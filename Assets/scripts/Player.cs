@@ -5,18 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public BezierCurve curva;
-    public int interpolationFramesCount = 45; // Number of frames to completely interpolate between the 2 positions
-    int elapsedFrames = 0;
-
+    public Vector2 lastDirection;
+    public float speed;
+    
     private void Update()
     {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
 
-        float interpolationRatio = (float)elapsedFrames / interpolationFramesCount;
-
-        transform.position = Vector3.Lerp(curva.GetPointAt(0), curva.GetPointAt(1), interpolationRatio);
-
-        elapsedFrames = (elapsedFrames + 1) % (interpolationFramesCount + 1);  // reset elapsedFrames to zero after it reached (interpolationFramesCount + 1)
-
-        
+        transform.Translate(new Vector3(horizontal, vertical, 0) * speed);
     }
 }
