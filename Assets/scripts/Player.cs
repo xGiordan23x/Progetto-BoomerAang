@@ -8,6 +8,10 @@ public class Player : MonoBehaviour
     public Vector2 lastDirection;
     public float speed;
     public bool isReturning;
+    public float UpCurveDistance;
+    public float DownCurveDistance;
+    public float LeftCurveDistance;
+    public float RightCurveDistance;
     private bool isFacingRight;
     private bool isFacingLeft;
     private bool isFacingUp;
@@ -43,25 +47,30 @@ public class Player : MonoBehaviour
 
     private void SetCurveHandles(Vector2 lastDirection)
     {
-        if (lastDirection == Vector2.up)
+
+        foreach(BezierPoint p in points)
         {
-            foreach(BezierPoint p in points)
+            p.handle1 = Vector3.zero;
+            p.handle2 = Vector3.zero;
+            if (lastDirection == Vector2.up)
             {
+                p.handle1 += new Vector3(0, UpCurveDistance);
 
             }
+            else if (lastDirection == Vector2.down)
+            {
+                p.handle1 += new Vector3(0, -DownCurveDistance);
+            }
+            else if (lastDirection == Vector2.left)
+            {
+                p.handle1 += new Vector3(-LeftCurveDistance,0);
+            }
+            else if (lastDirection == Vector2.right)
+            {
+                p.handle1 += new Vector3(RightCurveDistance,0);
+            }
         }
-        else if (lastDirection == Vector2.down)
-        {
-
-        }
-        else if (lastDirection == Vector2.left)
-        {
-
-        }
-        else if (lastDirection == Vector2.right)
-        {
-
-        }
+        
     }
 
     

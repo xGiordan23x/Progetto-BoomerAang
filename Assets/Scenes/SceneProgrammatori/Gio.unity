@@ -154,8 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _curve: {fileID: 1898991909}
   handleStyle: 0
-  _handle1: {x: -2.8851395, y: 1.9803319, z: 0.00028388202}
-  _handle2: {x: 2.8851395, y: -1.9803319, z: -0.00028388202}
+  _handle1: {x: 3.43, y: 0, z: 0}
+  _handle2: {x: -3.43, y: -0, z: -0}
 --- !u!4 &122612219
 Transform:
   m_ObjectHideFlags: 0
@@ -207,6 +207,10 @@ MonoBehaviour:
   lastDirection: {x: 0, y: 0}
   speed: 10
   isReturning: 0
+  UpCurveDistance: 10
+  DownCurveDistance: 10
+  LeftCurveDistance: 10
+  RightCurveDistance: 10
 --- !u!212 &1738141597
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -463,8 +467,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _curve: {fileID: 1898991909}
   handleStyle: 0
-  _handle1: {x: -2.0464916, y: 0.15159273, z: -0.0009765625}
-  _handle2: {x: 2.0464916, y: -0.15159273, z: 0.0009765625}
+  _handle1: {x: 2.68, y: 0, z: 0}
+  _handle2: {x: -2.68, y: -0, z: -0}
 --- !u!4 &2051877688
 Transform:
   m_ObjectHideFlags: 0
