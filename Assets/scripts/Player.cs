@@ -18,10 +18,13 @@ public class Player : MonoBehaviour
     private bool isFacingUp;
     private bool isFacingDown;
 
+    Rigidbody2D body;
+
     public StateMachine<PlayerStateType> stateMachine = new();
 
     private void Start()
     {
+        body = GetComponent<Rigidbody2D>();
         points = curve.GetAnchorPoints();
         stateMachine.RegisterState(PlayerStateType.Idle, new PlayerStateIdle(this));
         stateMachine.RegisterState(PlayerStateType.Walk, new PlayerStateWalk(this));
@@ -34,11 +37,9 @@ public class Player : MonoBehaviour
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
 
-            Vector3 movement = new Vector3(horizontal, vertical, 0);
-            if (movement != Vector3.zero)
-            {
-                Move(movement);
-            }
+            Vector3 movement = new Vector3(horizontal, vertical).normalized;
+
+            Move(movement);
         }
         else
         {
@@ -122,7 +123,9 @@ public class Player : MonoBehaviour
 
     public void Move(Vector3 movement)
     {
-        transform.Translate(movement.normalized * speed * Time.deltaTime);
+        //transform.Translate(movement.normalized * speed * Time.deltaTime);
+
+        body.MovePosition(transform.position + movement * speed * Time.deltaTime);
         lastDirection = movement;
     }
 
