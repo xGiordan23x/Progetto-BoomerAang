@@ -203,9 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curve: {fileID: 1898991909}
-  points:
-  - {fileID: 2051877687}
-  - {fileID: 122612218}
+  points: []
   lastDirection: {x: 0, y: 0}
   speed: 10
   isReturning: 0
