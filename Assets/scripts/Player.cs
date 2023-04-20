@@ -1,127 +1,75 @@
-using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [Header("Curve")]
     public BezierCurve curve;
-    public BezierPoint[] points;
+    private BezierPoint[] points;
     public Vector2 lastDirection;
+    [Header("Variabili")]
+    public Animator animator;
     public float speed;
     public bool isReturning;
-    public float UpCurveDistance;
-    public float DownCurveDistance;
-    public float LeftCurveDistance;
-    public float RightCurveDistance;
-    private bool isFacingRight;
-    private bool isFacingLeft;
-    private bool isFacingUp;
-    private bool isFacingDown;
+    public Rigidbody2D rigidbody;
+    public Vector3 posizioneGeneratorePozione;
+    [Header("LarghezzaCurvaPerDirezione")]
+    public AnimationCurve animationCurve;
+    public float curveDistance;
+   
 
     public StateMachine<PlayerStateType> stateMachine = new();
 
     private void Start()
     {
         points = curve.GetAnchorPoints();
-        stateMachine.RegisterState(PlayerStateType.Idle, new PlayerStateIdle(this));
-        stateMachine.RegisterState(PlayerStateType.Walk, new PlayerStateWalk(this));
-        stateMachine.RegisterState(PlayerStateType.Boomerang, new PlayerStateBoomerang(this));
+        rigidbody = GetComponent<Rigidbody2D>();
+        stateMachine.RegisterState(PlayerStateType.HumanMovement, new PlayerStateHumanMovement(this));
+        stateMachine.RegisterState(PlayerStateType.BoomerangMovement, new PlayerStateBoomerangMovement(this));
+
+        //stateMachine.SetState(PlayerStateType.Idle);
     }
     private void Update()
     {
-        if (!isReturning)
-        {
-            float horizontal = Input.GetAxisRaw("Horizontal");
-            float vertical = Input.GetAxisRaw("Vertical");
 
-            Vector3 movement = new Vector3(horizontal, vertical, 0);
-            if (movement != Vector3.zero)
-            {
-                Move(movement);
-            }
-        }
-        else
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        Vector3 movement = new Vector3(horizontal, vertical, 0);
+        if (movement != Vector3.zero)
         {
-            //imposta il punto uno sotto il player
+            Move(movement);
+        }
+        else if (isReturning)
+        {
             curve[1].transform.position = transform.position;
             SetCurveHandles(lastDirection);
-            MoveAlongCurve();
-
         }
+
 
     }
 
     private void MoveAlongCurve()
     {
-      //curve.GetPointAt()
+        //curve.GetPointAt()
     }
 
-    private void SetCurveHandles(Vector2 lastDirection)
+    public void SetCurveHandles(Vector2 lastDirection)
     {
-        int temp = 0;
-        foreach(BezierPoint p in points)
-        {
+        Vector3 GeneratorDirection = posizioneGeneratorePozione - transform.position;
+        float temp = Vector3.Dot(lastDirection, GeneratorDirection);
+        temp = (temp + 1) / 2f;//controllare
+        float DistanzaHandle = animationCurve.Evaluate(temp) * curveDistance;
 
-            p.handle1 = Vector3.zero;
-            p.handle2 = Vector3.zero;
+        points[0].handle2 = lastDirection*DistanzaHandle;
+        points[1].handle1 = lastDirection * DistanzaHandle;
 
-           
-            if(temp == 1)
-            {
-                if (lastDirection == Vector2.up)
-                {
-                    p.handle1 += new Vector3(0, UpCurveDistance);
-                   
-                }
-                else if (lastDirection == Vector2.down)
-                {
-                    p.handle1 += new Vector3(0, -DownCurveDistance);
-                    
-                }
-                else if (lastDirection == Vector2.left)
-                {
-                    p.handle1 += new Vector3(-LeftCurveDistance, 0);
-                    
-                }
-                else if (lastDirection == Vector2.right)
-                {
-                    p.handle1 += new Vector3(RightCurveDistance, 0);
-                    
-                }
-            }
-
-            if (temp == 0)
-            {
-                if (lastDirection == Vector2.up)
-                {
-                    p.handle1 += new Vector3(0, -UpCurveDistance);
-                    temp++;
-                }
-                else if (lastDirection == Vector2.down)
-                {
-                    p.handle1 += new Vector3(0, DownCurveDistance);
-                    temp++;
-                }
-                else if (lastDirection == Vector2.left)
-                {
-                    p.handle1 += new Vector3(LeftCurveDistance, 0);
-                    temp++;
-                }
-                else if (lastDirection == Vector2.right)
-                {
-                    p.handle1 += new Vector3(-RightCurveDistance, 0);
-                    temp++;
-                }
-            }
-            
-        }
-        
     }
 
-    
+
 
     public void Move(Vector3 movement)
     {
+
         transform.Translate(movement.normalized * speed * Time.deltaTime);
         lastDirection = movement;
     }

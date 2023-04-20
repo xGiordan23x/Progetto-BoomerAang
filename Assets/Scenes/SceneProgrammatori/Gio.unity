@@ -204,14 +204,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curve: {fileID: 1898991909}
-  points: []
   lastDirection: {x: 0, y: 0}
+  animator: {fileID: 0}
   speed: 10
   isReturning: 0
-  UpCurveDistance: 10
-  DownCurveDistance: 10
-  LeftCurveDistance: 10
-  RightCurveDistance: 10
+  rigidbody: {fileID: 0}
+  posizioneGeneratorePozione: {x: 0, y: 0, z: 0}
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0018005371
+      value: 0.50078964
+      inSlope: 1.0296082
+      outSlope: 1.0296082
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.50378895
+      value: 1.0176411
+      inSlope: -0.39740306
+      outSlope: -0.39740306
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.002753
+      value: 0.10732381
+      inSlope: -1.8244144
+      outSlope: -1.8244144
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curveDistance: 1
 --- !u!212 &1738141597
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -272,7 +304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738141595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.17, y: 1.08, z: 0}
+  m_LocalPosition: {x: 4.52, y: 0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -491,7 +523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051877686}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.59, y: 3.42, z: -0.0006926805}
+  m_LocalPosition: {x: 8.13, y: 3.29, z: -0.0006926805}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

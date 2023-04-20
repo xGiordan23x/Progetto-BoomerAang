@@ -7,9 +7,8 @@ using UnityEngine;
 
 public enum PlayerStateType 
 { 
-    Idle,
-    Walk,
-    Boomerang
+    HumanMovement,
+    BoomerangMovement
 }
 
 public  class StateMachine<T> where T : Enum
