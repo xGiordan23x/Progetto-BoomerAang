@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         points = curve.GetAnchorPoints();
-        Debug.Log("agagaag");
     }
     private void Update()
     {
@@ -59,7 +58,7 @@ public class Player : MonoBehaviour
             }
             else if (lastDirection == Vector2.down)
             {
-                p.handle1 += new Vector3(0, -DownCurveDistance);
+                p.handle1 += new Vector3(0, DownCurveDistance);
             }
             else if (lastDirection == Vector2.left)
             {
@@ -67,7 +66,7 @@ public class Player : MonoBehaviour
             }
             else if (lastDirection == Vector2.right)
             {
-                p.handle1 += new Vector3(RightCurveDistance,0);
+                p.handle1 += new Vector3(-RightCurveDistance,0);
             }
         }
         

@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df18390d5f4c2f4a9a75cab04bffc5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curve: {fileID: 0}
+  curve: {fileID: 1515835020}
   points: []
   lastDirection: {x: 0, y: 0}
   speed: 10
