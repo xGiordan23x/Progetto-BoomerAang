@@ -18,10 +18,13 @@ public class Player : MonoBehaviour
     private bool isFacingUp;
     private bool isFacingDown;
 
+    public StateMachine<PlayerStateType> stateMachine = new();
 
     private void Start()
     {
         points = curve.GetAnchorPoints();
+        stateMachine.RegisterState(PlayerStateType.Idle, new PlayerStateIdle(this));
+
         
     }
     private void Update()
