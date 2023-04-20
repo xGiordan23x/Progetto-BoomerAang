@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         points = curve.GetAnchorPoints();
+        Debug.Log("agagaag");
     }
     private void Update()
     {
@@ -34,33 +35,36 @@ public class Player : MonoBehaviour
         else
         {
             curve[1].transform.position = transform.position;
-            //SetCurveHandles(lastDirection);
+            SetCurveHandles(lastDirection);
 
         }
 
     }
 
-    //private void SetCurveHandles(Vector2 lastDirection)
-    //{
-    //    switch (lastDirection)
-    //    {
-    //        case Vector2(2, 0):
+    private void SetCurveHandles(Vector2 lastDirection)
+    {
+        if (lastDirection == Vector2.up)
+        {
+            foreach(BezierPoint p in points)
+            {
 
-    //            break;
+            }
+        }
+        else if (lastDirection == Vector2.down)
+        {
 
-    //        case Vector2.down:
-    //            break;
+        }
+        else if (lastDirection == Vector2.left)
+        {
 
-    //        case Vector2.left:
-    //            break;
+        }
+        else if (lastDirection == Vector2.right)
+        {
 
-    //        case Vector2.right:
-    //            break;
+        }
+    }
 
-
-
-    //    }
-    //}
+    
 
     public void Move(Vector3 movement)
     {
