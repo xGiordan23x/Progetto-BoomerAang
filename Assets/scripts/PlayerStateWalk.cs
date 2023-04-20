@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStateWalk : MonoBehaviour
+public class PlayerStateWalk : State
 {
     private Player _player;
 

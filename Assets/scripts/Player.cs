@@ -24,8 +24,8 @@ public class Player : MonoBehaviour
     {
         points = curve.GetAnchorPoints();
         stateMachine.RegisterState(PlayerStateType.Idle, new PlayerStateIdle(this));
-
-        
+        stateMachine.RegisterState(PlayerStateType.Walk, new PlayerStateWalk(this));
+        stateMachine.RegisterState(PlayerStateType.Boomerang, new PlayerStateBoomerang(this));
     }
     private void Update()
     {
