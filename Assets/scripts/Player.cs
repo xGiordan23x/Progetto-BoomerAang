@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         else
         {
             curve[1].transform.position = transform.position;
-            SetCurveHandles(lastDirection);
+            //SetCurveHandles(lastDirection);
 
         }
 
