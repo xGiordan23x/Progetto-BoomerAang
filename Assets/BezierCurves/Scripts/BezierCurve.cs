@@ -114,6 +114,7 @@ public class BezierCurve : MonoBehaviour {
 	
 	#endregion
 	
+
 	#region PrivateVariables
 	
 	/// <summary> 
