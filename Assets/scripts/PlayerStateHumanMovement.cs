@@ -13,7 +13,8 @@ public class PlayerStateHumanMovement : State
     }
     public override void OnEnter()
     {
-        Debug.Log("Sono in Walk");
+        Debug.Log("Sono in human movement");
+       
     }
     public override void OnUpdate()
     {
@@ -31,7 +32,7 @@ public class PlayerStateHumanMovement : State
        
         if (_player.isReturning)
         {
-            _player.stateMachine.SetState(PlayerStateType.BoomerangMovement);
+            _player.stateMachine.SetState(PlayerStateType.BoomerangReturning);
         }
 
 
