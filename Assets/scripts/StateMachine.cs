@@ -7,9 +7,8 @@ using UnityEngine;
 
 public enum PlayerStateType 
 { 
-    Idle,
-    Walk,
-    Boomerang
+    HumanMovement,
+    BoomerangMovement
 }
 
 public  class StateMachine<T> where T : Enum
@@ -29,9 +28,9 @@ public  class StateMachine<T> where T : Enum
 
     public void SetState( T type) 
     {
-        if ((_states.ContainsKey(type)))
+        if (!(_states.ContainsKey(type)))
         {
-            throw new Exception("Stato gia presente " + type);
+            throw new Exception("Stato inesistente " + type);
         }
 
         _currentState?.OnExit();
