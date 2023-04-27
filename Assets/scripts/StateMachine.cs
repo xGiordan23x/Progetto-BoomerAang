@@ -8,14 +8,16 @@ using UnityEngine;
 public enum PlayerStateType 
 { 
     HumanMovement,
-    BoomerangMovement
+    BoomerangMovement,
+    BoomerangReturning
+
 }
 
 public  class StateMachine<T> where T : Enum
 {
     private Dictionary<T, State> _states = new();
     private State _currentState;
-
+    
     public void RegisterState(T type, State state)
     {
         if( ( _states.ContainsKey(type)))
@@ -42,4 +44,5 @@ public  class StateMachine<T> where T : Enum
     {
         _currentState?.OnUpdate();
     }
+    public State GetCurrentState() { return _currentState; }
 }
