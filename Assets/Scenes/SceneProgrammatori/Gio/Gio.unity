@@ -438,7 +438,7 @@ MonoBehaviour:
   returnTimer: 1
   potionGenerator: {fileID: 1211854931}
   Interact: 0
-  isBoomerang: 0
+  hasPotion: 0
 --- !u!212 &1738141597
 SpriteRenderer:
   m_ObjectHideFlags: 0
