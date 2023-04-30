@@ -27,7 +27,7 @@ public class PubSub : MonoBehaviour
 
 
     private Dictionary<string, List<Action<object>>> _registeredFunction = new();
-
+    
     public void RegisteredFunction(string messageType, Action<object> function)
     {
         if (_registeredFunction.ContainsKey(messageType))
@@ -42,8 +42,7 @@ public class PubSub : MonoBehaviour
             _registeredFunction.Add(messageType, newList);
         }
     }
-
-
+   
     public new void SendMessage(string messageType, object messageContent)
     {
         foreach (Action<object> function in _registeredFunction[messageType])
@@ -51,6 +50,37 @@ public class PubSub : MonoBehaviour
             function.Invoke(messageContent);
         }
     }
+
+
+    //aggiungo quello che so io
+    private Dictionary<string, List<ISubscriber>> _subscribers = new();
+    public void RegisteredSubscriber(string messageType, ISubscriber subscriber)
+    {
+        if (_subscribers.ContainsKey(messageType))
+        {
+            _subscribers[messageType].Add(subscriber);
+
+        }
+        else
+        {
+            List<ISubscriber> newList = new();
+            newList.Add(subscriber);
+            _subscribers.Add(messageType, newList);
+        }
+
+    }
+    public void SendMessageSubscriber(string messageType, object content)
+    {
+        if (!_subscribers.ContainsKey(messageType)) return;
+
+
+        foreach (ISubscriber subscriber in _subscribers[messageType])
+        {
+            subscriber.OnNotify(content);
+        }
+    }
+
+
 
 
 }

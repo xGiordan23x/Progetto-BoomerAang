@@ -4,28 +4,27 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class PotionGenerator : MonoBehaviour
+public class PotionGenerator : MonoBehaviour, ISubscriber
 {  
     public float timerBoomerang;
-    private float timer;
+    public float timer;
     private bool started;
     private Player player;
-    public bool activated;
+    private bool activated;
 
     private void Start()
     {
         started = false;
         timer = 0;
         activated = true;
+        PubSub.Instance.RegisteredSubscriber(nameof(PotionGenerator), this);
     }
-    internal void StartTimer(Player playerRef )
+    internal void StartTimer()
     {
         Debug.Log("Timer avviato");
         timer = timerBoomerang;
         started = true;
-        player= playerRef;
-        player.hasPotion = true;
-
+        PubSub.Instance.SendMessageSubscriber(nameof(Player),this);
     }
 
     private void Update()
@@ -47,8 +46,10 @@ public class PotionGenerator : MonoBehaviour
                 {
                     timer = 0;
                     Debug.Log("timer Finito");
-                    player.isReturning = true;
                     started = false;
+
+                    PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateHumanMovement),this);
+                   
                     activated= false;
                     
                 }
@@ -56,4 +57,11 @@ public class PotionGenerator : MonoBehaviour
         }
     }
 
+    public void OnNotify(object content)
+    {
+       if (content is Player)
+        {
+            StartTimer();
+        }
+    }
 }

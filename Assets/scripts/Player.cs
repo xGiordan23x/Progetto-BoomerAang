@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, ISubscriber
 {
+
     [Header("Curva")]
     public BezierCurve curve;
     public BezierPoint[] points;
@@ -12,7 +14,7 @@ public class Player : MonoBehaviour
     [Header("VariabiliUmano")]
     public Animator animator;
     public float humanSpeed;
-    public bool isReturning;
+
     [HideInInspector] public Rigidbody2D rb;
     [Header("VariabiliBoomerang")]
     public float returnTimer;
@@ -20,13 +22,16 @@ public class Player : MonoBehaviour
 
     public bool Interact;
     public bool hasPotion;
-    
+
+    [HideInInspector] public bool isReturning;
+
 
 
     public StateMachine<PlayerStateType> stateMachine = new();
 
     private void Start()
     {
+        PubSub.Instance.RegisteredSubscriber(nameof(Player), this);
         points = curve.GetAnchorPoints();
         rb = GetComponent<Rigidbody2D>();
         stateMachine.RegisterState(PlayerStateType.HumanMovement, new PlayerStateHumanMovement(this));
@@ -37,7 +42,7 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-       
+
         stateMachine.Update();
     }
 
@@ -66,7 +71,7 @@ public class Player : MonoBehaviour
         PotionGenerator generator = collision.GetComponent<PotionGenerator>();
         if (generator != null && (stateMachine.GetCurrentState() is PlayerStateBoomerangMovement))
         {
-            generator.StartTimer(this);
+            PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
         }
 
         else
@@ -74,4 +79,29 @@ public class Player : MonoBehaviour
 
         }
     }
+
+    public void OnNotify(object content)
+    {
+        if (content is PotionGenerator)
+        {
+            hasPotion = true;
+        }
+
+    }
+
+
+    //Da mettere in GameManager
+    public LineRenderer lineaProva;
+    internal void DrawCurve()
+    {
+        lineaProva.positionCount = (int)curve.length;
+        for (int i = 0; i < curve.length-1; i++)
+        {
+            float percentage = Mathf.InverseLerp(0, curve.length-1, i);
+          
+            lineaProva.SetPosition(i,curve.GetPointAt(percentage));
+            
+        }
+    }
 }
+    

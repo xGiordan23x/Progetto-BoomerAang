@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
-public class PlayerStateBoomerangMovement : State
+public class PlayerStateBoomerangMovement : State, ISubscriber
 {
     private Player _player;
     
@@ -11,14 +11,21 @@ public class PlayerStateBoomerangMovement : State
     public PlayerStateBoomerangMovement(Player player)
     {
         _player = player;
+        PubSub.Instance.RegisteredSubscriber(nameof(PlayerStateBoomerangMovement), this);
     }
 
     public override void OnEnter()
     {
-        Debug.Log("Sono in Boomerang movimento");
+        Debug.Log("Sono in Boomerang movimento"); 
+        _player.GetComponent<SpriteRenderer>().color = Color.white;
         _player.hasPotion = false;
-
     }
+
+    public void OnNotify(object content)
+    {
+       
+    }
+
     public override void OnUpdate()
     {
         //movement
