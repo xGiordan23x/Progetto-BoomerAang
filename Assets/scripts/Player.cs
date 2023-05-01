@@ -20,7 +20,9 @@ public class Player : MonoBehaviour
 
     public bool Interact;
     public bool hasPotion;
-    
+
+    private SpriteRenderer spriteRenderer;
+
 
 
     public StateMachine<PlayerStateType> stateMachine = new();
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour
     {
         points = curve.GetAnchorPoints();
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         stateMachine.RegisterState(PlayerStateType.HumanMovement, new PlayerStateHumanMovement(this));
         stateMachine.RegisterState(PlayerStateType.BoomerangMovement, new PlayerStateBoomerangMovement(this));
         stateMachine.RegisterState(PlayerStateType.BoomerangReturning, new PlayerStateBoomerangReturning(this));
@@ -37,8 +40,9 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-       
+
         stateMachine.Update();
+
     }
 
 
@@ -72,6 +76,16 @@ public class Player : MonoBehaviour
         else
         {
 
+        }
+    }
+
+    public void FlipSprite(float speed)
+    {
+
+
+        if (transform.localScale.x * speed < 0)
+        {
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
     }
 }
