@@ -33,7 +33,9 @@ public class PlayerStateBoomerangMovement : State
 
         _player.rb.velocity = new Vector2(movement.x * _player.humanSpeed, movement.y * _player.humanSpeed);
 
-        if(_player.hasPotion)
+        _player.FlipSprite(horizontal);  //flippo lo sprite per X
+
+        if (_player.hasPotion)
         {
             _player.stateMachine.SetState(PlayerStateType.HumanMovement);
         }
