@@ -33,6 +33,14 @@ public class PlayerStateHumanMovement : State
 
         _player.FlipSprite(horizontal);         //flippo lo sprite in X
 
+        //interaction
+
+        if (Input.GetButtonDown("Use"))
+        {
+            _player.Interaction();
+        }
+
+
         if (_player.isReturning)
         {
             _player.stateMachine.SetState(PlayerStateType.BoomerangReturning);

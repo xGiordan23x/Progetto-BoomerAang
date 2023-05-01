@@ -35,6 +35,14 @@ public class PlayerStateBoomerangMovement : State
 
         _player.FlipSprite(horizontal);  //flippo lo sprite per X
 
+
+        //interaction
+
+        if (Input.GetButtonDown("Use"))
+        {
+            _player.Interaction();
+        }
+
         if (_player.hasPotion)
         {
             _player.stateMachine.SetState(PlayerStateType.HumanMovement);

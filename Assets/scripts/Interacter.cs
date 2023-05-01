@@ -7,7 +7,7 @@ public class Interacter : MonoBehaviour
     public float range;
     public LayerMask mask;
 
-    public void Interaction()
+    public void Interaction(Player player)
     {
         Collider2D[] collision = Physics2D.OverlapCircleAll(transform.position, range, mask);
 
@@ -17,7 +17,7 @@ public class Interacter : MonoBehaviour
 
             if (interactable != null)
             {
-                interactable.Interact();
+                interactable.Interact(player);
             }
         }
     }
