@@ -1817,6 +1817,7 @@ MonoBehaviour:
   potionGenerator: {fileID: 1541728230}
   Interact: 0
   hasPotion: 0
+  interactionPoint: {fileID: 653229485}
 --- !u!212 &632220579
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1932,7 +1933,7 @@ MonoBehaviour:
   range: 0.4
   mask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!1 &794676168
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,7 +2094,7 @@ GameObject:
   - component: {fileID: 1241118865}
   - component: {fileID: 1241118864}
   - component: {fileID: 1241118869}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2159,6 +2160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7780e553c828f43b4a532f6ba44f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!212 &1241118867
 SpriteRenderer:
   m_ObjectHideFlags: 0

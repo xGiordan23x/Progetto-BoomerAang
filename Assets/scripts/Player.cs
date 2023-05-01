@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    public Interacter interactionPoint;
+
 
 
     public StateMachine<PlayerStateType> stateMachine = new();
@@ -81,11 +83,14 @@ public class Player : MonoBehaviour
 
     public void FlipSprite(float speed)
     {
-
-
         if (transform.localScale.x * speed < 0)
         {
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
+    }
+
+    public void Interaction()
+    {
+        interactionPoint.Interaction(this);
     }
 }
