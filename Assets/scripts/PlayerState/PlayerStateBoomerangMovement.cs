@@ -29,22 +29,8 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
 
     public override void OnUpdate()
     {
-
-        //movement
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-
-        Vector2 movement = new Vector2(horizontal, vertical).normalized;
-        if (movement != Vector2.zero)//controllo cosi che lastDirection non sia 0,0
-        {
-            _player.ChangeLastDirection(movement);
-            _player.ChangeInteractionVerse();
-        }
-
-        _player.rb.velocity = new Vector2(movement.x * _player.humanSpeed, movement.y * _player.humanSpeed);
-
-        //_player.FlipSprite(horizontal);  //flippo lo sprite per X
-
+        //Movement
+        _player.Move();
 
         //interaction
 
@@ -53,11 +39,8 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
             _player.Interaction();
         }
 
-        if (_player.hasPotion)
-
-        _player.Move();
+     
         if(_player.hasPotion)
-
         {
             _player.stateMachine.SetState(PlayerStateType.HumanMovement);
         }

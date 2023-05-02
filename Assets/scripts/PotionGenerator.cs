@@ -4,19 +4,18 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class PotionGenerator : MonoBehaviour, ISubscriber
+public class PotionGenerator :Interactable ,ISubscriber
 {  
     public float timerBoomerang;
     public float timer;
     private bool started;
     private Player player;
-    private bool activated;
-
+    
     private void Start()
     {
         started = false;
         timer = 0;
-        activated = true;
+       
         PubSub.Instance.RegisteredSubscriber(nameof(PotionGenerator), this);
     }
     internal void StartTimer()
@@ -30,14 +29,6 @@ public class PotionGenerator : MonoBehaviour, ISubscriber
     private void Update()
     {
 
-       if( Input.GetKeyDown(KeyCode.E))
-        {
-            activated = true;
-        }
-
-        if (activated)
-        {
-
             if (started)
             {
                 timer -= Time.deltaTime;
@@ -50,11 +41,9 @@ public class PotionGenerator : MonoBehaviour, ISubscriber
 
                     PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateHumanMovement),this);
                    
-                    activated= false;
-                    
                 }
             }
-        }
+        
     }
 
     public void OnNotify(object content)
@@ -64,4 +53,10 @@ public class PotionGenerator : MonoBehaviour, ISubscriber
             StartTimer();
         }
     }
+    public override void Interact(Player player)
+    {
+        base.Interact(player);
+        StartTimer();
+    }
+
 }

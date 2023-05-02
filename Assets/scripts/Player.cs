@@ -74,18 +74,22 @@ public class Player : MonoBehaviour, ISubscriber
 
     }
 
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //mettere in trigger stay
+        //PotionGenerator generator = collision.GetComponent<PotionGenerator>();
+       
+        //if (generator != null && (stateMachine.GetCurrentState() is PlayerStateBoomerangMovement))
+        //{
+        //    // mettere stay e tasto interazione
+        //    PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
+        //}
 
-        PotionGenerator generator = collision.GetComponent<PotionGenerator>();
+
         CurveModifier curveModifier = collision.GetComponent<CurveModifier>();
-        if (generator != null && (stateMachine.GetCurrentState() is PlayerStateBoomerangMovement))
-        {
-            // mettere stay e tasto interazione
-            PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
-        }
 
-        else if(curveModifier != null && (stateMachine.GetCurrentState() is PlayerStateBoomerangReturning))
+        if (curveModifier != null && (stateMachine.GetCurrentState() is PlayerStateBoomerangReturning))
         {
             lastDirection = curveModifier.newDirection;
             PubSub.Instance.SendMessageSubscriber(nameof(CurveModifier), this);
@@ -171,6 +175,11 @@ public class Player : MonoBehaviour, ISubscriber
         if (movement != Vector2.zero)//controllo cosi che lastDirection non sia 0,0
         {
             lastDirection = movement;
+
+           ChangeLastDirection(movement);
+
+            //prova
+            ChangeInteractionVerse();
         }
         
         rb.velocity = new Vector2(movement.x *  humanSpeed, movement.y * humanSpeed);
