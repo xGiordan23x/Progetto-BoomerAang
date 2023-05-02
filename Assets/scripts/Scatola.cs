@@ -39,6 +39,16 @@ public class Scatola : Interactable
         float elapsedTime = 0;
 
         startPosition = transform.position;
+        endPosition = startPosition + direction;
+
+        while (elapsedTime < timeToMove)
+        {
+            transform.position = Vector3.Lerp(startPosition, endPosition, (elapsedTime / timeToMove));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = endPosition;
 
         isMoving = false;
     }
