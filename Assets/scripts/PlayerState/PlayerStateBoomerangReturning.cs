@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStateBoomerangReturning : State
+public class PlayerStateBoomerangReturning : State, ISubscriber
 {
     private Player _player;
     private float elapsedTime;
@@ -11,12 +11,13 @@ public class PlayerStateBoomerangReturning : State
     public PlayerStateBoomerangReturning(Player player)
     {
         _player = player;
+        PubSub.Instance.RegisteredSubscriber(nameof(PlayerStateBoomerangReturning), this);
     }
 
     public override void OnEnter()
     {
         Debug.Log("Sono in Boomerang ritorno");
-       
+        _player.GetComponent<SpriteRenderer>().color = Color.yellow;
 
         //imposta il punto uno sotto il player
         _player.points[0].transform.position = _player.transform.position;
@@ -25,8 +26,14 @@ public class PlayerStateBoomerangReturning : State
 
         _player.SetCurveHandles(_player.lastDirection);
         elapsedTime = 0;
-
+        _player.DrawCurve();
     }
+
+    public void OnNotify(object content)
+    {
+        
+    }
+
     public override void OnUpdate()
     {
         //Ritono a base parabola
