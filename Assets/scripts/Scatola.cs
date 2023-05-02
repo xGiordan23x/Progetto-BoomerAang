@@ -9,30 +9,18 @@ public class Scatola : Interactable
     Vector3 startPosition;
     Vector3 endPosition;
 
-    [SerializeField] AnimationCurve curve;
+    
 
-    Rigidbody2D rb;
+    private bool isMoving = false;
 
-    bool isMoving = false;
-
-    float time;
+    private float timeToMove=0.5f;
 
 
     public override void Interact(Player player)
     {
         if (!isMoving)
         {
-            startPosition = transform.position.normalized;
-
-            endPosition = (player.transform.position.normalized - startPosition);
-
-            Debug.Log(endPosition);
-
-            isMoving = true;
-
-            time = 0;
-
-            base.Interact(player);
+            
 
         }
 
@@ -41,12 +29,17 @@ public class Scatola : Interactable
 
     private void Update()
     {
-        if (isMoving)
-        {
-           
 
+    }
 
-        }
+    private IEnumerator MoveBox(Vector3 direction)
+    {
+        isMoving = true;
 
+        float elapsedTime = 0;
+
+        startPosition = transform.position;
+
+        isMoving = false;
     }
 }
