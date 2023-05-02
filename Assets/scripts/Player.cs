@@ -93,4 +93,29 @@ public class Player : MonoBehaviour
     {
         interactionPoint.Interaction(this);
     }
+
+    //prove per interazione
+
+    public void ChangeInteractionVerse()
+    {
+        Transform verse = interactionPoint.GetComponent<Transform>();
+
+        verse.localPosition = lastDirection;
+    }
+
+    public void ChangeLastDirection(Vector2 movement)
+    {
+        if (movement.y > 0)
+        {
+            movement.y = 1;
+            movement.x = 0;
+        }
+        if (movement.y < 0)
+        {
+            movement.y = -1;
+            movement.x = 0;
+        }
+
+        lastDirection = movement;
+    }
 }
