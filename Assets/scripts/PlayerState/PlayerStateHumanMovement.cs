@@ -37,13 +37,17 @@ public class PlayerStateHumanMovement : State, ISubscriber
         Vector2 movement = new Vector2(horizontal, vertical).normalized;
         if (movement != Vector2.zero)//controllo cosi che lastDirection non sia 0,0
         {
-            _player.lastDirection = movement;
+
+            _player.ChangeLastDirection(movement);
+
+            //prova
+            _player.ChangeInteractionVerse();
         }
 
 
         _player.rb.velocity = new Vector2(movement.x * _player.humanSpeed, movement.y * _player.humanSpeed);
 
-        _player.FlipSprite(horizontal);         //flippo lo sprite in X
+        //_player.FlipSprite(horizontal);         //flippo lo sprite in X
 
         //interaction
 
