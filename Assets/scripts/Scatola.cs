@@ -18,11 +18,7 @@ public class Scatola : Interactable
 
     public override void Interact(Player player)
     {
-        if (!isMoving)
-        {
-            
-
-        }
+        
 
 
     }
