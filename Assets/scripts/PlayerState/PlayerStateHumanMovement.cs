@@ -31,6 +31,7 @@ public class PlayerStateHumanMovement : State, ISubscriber
     public override void OnUpdate()
     {
 
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -56,6 +57,9 @@ public class PlayerStateHumanMovement : State, ISubscriber
             _player.Interaction();
         }
 
+
+
+        _player.Move();
 
         if (_player.isReturning)
         {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerStateBoomerangReturning : State, ISubscriber
@@ -18,20 +19,28 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
     {
         Debug.Log("Sono in Boomerang ritorno");
         _player.GetComponent<SpriteRenderer>().color = Color.yellow;
+      
+        SetCurve(_player.lastDirection);
+    }
 
+    private void SetCurve(Vector2 direction)
+    {
         //imposta il punto uno sotto il player
         _player.points[0].transform.position = _player.transform.position;
         //imposto l'altro punto sotto il generatore
         _player.points[1].transform.position = _player.potionGenerator.position;
 
-        _player.SetCurveHandles(_player.lastDirection);
+        _player.SetCurveHandles(direction);
         elapsedTime = 0;
         _player.DrawCurve();
     }
 
     public void OnNotify(object content)
     {
-        
+      if(content is CurveModifier)
+        {
+            SetCurve(_player.lastDirection);
+        }
     }
 
     public override void OnUpdate()
@@ -50,6 +59,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
             _player.stateMachine.SetState(PlayerStateType.BoomerangMovement);
 
         }
+        
 
     }
 

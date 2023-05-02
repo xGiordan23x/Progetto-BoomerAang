@@ -19,6 +19,7 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
         Debug.Log("Sono in Boomerang movimento"); 
         _player.GetComponent<SpriteRenderer>().color = Color.white;
         _player.hasPotion = false;
+        PubSub.Instance.SendMessageSubscriber(nameof(CurveModifier),this);
     }
 
     public void OnNotify(object content)
@@ -28,6 +29,7 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
 
     public override void OnUpdate()
     {
+
         //movement
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -52,6 +54,10 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
         }
 
         if (_player.hasPotion)
+
+        _player.Move();
+        if(_player.hasPotion)
+
         {
             _player.stateMachine.SetState(PlayerStateType.HumanMovement);
         }
