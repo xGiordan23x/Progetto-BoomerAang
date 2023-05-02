@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour, ISubscriber
 {
@@ -69,14 +70,18 @@ public class Player : MonoBehaviour, ISubscriber
     {
 
         PotionGenerator generator = collision.GetComponent<PotionGenerator>();
+        CurveModifier curveModifier = collision.GetComponent<CurveModifier>();
         if (generator != null && (stateMachine.GetCurrentState() is PlayerStateBoomerangMovement))
         {
+            // mettere stay e tasto interazione
             PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
         }
 
-        else
+        else if(curveModifier != null && (stateMachine.GetCurrentState() is PlayerStateBoomerangReturning))
         {
-
+            lastDirection = curveModifier.newDirection;
+            PubSub.Instance.SendMessageSubscriber(nameof(CurveModifier), this);
+            curveModifier.activated = true;
         }
     }
 
@@ -102,6 +107,22 @@ public class Player : MonoBehaviour, ISubscriber
             lineaProva.SetPosition(i,curve.GetPointAt(percentage));
             
         }
+    }
+
+    public void Move()
+    {
+
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        Vector2 movement = new Vector2(horizontal, vertical).normalized;
+
+        if (movement != Vector2.zero)//controllo cosi che lastDirection non sia 0,0
+        {
+            lastDirection = movement;
+        }
+        
+        rb.velocity = new Vector2(movement.x *  humanSpeed, movement.y * humanSpeed);
     }
 }
     
