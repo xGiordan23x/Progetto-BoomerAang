@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 403495689}
   - component: {fileID: 403495691}
   - component: {fileID: 403495690}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terreno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1811,13 +1811,14 @@ MonoBehaviour:
   curveDistance: 10
   animator: {fileID: 0}
   humanSpeed: 10
-  isReturning: 0
   rb: {fileID: 0}
   returnTimer: 1
   potionGenerator: {fileID: 1541728230}
   Interact: 0
   hasPotion: 0
   interactionPoint: {fileID: 653229485}
+  isReturning: 0
+  lineaProva: {fileID: 0}
 --- !u!212 &632220579
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1944,7 +1945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 794676170}
   - component: {fileID: 794676169}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2162,7 +2163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
 --- !u!212 &1241118867
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2223,7 +2224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241118863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0590161, y: 0.2938894, z: 0}
+  m_LocalPosition: {x: 0.50001, y: 0.50001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2342,7 +2343,7 @@ GameObject:
   - component: {fileID: 1541728226}
   - component: {fileID: 1541728225}
   - component: {fileID: 1541728224}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2448,7 +2449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerBoomerang: 5
-  activated: 0
+  timer: 0
 --- !u!212 &1541728229
 SpriteRenderer:
   m_ObjectHideFlags: 0
