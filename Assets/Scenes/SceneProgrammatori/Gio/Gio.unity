@@ -885,6 +885,7 @@ GameObject:
   - component: {fileID: 1738141599}
   - component: {fileID: 1738141600}
   - component: {fileID: 1738141602}
+  - component: {fileID: 1738141603}
   m_Layer: 0
   m_Name: ---Player---
   m_TagString: Untagged
@@ -1069,6 +1070,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.48}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!95 &1738141603
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738141595}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ab0533fa3634554408fbecf7ac537873, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1825600212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,7 +1242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ca833eba88fda48843336f5880e13d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newDirection: {x: 1, y: 0}
+  newDirection: {x: -1, y: 0}
   activated: 0
   timeToWaitBeforeChange: 4
 --- !u!4 &1825600218
