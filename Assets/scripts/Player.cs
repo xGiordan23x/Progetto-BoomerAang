@@ -77,21 +77,13 @@ public class Player : MonoBehaviour, ISubscriber
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //mettere in trigger stay
-        //PotionGenerator generator = collision.GetComponent<PotionGenerator>();
-       
-        //if (generator != null && (stateMachine.GetCurrentState() is PlayerStateBoomerangMovement))
-        //{
-        //    // mettere stay e tasto interazione
-        //    PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
-        //}
-
-
+        
         CurveModifier curveModifier = collision.GetComponent<CurveModifier>();
 
         if (curveModifier != null && (stateMachine.GetCurrentState() is PlayerStateBoomerangReturning))
         {
             lastDirection = curveModifier.newDirection;
+            PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
             PubSub.Instance.SendMessageSubscriber(nameof(CurveModifier), this);
             curveModifier.activated = true;
         }

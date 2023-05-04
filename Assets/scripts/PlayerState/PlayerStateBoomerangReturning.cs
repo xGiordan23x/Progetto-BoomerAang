@@ -7,6 +7,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
 {
     private Player _player;
     private float elapsedTime;
+    private bool stopPlayer;
 
 
     public PlayerStateBoomerangReturning(Player player)
@@ -40,24 +41,32 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
       if(content is CurveModifier)
         {
             SetCurve(_player.lastDirection);
+            stopPlayer = false;
+        }
+      if(content is Player)
+        {
+            stopPlayer = true;
         }
     }
 
     public override void OnUpdate()
     {
-        //Ritono a base parabola
-        elapsedTime += Time.deltaTime;
-        
-        float distanceTimer = _player.curve.length  *  _player.returnTimer/10;
-        float percentage = elapsedTime /distanceTimer;
-
-        _player.transform.position = _player.curve.GetPointAt(percentage);
-
-        if (percentage >= 1)
+        if (!stopPlayer)
         {
-            _player.isReturning = false;
-            _player.stateMachine.SetState(PlayerStateType.BoomerangMovement);
+            //Ritono a base parabola
+            elapsedTime += Time.deltaTime;
 
+            float distanceTimer = _player.curve.length * _player.returnTimer / 10;
+            float percentage = elapsedTime / distanceTimer;
+
+            _player.transform.position = _player.curve.GetPointAt(percentage);
+
+            if (percentage >= 1)
+            {
+                _player.isReturning = false;
+                _player.stateMachine.SetState(PlayerStateType.BoomerangMovement);
+
+            }
         }
         
 
