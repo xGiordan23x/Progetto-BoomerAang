@@ -16,15 +16,17 @@ public class Scatola : Interactable
 
     public override void Interact(Player player)
     {
-        if (player.stateMachine.GetCurrentState() is not PlayerStateHumanMovement)
+        if (player.stateMachine.GetCurrentState() is PlayerStateHumanMovement)
         {
-            return;
+            if (!isMoving)
+            {
+                StartCoroutine(MoveBox(player.lastDirection));
+
+                base.Interact(player);          //per effetti visivi/sonori
+            }
         }
 
-        if (!isMoving)
-        {
-            StartCoroutine(MoveBox(player.lastDirection));
-        }
+       
 
 
     }

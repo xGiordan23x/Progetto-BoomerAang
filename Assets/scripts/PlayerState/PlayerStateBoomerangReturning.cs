@@ -19,7 +19,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
     {
         Debug.Log("Sono in Boomerang ritorno");
         _player.GetComponent<SpriteRenderer>().color = Color.yellow;
-      
+
         SetCurve(_player.lastDirection);
     }
 
@@ -37,19 +37,21 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
 
     public void OnNotify(object content)
     {
-      if(content is CurveModifier)
+        if (content is CurveModifier)
         {
             SetCurve(_player.lastDirection);
         }
     }
 
+
+
     public override void OnUpdate()
     {
         //Ritono a base parabola
         elapsedTime += Time.deltaTime;
-        
-        float distanceTimer = _player.curve.length  *  _player.returnTimer/10;
-        float percentage = elapsedTime /distanceTimer;
+
+        float distanceTimer = _player.curve.length * _player.returnTimer / 10;
+        float percentage = elapsedTime / distanceTimer;
 
         _player.transform.position = _player.curve.GetPointAt(percentage);
 
@@ -59,9 +61,12 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
             _player.stateMachine.SetState(PlayerStateType.BoomerangMovement);
 
         }
-        
+       
+
 
     }
+
+
 
 
 }
