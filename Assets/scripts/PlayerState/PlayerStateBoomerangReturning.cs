@@ -7,6 +7,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
 {
     private Player _player;
     private float elapsedTime;
+    
 
 
     public PlayerStateBoomerangReturning(Player player)
@@ -20,7 +21,17 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
         Debug.Log("Sono in Boomerang ritorno");
         _player.GetComponent<SpriteRenderer>().color = Color.yellow;
 
-        SetCurve(_player.lastDirection);
+        Debug.Log("Creo un collider");
+        _player.AddBomerangCollider();
+
+        SetCurve(_player.lastDirection); //sta cosa da errori , da risolvere        Fede.
+
+        
+
+        //CircleCollider2D circle = _player.AddComponent<CircleCollider2D>();
+        //_player.boomerangCollider = circle;
+        //_player.boomerangCollider.radius = _player.boomerangReturningRange;
+        
     }
 
     private void SetCurve(Vector2 direction)
@@ -61,10 +72,17 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
             _player.stateMachine.SetState(PlayerStateType.BoomerangMovement);
 
         }
-       
+
 
 
     }
+
+    public override void OnExit()
+    {
+        _player.DestroyBoomerangCollider();
+    }
+
+
 
 
 

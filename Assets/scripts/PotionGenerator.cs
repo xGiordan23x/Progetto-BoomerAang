@@ -55,8 +55,12 @@ public class PotionGenerator :Interactable ,ISubscriber
     }
     public override void Interact(Player player)
     {
-        base.Interact(player);
-        StartTimer();
+        if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangMovement)
+        {
+
+            base.Interact(player);
+            StartTimer();
+        }
     }
 
 }
