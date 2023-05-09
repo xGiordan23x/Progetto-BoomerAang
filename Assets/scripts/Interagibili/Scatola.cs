@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Scatola : Interactable
 {
+    [Header("OpzioniCassa")]
+
+    [SerializeField] bool isDestroyable;
+    [SerializeField] bool canMove;
+
     public LayerMask mask;
 
     Vector3 startPosition;
@@ -13,10 +18,12 @@ public class Scatola : Interactable
 
     private float timeToMove = 0.5f;
 
+    
+
 
     public override void Interact(Player player)
     {
-        if (player.stateMachine.GetCurrentState() is PlayerStateHumanMovement)
+        if (player.stateMachine.GetCurrentState() is PlayerStateHumanMovement && canMove)
         {
             if (!isMoving)
             {
@@ -26,7 +33,12 @@ public class Scatola : Interactable
             }
         }
 
-       
+        if(player.stateMachine.GetCurrentState() is PlayerStateBoomerangReturning && isDestroyable)
+        {
+            gameObject.SetActive(false);
+        }
+
+
 
 
     }

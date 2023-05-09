@@ -2327,6 +2327,8 @@ MonoBehaviour:
   OnInteraction:
     m_PersistentCalls:
       m_Calls: []
+  isDestroyable: 0
+  canMove: 1
   mask:
     serializedVersion: 2
     m_Bits: 8
