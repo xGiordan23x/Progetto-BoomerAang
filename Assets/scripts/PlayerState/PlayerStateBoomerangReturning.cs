@@ -19,8 +19,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
     public override void OnEnter()
     {
         Debug.Log("Sono in Boomerang ritorno");
-        _player.GetComponent<SpriteRenderer>().color = Color.yellow;
-      
+        _player.animator.SetTrigger("BoomerangReturning");
         SetCurve(_player.lastDirection);
     }
 

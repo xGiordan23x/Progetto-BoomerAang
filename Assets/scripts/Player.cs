@@ -38,6 +38,7 @@ public class Player : MonoBehaviour, ISubscriber
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         PubSub.Instance.RegisteredSubscriber(nameof(Player), this);
         points = curve.GetAnchorPoints();
         rb = GetComponent<Rigidbody2D>();
@@ -52,6 +53,9 @@ public class Player : MonoBehaviour, ISubscriber
     {
 
         stateMachine.Update();
+        animator.SetFloat("X",lastDirection.x);
+        animator.SetFloat("Y",lastDirection.y);
+        animator.SetFloat("speed",rb.velocity.magnitude);
 
     }
 
@@ -157,8 +161,7 @@ public class Player : MonoBehaviour, ISubscriber
 
 
     public void Move()
-    {
-
+    {     
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -173,7 +176,14 @@ public class Player : MonoBehaviour, ISubscriber
             //prova
             ChangeInteractionVerse();
         }
+        if(movement == Vector2.zero)
+        {
+            animator.SetBool("movement", false);
+            animator.SetBool("idle", true);
+
+        }
         
+
         rb.velocity = new Vector2(movement.x *  humanSpeed, movement.y * humanSpeed);
     }
 

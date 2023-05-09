@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
@@ -15,7 +16,7 @@ public class PlayerStateHumanMovement : State, ISubscriber
     public override void OnEnter()
     {
         Debug.Log("Sono in human movement");
-        _player.GetComponent<SpriteRenderer>().color = Color.green;
+        //_player.GetComponent<SpriteRenderer>().color = Color.green;
        
     }
 
@@ -50,5 +51,6 @@ public class PlayerStateHumanMovement : State, ISubscriber
 
 
     }
+    
 
 }
