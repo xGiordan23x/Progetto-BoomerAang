@@ -7,8 +7,8 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
 {
     private Player _player;
     private float elapsedTime;
-    
 
+    private bool stopPlayer;
 
     public PlayerStateBoomerangReturning(Player player)
     {
@@ -19,6 +19,10 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
     public override void OnEnter()
     {
         Debug.Log("Sono in Boomerang ritorno");
+
+        _player.animator.SetTrigger("BoomerangReturning");
+        SetCurve(_player.lastDirection);
+
         _player.GetComponent<SpriteRenderer>().color = Color.yellow;
 
         Debug.Log("Creo un collider");
@@ -28,10 +32,6 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
 
         
 
-        //CircleCollider2D circle = _player.AddComponent<CircleCollider2D>();
-        //_player.boomerangCollider = circle;
-        //_player.boomerangCollider.radius = _player.boomerangReturningRange;
-        
     }
 
     private void SetCurve(Vector2 direction)
@@ -51,6 +51,11 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
         if (content is CurveModifier)
         {
             SetCurve(_player.lastDirection);
+            stopPlayer = false;
+        }
+      if(content is Player)
+        {
+            stopPlayer = true;
         }
     }
 
@@ -58,19 +63,24 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
 
     public override void OnUpdate()
     {
-        //Ritono a base parabola
-        elapsedTime += Time.deltaTime;
 
-        float distanceTimer = _player.curve.length * _player.returnTimer / 10;
-        float percentage = elapsedTime / distanceTimer;
+        if (!stopPlayer)
 
-        _player.transform.position = _player.curve.GetPointAt(percentage);
-
-        if (percentage >= 1)
         {
-            _player.isReturning = false;
-            _player.stateMachine.SetState(PlayerStateType.BoomerangMovement);
+            //Ritono a base parabola
+            elapsedTime += Time.deltaTime;
 
+            float distanceTimer = _player.curve.length * _player.returnTimer / 10;
+            float percentage = elapsedTime / distanceTimer;
+
+            _player.transform.position = _player.curve.GetPointAt(percentage);
+
+            if (percentage >= 1)
+            {
+                _player.isReturning = false;
+                _player.stateMachine.SetState(PlayerStateType.BoomerangMovement);
+
+            }
         }
 
 

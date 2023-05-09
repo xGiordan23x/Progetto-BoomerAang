@@ -41,6 +41,7 @@ public class Player : MonoBehaviour, ISubscriber
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         PubSub.Instance.RegisteredSubscriber(nameof(Player), this);
         points = curve.GetAnchorPoints();
         rb = GetComponent<Rigidbody2D>();
@@ -55,6 +56,9 @@ public class Player : MonoBehaviour, ISubscriber
     {
 
         stateMachine.Update();
+        animator.SetFloat("X",lastDirection.x);
+        animator.SetFloat("Y",lastDirection.y);
+        animator.SetFloat("speed",rb.velocity.magnitude);
 
     }
 
@@ -80,21 +84,13 @@ public class Player : MonoBehaviour, ISubscriber
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //mettere in trigger stay
-        //PotionGenerator generator = collision.GetComponent<PotionGenerator>();
-
-        //if (generator != null && (stateMachine.GetCurrentState() is PlayerStateBoomerangMovement))
-        //{
-        //    // mettere stay e tasto interazione
-        //    PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
-        //}
-
 
         CurveModifier curveModifier = collision.GetComponent<CurveModifier>();
 
         if (curveModifier != null && (stateMachine.GetCurrentState() is PlayerStateBoomerangReturning))
         {
             lastDirection = curveModifier.newDirection;
+            PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
             PubSub.Instance.SendMessageSubscriber(nameof(CurveModifier), this);
             curveModifier.activated = true;
         }
@@ -175,8 +171,7 @@ public class Player : MonoBehaviour, ISubscriber
 
 
     public void Move()
-    {
-
+    {     
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -192,7 +187,16 @@ public class Player : MonoBehaviour, ISubscriber
             ChangeInteractionVerse();
         }
 
-        rb.velocity = new Vector2(movement.x * humanSpeed, movement.y * humanSpeed);
+        if(movement == Vector2.zero)
+        {
+            animator.SetBool("movement", false);
+            animator.SetBool("idle", true);
+
+        }
+        
+
+        rb.velocity = new Vector2(movement.x *  humanSpeed, movement.y * humanSpeed);
+
     }
 
     public void DestroyBoomerangCollider()
@@ -212,6 +216,7 @@ public class Player : MonoBehaviour, ISubscriber
             boomerangCollider.radius = boomerangReturningRange;
             boomerangCollider.isTrigger = true;
         }
+
     }
 
 }

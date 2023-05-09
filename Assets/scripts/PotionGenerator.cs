@@ -5,19 +5,23 @@ using System.Threading;
 using UnityEngine;
 
 public class PotionGenerator :Interactable ,ISubscriber
-{  
+{
+    public int timerToAddFromFountain;
     public float timerBoomerang;
-    public float timer;
+    private float timer;
     private bool started;
     private Player player;
-    
+   
     private void Start()
     {
         started = false;
         timer = 0;
        
         PubSub.Instance.RegisteredSubscriber(nameof(PotionGenerator), this);
+      
     }
+
+   
     internal void StartTimer()
     {
         Debug.Log("Timer avviato");
@@ -48,9 +52,9 @@ public class PotionGenerator :Interactable ,ISubscriber
 
     public void OnNotify(object content)
     {
-       if (content is Player)
+       if (content is Fontanella)
         {
-            StartTimer();
+            timer += timerToAddFromFountain;
         }
     }
     public override void Interact(Player player)
