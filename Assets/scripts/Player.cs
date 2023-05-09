@@ -30,7 +30,10 @@ public class Player : MonoBehaviour, ISubscriber
 
     private SpriteRenderer spriteRenderer;
 
+    [Header("VariabiliInteractiblePoint")]
     public Interacter interactionPoint;
+    [SerializeField] float MoltiplicationDistance=0.5f;
+
 
     [HideInInspector] public bool isReturning;
 
@@ -154,7 +157,7 @@ public class Player : MonoBehaviour, ISubscriber
     {
         Transform verse = interactionPoint.GetComponent<Transform>();
 
-        verse.localPosition = lastDirection;
+        verse.localPosition = lastDirection*MoltiplicationDistance;
     }
 
     public void ChangeLastDirection(Vector2 movement)
