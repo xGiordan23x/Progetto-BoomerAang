@@ -20,6 +20,9 @@ public class Player : MonoBehaviour, ISubscriber
     [Header("VariabiliBoomerang")]
     public float returnTimer;
     public Transform potionGenerator;
+    public CircleCollider2D boomerangCollider;
+    public float boomerangReturningRange;
+
 
     public bool Interact;
     public bool hasPotion;
@@ -78,10 +81,10 @@ public class Player : MonoBehaviour, ISubscriber
 
     }
 
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+
         CurveModifier curveModifier = collision.GetComponent<CurveModifier>();
 
         if (curveModifier != null && (stateMachine.GetCurrentState() is PlayerStateBoomerangReturning))
@@ -91,6 +94,13 @@ public class Player : MonoBehaviour, ISubscriber
             PubSub.Instance.SendMessageSubscriber(nameof(CurveModifier), this);
             curveModifier.activated = true;
         }
+
+        if(collision.GetComponent<Interactable>() != null&& stateMachine.GetCurrentState() is PlayerStateBoomerangReturning)
+        {
+            collision.GetComponent<Interactable>().Interact(this);
+        }
+
+
     }
 
 
@@ -123,12 +133,12 @@ public class Player : MonoBehaviour, ISubscriber
     internal void DrawCurve()
     {
         lineaProva.positionCount = (int)curve.length;
-        for (int i = 0; i < curve.length-1; i++)
+        for (int i = 0; i < curve.length - 1; i++)
         {
-            float percentage = Mathf.InverseLerp(0, curve.length-1, i);
-          
-            lineaProva.SetPosition(i,curve.GetPointAt(percentage));
-            
+            float percentage = Mathf.InverseLerp(0, curve.length - 1, i);
+
+            lineaProva.SetPosition(i, curve.GetPointAt(percentage));
+
         }
     }
 
@@ -171,11 +181,12 @@ public class Player : MonoBehaviour, ISubscriber
         {
             lastDirection = movement;
 
-           ChangeLastDirection(movement);
+            ChangeLastDirection(movement);
 
             //prova
             ChangeInteractionVerse();
         }
+
         if(movement == Vector2.zero)
         {
             animator.SetBool("movement", false);
@@ -185,7 +196,27 @@ public class Player : MonoBehaviour, ISubscriber
         
 
         rb.velocity = new Vector2(movement.x *  humanSpeed, movement.y * humanSpeed);
+
+    }
+
+    public void DestroyBoomerangCollider()
+    {
+        if (boomerangCollider != null)
+        {
+            Destroy(boomerangCollider);           
+        }
+    }
+
+    public void AddBomerangCollider()
+    {
+        if (boomerangCollider == null)
+        {
+            boomerangCollider = gameObject.AddComponent<CircleCollider2D>();
+
+            boomerangCollider.radius = boomerangReturningRange;
+            boomerangCollider.isTrigger = true;
+        }
+
     }
 
 }
-    

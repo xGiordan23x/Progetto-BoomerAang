@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Terrain
-  - 
+  - Wall
   - 
   - 
   - 
@@ -43,4 +43,19 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: GroundWalls
+    uniqueID: 2871256707
+    locked: 0
+  - name: Player
+    uniqueID: 3775881391
+    locked: 0
+  - name: ObjectsBottom
+    uniqueID: 3119521151
+    locked: 0
+  - name: ObjectsTop
+    uniqueID: 3667741377
+    locked: 0
+  - name: FloorWallDecoration
+    uniqueID: 3632089781
     locked: 0

@@ -7,8 +7,8 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
 {
     private Player _player;
     private float elapsedTime;
-    private bool stopPlayer;
 
+    private bool stopPlayer;
 
     public PlayerStateBoomerangReturning(Player player)
     {
@@ -19,8 +19,19 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
     public override void OnEnter()
     {
         Debug.Log("Sono in Boomerang ritorno");
+
         _player.animator.SetTrigger("BoomerangReturning");
         SetCurve(_player.lastDirection);
+
+        _player.GetComponent<SpriteRenderer>().color = Color.yellow;
+
+        Debug.Log("Creo un collider");
+        _player.AddBomerangCollider();
+
+        SetCurve(_player.lastDirection); //sta cosa da errori , da risolvere        Fede.
+
+        
+
     }
 
     private void SetCurve(Vector2 direction)
@@ -37,7 +48,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
 
     public void OnNotify(object content)
     {
-      if(content is CurveModifier)
+        if (content is CurveModifier)
         {
             SetCurve(_player.lastDirection);
             stopPlayer = false;
@@ -48,9 +59,13 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
         }
     }
 
+
+
     public override void OnUpdate()
     {
+
         if (!stopPlayer)
+
         {
             //Ritono a base parabola
             elapsedTime += Time.deltaTime;
@@ -67,9 +82,19 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
 
             }
         }
-        
+
+
 
     }
+
+    public override void OnExit()
+    {
+        _player.DestroyBoomerangCollider();
+    }
+
+
+
+
 
 
 }
