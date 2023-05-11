@@ -17,7 +17,7 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
     public override void OnEnter()
     {
         Debug.Log("Sono in Boomerang movimento"); 
-        _player.GetComponent<SpriteRenderer>().color = Color.white;
+        
         _player.hasPotion = false;
         PubSub.Instance.SendMessageSubscriber(nameof(CurveModifier),this);
     }

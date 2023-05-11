@@ -23,8 +23,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
         _player.animator.SetTrigger("BoomerangReturning");
         SetCurve(_player.lastDirection);
 
-        _player.GetComponent<SpriteRenderer>().color = Color.yellow;
-
+       
         Debug.Log("Creo un collider");
         _player.AddBomerangCollider();
 
@@ -78,6 +77,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
             if (percentage >= 1)
             {
                 _player.isReturning = false;
+                _player.animator.SetTrigger("BoomerangMoving");
                 _player.stateMachine.SetState(PlayerStateType.BoomerangMovement);
 
             }
