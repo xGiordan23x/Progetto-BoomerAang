@@ -98,7 +98,7 @@ public class Player : MonoBehaviour, ISubscriber
             curveModifier.activated = true;
         }
 
-        if(collision.GetComponent<Interactable>() != null&& stateMachine.GetCurrentState() is PlayerStateBoomerangReturning)
+        if(collision.GetComponent<Interactable>() != null && stateMachine.GetCurrentState() is PlayerStateBoomerangReturning)
         {
             collision.GetComponent<Interactable>().Interact(this);
         }
@@ -192,9 +192,7 @@ public class Player : MonoBehaviour, ISubscriber
 
         if(movement == Vector2.zero)
         {
-            animator.SetBool("movement", false);
-            animator.SetBool("idle", true);
-
+         
         }
         
 
@@ -220,6 +218,15 @@ public class Player : MonoBehaviour, ISubscriber
             boomerangCollider.isTrigger = true;
         }
 
+    }
+
+    public void SetIsReturning()
+    {
+        isReturning = true;
+    }
+    public void isDrinkingPotion()
+    {
+        PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
     }
 
 }

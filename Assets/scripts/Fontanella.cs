@@ -17,7 +17,7 @@ public class Fontanella : Interactable, ISubscriber
     {
         if (!activated)
         {
-            base.Interact(player);
+            player.animator.SetTrigger("InteractFountain");
             PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
             activated = true;
         }

@@ -16,15 +16,16 @@ public class PlayerStateHumanMovement : State, ISubscriber
     public override void OnEnter()
     {
         Debug.Log("Sono in human movement");
-        //_player.GetComponent<SpriteRenderer>().color = Color.green;
-       
+        
     }
 
     public void OnNotify(object content)
     {
         if(content is PotionGenerator)
         {
-            _player.isReturning= true;
+            //setto animazione trasformazione con funzione SetIsReturning a true
+            _player.animator.SetTrigger("transform");
+           
         }
        
     }
