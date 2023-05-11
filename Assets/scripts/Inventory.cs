@@ -41,7 +41,7 @@ public class Inventory : MonoBehaviour
                 }
             }
 
-            if(chiave.tipologiaChiave == KeyType.Chip)
+            if (chiave.tipologiaChiave == KeyType.Chip)
             {
                 if (quantitaChip < maxChip)
                 {
@@ -54,9 +54,35 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
+    }
 
+    public bool UseKey()
+    {
+        if (quantitaChiavi != 0)
+        {
+            quantitaChiavi--;
+            Debug.Log("Ho usato una chiave");
+            return true;
+        }
+        else
+        {
+            Debug.Log("Non ho chiavi");
+            return false;
+        }
+    }
 
-
-
+    public bool UseChip()
+    {
+        if (quantitaChiavi != 0)
+        {
+            quantitaChip--;
+            Debug.Log("Ho usato un chip");
+            return true;
+        }
+        else
+        {
+            Debug.Log("Non ho chip");
+            return false;
+        }
     }
 }

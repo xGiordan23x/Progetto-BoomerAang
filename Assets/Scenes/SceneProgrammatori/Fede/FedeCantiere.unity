@@ -3996,7 +3996,7 @@ GameObject:
   - component: {fileID: 1825845211}
   - component: {fileID: 1825845210}
   - component: {fileID: 1825845212}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Porta
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -4129,6 +4129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a367817511ddf42b7d93f2c736be44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnInteraction:
+    m_PersistentCalls:
+      m_Calls: []
+  isOpen: 0
 --- !u!1 &1863636764
 GameObject:
   m_ObjectHideFlags: 0

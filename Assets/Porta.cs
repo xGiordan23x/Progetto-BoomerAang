@@ -2,17 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Porta : MonoBehaviour
+public class Porta : Interactable
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] bool isOpen;
+
+    public override void Interact(Player player)
     {
-        
+        if (player.stateMachine.GetCurrentState() is not PlayerStateBoomerangReturning && !isOpen)    //il giocatore deve essere umano o boomerang che cammina
+        {
+            Inventory inventory = GetComponent<Inventory>();
+
+            if(inventory != null)
+            {
+                if (inventory.UseKey())
+                {
+                    isOpen = true;
+                }
+                
+            }
+
+
+            
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.GetComponent<Player>() != null && isOpen)
+        {
+            //apro la porta
+
+            gameObject.SetActive(false);
+        }
     }
+
 }
