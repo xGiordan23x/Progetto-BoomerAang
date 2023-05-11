@@ -8,7 +8,7 @@ public class PotionGenerator :Interactable ,ISubscriber
 {
     public int timerToAddFromFountain;
     public float timerBoomerang;
-    private float timer;
+    public float timer;
     private bool started;
     private Player player;
    
@@ -26,8 +26,9 @@ public class PotionGenerator :Interactable ,ISubscriber
     {
         Debug.Log("Timer avviato");
         timer = timerBoomerang;
-        started = true;
+       
         PubSub.Instance.SendMessageSubscriber(nameof(Player),this);
+        started = true;
     }
 
     private void Update()
@@ -63,10 +64,10 @@ public class PotionGenerator :Interactable ,ISubscriber
     }
     public override void Interact(Player player)
     {
-        if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangMovement)
+        if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangMovement && !started)
         {
             //avvio animazone bevi pozione con event che chiama isDrinkingPotion
-            player.animator.SetTrigger("DrinkPotion");
+            player.animator.SetBool("DrinkPotion",true); 
         }
     }
 

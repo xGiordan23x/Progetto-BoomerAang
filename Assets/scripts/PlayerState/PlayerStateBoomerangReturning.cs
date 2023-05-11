@@ -20,14 +20,12 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
     {
         Debug.Log("Sono in Boomerang ritorno");
 
-        _player.animator.SetTrigger("BoomerangReturning");
+        _player.animator.SetBool("BoomerangReturning",true);
         SetCurve(_player.lastDirection);
 
        
         Debug.Log("Creo un collider");
         _player.AddBomerangCollider();
-
-        SetCurve(_player.lastDirection); //sta cosa da errori , da risolvere        Fede.
 
         
 
@@ -77,7 +75,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
             if (percentage >= 1)
             {
                 _player.isReturning = false;
-                _player.animator.SetTrigger("BoomerangMoving");
+                _player.animator.SetBool("BoomerangMoving", true);
                 _player.stateMachine.SetState(PlayerStateType.BoomerangMovement);
 
             }

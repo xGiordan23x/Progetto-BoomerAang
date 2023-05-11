@@ -16,7 +16,8 @@ public class PlayerStateHumanMovement : State, ISubscriber
     public override void OnEnter()
     {
         Debug.Log("Sono in human movement");
-        
+        _player.animator.SetBool("BoomerangMoving", false);
+
     }
 
     public void OnNotify(object content)
@@ -24,7 +25,7 @@ public class PlayerStateHumanMovement : State, ISubscriber
         if(content is PotionGenerator)
         {
             //setto animazione trasformazione con funzione SetIsReturning a true
-            _player.animator.SetTrigger("transform");
+            _player.animator.SetBool("transform",true);
            
         }
        

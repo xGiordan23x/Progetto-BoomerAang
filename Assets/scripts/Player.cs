@@ -187,12 +187,6 @@ public class Player : MonoBehaviour, ISubscriber
             ChangeInteractionVerse();
         }
 
-        if(movement == Vector2.zero)
-        {
-         
-        }
-        
-
         rb.velocity = new Vector2(movement.x *  humanSpeed, movement.y * humanSpeed);
 
     }
@@ -220,10 +214,13 @@ public class Player : MonoBehaviour, ISubscriber
     public void SetIsReturning()
     {
         isReturning = true;
+        animator.SetBool("transform", false);
+
     }
     public void isDrinkingPotion()
     {
         PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
+        animator.SetBool("DrinkPotion", false);
     }
 
 }

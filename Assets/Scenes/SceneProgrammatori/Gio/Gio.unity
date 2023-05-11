@@ -491,8 +491,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569254e5ce8d11d4d97e7f0d9102787a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnInteraction:
+    m_PersistentCalls:
+      m_Calls: []
   timerToAddFromFountain: 2
   timerBoomerang: 5
+  timer: 0
 --- !u!50 &1211854933
 Rigidbody2D:
   serializedVersion: 4
@@ -591,6 +595,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157bc1f79c1635e4dab0beef81679ed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnInteraction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1359663339
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,6 +612,7 @@ GameObject:
   - component: {fileID: 1359663343}
   - component: {fileID: 1359663345}
   - component: {fileID: 1359663344}
+  - component: {fileID: 1359663346}
   m_Layer: 3
   m_Name: Fontanella
   m_TagString: Untagged
@@ -624,6 +632,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adeb35af4a5b1154db4eb66081bce550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnInteraction:
+    m_PersistentCalls:
+      m_Calls: []
   activated: 0
 --- !u!212 &1359663341
 SpriteRenderer:
@@ -704,6 +715,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157bc1f79c1635e4dab0beef81679ed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnInteraction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &1359663344
 Rigidbody2D:
   serializedVersion: 4
@@ -741,6 +755,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1359663346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359663339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1baf8c45c3490504c9a241d9fe1d44a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 1359663341}
 --- !u!1 &1700789581
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,6 +974,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   returnTimer: 1
   potionGenerator: {fileID: 1211854931}
+  boomerangCollider: {fileID: 0}
+  boomerangReturningRange: 0
   Interact: 0
   hasPotion: 0
   interactionPoint: {fileID: 191789711}
