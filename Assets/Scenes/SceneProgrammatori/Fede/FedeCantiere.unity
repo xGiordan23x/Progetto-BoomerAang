@@ -3996,6 +3996,7 @@ GameObject:
   - component: {fileID: 1825845211}
   - component: {fileID: 1825845210}
   - component: {fileID: 1825845212}
+  - component: {fileID: 1825845213}
   m_Layer: 3
   m_Name: Porta
   m_TagString: Untagged
@@ -4133,6 +4134,22 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isOpen: 0
+--- !u!58 &1825845213
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825845207}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
 --- !u!1 &1863636764
 GameObject:
   m_ObjectHideFlags: 0

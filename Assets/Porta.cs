@@ -10,19 +10,20 @@ public class Porta : Interactable
     {
         if (player.stateMachine.GetCurrentState() is not PlayerStateBoomerangReturning && !isOpen)    //il giocatore deve essere umano o boomerang che cammina
         {
-            Inventory inventory = GetComponent<Inventory>();
+            Inventory inventory = player.GetComponent<Inventory>();
 
-            if(inventory != null)
+            if (inventory != null)
             {
                 if (inventory.UseKey())
                 {
                     isOpen = true;
+                    OpenDoor();
                 }
-                
+
             }
 
 
-            
+
         }
 
     }
@@ -32,9 +33,15 @@ public class Porta : Interactable
         if (collision.GetComponent<Player>() != null && isOpen)
         {
             //apro la porta
-
-            gameObject.SetActive(false);
+            OpenDoor();
+            
         }
+    }
+
+    private void OpenDoor()
+    {
+        //animazione aprimento porta
+        gameObject.SetActive(false);
     }
 
 }
