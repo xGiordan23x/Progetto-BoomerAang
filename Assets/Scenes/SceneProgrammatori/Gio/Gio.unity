@@ -496,7 +496,7 @@ MonoBehaviour:
       m_Calls: []
   timerToAddFromFountain: 2
   timerBoomerang: 5
-  timer: 0
+  isActive: 1
 --- !u!50 &1211854933
 Rigidbody2D:
   serializedVersion: 4
@@ -979,7 +979,9 @@ MonoBehaviour:
   Interact: 0
   hasPotion: 0
   interactionPoint: {fileID: 191789711}
+  MoltiplicationDistance: 0.5
   isReturning: 0
+  canMove: 0
   lineaProva: {fileID: 1700789582}
 --- !u!212 &1738141597
 SpriteRenderer:

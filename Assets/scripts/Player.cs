@@ -37,7 +37,7 @@ public class Player : MonoBehaviour, ISubscriber
 
      public bool isReturning;
 
-
+    public bool canMove;
 
 
     public StateMachine<PlayerStateType> stateMachine = new();
@@ -218,6 +218,22 @@ public class Player : MonoBehaviour, ISubscriber
     {
         isReturning = true;
         animator.SetBool("transform", false);
+
+    }
+    public void SetCanMove(int i)
+    {
+        if(i==0)
+        {
+            canMove = false;
+            rb.constraints = RigidbodyConstraints2D.FreezePosition;
+
+        }
+        else
+        {
+            canMove = true;
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
 
     }
     public void isDrinkingPotion()
