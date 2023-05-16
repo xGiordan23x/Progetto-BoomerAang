@@ -9,9 +9,9 @@ public class PotionGenerator :Interactable ,ISubscriber
     public int timerToAddFromFountain;
     public float timerBoomerang;
     private float timer;
-    private bool started;
-    private Player player;
-   
+    private bool started; 
+    [SerializeField] bool isActive;
+
     private void Start()
     {
         started = false;
@@ -24,7 +24,7 @@ public class PotionGenerator :Interactable ,ISubscriber
    
     internal void StartTimer()
     {
-        Debug.Log("Timer avviato");
+        Debug.Log("Timer avviato");        
         timer = timerBoomerang;
         started = true;
         PubSub.Instance.SendMessageSubscriber(nameof(Player),this);
@@ -52,7 +52,7 @@ public class PotionGenerator :Interactable ,ISubscriber
 
     public void OnNotify(object content)
     {
-       if (content is Fontanella)
+       if (content is Player)  // mettere fontanella
         {
             timer += timerToAddFromFountain;
         }
@@ -63,10 +63,29 @@ public class PotionGenerator :Interactable ,ISubscriber
     }
     public override void Interact(Player player)
     {
-        if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangMovement)
+        if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangMovement && isActive)   //il generatore puo essere usato solo dal boomerang che cammino
         {
+
             //avvio animazone bevi pozione con event che chiama isDrinkingPotion
             player.animator.SetTrigger("DrinkPotion");
+
+            player.potionGenerator = transform;   //setto questo generatore come punto di ritorno;
+            base.Interact(player);
+            StartTimer();
+        }
+
+        if(player.stateMachine.GetCurrentState() is not PlayerStateBoomerangReturning && !isActive)  //diversamente puo essere attivato con un chip da tutte le forme tranne quando è un boomerang che torna indietro
+        {
+            Inventory inventory = player.GetComponent<Inventory>();
+
+            if (inventory != null)
+            {
+                if (inventory.UseChip())
+                {
+                    isActive = true;                   
+                }
+
+            }
         }
     }
 
