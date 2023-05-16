@@ -19,7 +19,7 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
         Debug.Log("Sono in Boomerang movimento");
         _player.isReturning = false;
         _player.hasPotion = false;
-        _player.SetCanMove(1);
+      
         PubSub.Instance.SendMessageSubscriber(nameof(CurveModifier),this);
     }
 

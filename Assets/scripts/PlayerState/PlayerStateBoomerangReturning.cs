@@ -81,7 +81,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
             if (percentage >= 1)
             {
                 StopParabola();
-
+               
             }
         }
 
