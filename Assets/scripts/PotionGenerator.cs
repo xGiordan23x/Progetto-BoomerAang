@@ -33,7 +33,7 @@ public class PotionGenerator :Interactable ,ISubscriber
 
     private void Update()
     {
-
+        
             if (started)
             {
                 timer -= Time.deltaTime;
