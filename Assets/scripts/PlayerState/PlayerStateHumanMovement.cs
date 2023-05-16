@@ -7,6 +7,7 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class PlayerStateHumanMovement : State, ISubscriber
 {
     private Player _player;
+    private bool canMove;
     
     public PlayerStateHumanMovement(Player player)
     {
@@ -15,8 +16,10 @@ public class PlayerStateHumanMovement : State, ISubscriber
     }
     public override void OnEnter()
     {
+        canMove= true;
         Debug.Log("Sono in human movement");
-        
+        _player.animator.SetBool("BoomerangMoving", false);
+
     }
 
     public void OnNotify(object content)
@@ -24,7 +27,7 @@ public class PlayerStateHumanMovement : State, ISubscriber
         if(content is PotionGenerator)
         {
             //setto animazione trasformazione con funzione SetIsReturning a true
-            _player.animator.SetTrigger("transform");
+            _player.animator.SetBool("transform",true);
            
         }
        
@@ -32,23 +35,29 @@ public class PlayerStateHumanMovement : State, ISubscriber
 
     public override void OnUpdate()
     {
-        //Movement
-
-        _player.Move();
-
-        //interaction
-
-        if (Input.GetButtonDown("Use"))
+        if (canMove)
         {
-            _player.Interaction();
+            //Movement
+            _player.Move();
         }
 
+            //interaction
+
+            if (Input.GetButtonDown("Use"))
+            {
+                _player.Interaction();
+            }
+       
 
 
-        if (_player.isReturning)
-        {
-            _player.stateMachine.SetState(PlayerStateType.BoomerangReturning);
+            if (_player.isReturning)
+            {
+                _player.stateMachine.SetState(PlayerStateType.BoomerangReturning);
+            canMove = false;
+
+
         }
+
 
 
     }
