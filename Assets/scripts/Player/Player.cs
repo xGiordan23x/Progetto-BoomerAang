@@ -15,7 +15,7 @@ public class Player : MonoBehaviour, ISubscriber
     [Header("VariabiliUmano")]
     public Animator animator;
     public float humanSpeed;
-
+    private float speed;
     [HideInInspector] public Rigidbody2D rb;
     [Header("VariabiliBoomerang")]
     public float returnTimer;
@@ -54,6 +54,7 @@ public class Player : MonoBehaviour, ISubscriber
         stateMachine.RegisterState(PlayerStateType.BoomerangReturning, new PlayerStateBoomerangReturning(this));
 
         stateMachine.SetState(PlayerStateType.BoomerangMovement);
+        speed = humanSpeed;
     }
     private void Update()
     {
@@ -181,7 +182,7 @@ public class Player : MonoBehaviour, ISubscriber
             ChangeInteractionVerse();
         }
 
-        rb.velocity = new Vector2(movement.x *  humanSpeed, movement.y * humanSpeed);
+        rb.velocity = new Vector2(movement.x *  speed, movement.y * speed);
 
     }
 
@@ -213,15 +214,17 @@ public class Player : MonoBehaviour, ISubscriber
     }
     public void SetCanMove(int i)
     {
-        if(i==0)
+        if (i == 0)
         {
             canMove = false;
+            speed = 0;
             rb.constraints = RigidbodyConstraints2D.FreezePosition;
 
         }
         else
         {
             canMove = true;
+            speed = humanSpeed;
             rb.constraints = RigidbodyConstraints2D.None;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
