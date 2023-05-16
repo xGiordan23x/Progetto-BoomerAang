@@ -7,8 +7,7 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class PlayerStateHumanMovement : State, ISubscriber
 {
     private Player _player;
-    private bool canMove;
-    
+   
     public PlayerStateHumanMovement(Player player)
     {
         _player = player;
@@ -16,7 +15,7 @@ public class PlayerStateHumanMovement : State, ISubscriber
     }
     public override void OnEnter()
     {
-        canMove= true;
+        _player.SetCanMove(1);
         Debug.Log("Sono in human movement");
         _player.animator.SetBool("BoomerangMoving", false);
 
@@ -35,11 +34,11 @@ public class PlayerStateHumanMovement : State, ISubscriber
 
     public override void OnUpdate()
     {
-        if (canMove)
+        if (_player.canMove)
         {
             //Movement
             _player.Move();
-        }
+
 
             //interaction
 
@@ -47,15 +46,16 @@ public class PlayerStateHumanMovement : State, ISubscriber
             {
                 _player.Interaction();
             }
+        }
+       
+
        
 
 
             if (_player.isReturning)
             {
                 _player.stateMachine.SetState(PlayerStateType.BoomerangReturning);
-            canMove = false;
-
-
+            
         }
 
 

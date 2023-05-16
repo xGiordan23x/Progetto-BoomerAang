@@ -2,16 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CurveModifier : MonoBehaviour, ISubscriber
+public class CurveModifier : Interactable, ISubscriber
 {
+    public Transform stopPosition;
     public Vector2 newDirection;
     public bool activated;
    
     public float timeToWaitBeforeChange;
     private Animator anim;
 
+    private void Start()
+    {
+        PubSub.Instance.RegisteredSubscriber(nameof(CurveModifier), this);
+        activated = false;
+        anim = GetComponent<Animator>();
+        SetUpAnimator();
 
-
+    }
+   
     private void SetUpAnimator()
     {
        if(newDirection == Vector2.right)
@@ -31,30 +39,30 @@ public class CurveModifier : MonoBehaviour, ISubscriber
             anim.SetBool("Up", true);
         }
     }
+    public override void Interact(Player player)
+    {
+        player.transform.position = stopPosition.position;
+        player.lastDirection = newDirection;        
+        PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
+        activated = true;
+       
+        Invoke(nameof(SendMessage), timeToWaitBeforeChange);
+
+
+    }
 
     public void OnNotify(object content)
     {
-        if(content is Player && !activated)
-        {
-            Invoke(nameof(SendMessage), timeToWaitBeforeChange);
-            
-        }
+      
         if (content is PlayerStateBoomerangMovement)
         {
             activated= false;
         }
     }
 
-    private void Start()
-    {
-      PubSub.Instance.RegisteredSubscriber(nameof(CurveModifier),this);
-        activated= false;
-        anim = GetComponent<Animator>();
-        SetUpAnimator();
-
-    }
+   
     public void SendMessage()
     {
-        PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
+        PubSub.Instance.SendMessageSubscriber(nameof(Player),this);
     }
 }

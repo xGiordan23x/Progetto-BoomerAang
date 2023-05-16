@@ -48,11 +48,16 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
         if (content is CurveModifier)
         {
             SetCurve(_player.lastDirection);
-            stopPlayer = false;
-        }
-      if(content is Player)
-        {
             stopPlayer = true;
+        }
+        if(content is Player)
+        {
+            stopPlayer= false;
+        }
+    
+      if(content is BloccoStop)
+        {
+            StopParabola();
         }
     }
 
@@ -62,7 +67,6 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
     {
 
         if (!stopPlayer)
-
         {
             //Ritono a base parabola
             elapsedTime += Time.deltaTime;
@@ -74,15 +78,20 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
 
             if (percentage >= 1)
             {
-                _player.isReturning = false;
-                _player.animator.SetBool("BoomerangMoving", true);
-                _player.stateMachine.SetState(PlayerStateType.BoomerangMovement);
+                StopParabola();
 
             }
         }
 
 
 
+    }
+
+    private void StopParabola()
+    {
+        _player.isReturning = false;
+        _player.animator.SetBool("BoomerangMoving", true);
+        _player.stateMachine.SetState(PlayerStateType.BoomerangMovement);
     }
 
     public override void OnExit()
