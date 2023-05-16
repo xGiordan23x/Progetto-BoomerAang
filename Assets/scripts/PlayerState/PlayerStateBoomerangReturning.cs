@@ -88,6 +88,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
     public override void OnExit()
     {
         _player.DestroyBoomerangCollider();
+       
     }
 
 

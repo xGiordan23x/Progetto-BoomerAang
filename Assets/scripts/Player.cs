@@ -32,7 +32,7 @@ public class Player : MonoBehaviour, ISubscriber
 
     public Interacter interactionPoint;
 
-    [HideInInspector] public bool isReturning;
+     public bool isReturning;
 
 
 
