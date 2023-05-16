@@ -20,14 +20,16 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
     {
         Debug.Log("Sono in Boomerang ritorno");
 
-        _player.animator.SetBool("BoomerangReturning",true);
-        SetCurve(_player.lastDirection);
+        _player.animator.SetBool("BoomerangReturning", true);
 
-       
+
+
         Debug.Log("Creo un collider");
         _player.AddBomerangCollider();
 
-        
+
+        SetCurve(_player.lastDirection);
+
 
     }
 

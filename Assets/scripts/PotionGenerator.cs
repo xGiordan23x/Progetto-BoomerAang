@@ -8,6 +8,7 @@ public class PotionGenerator : Interactable, ISubscriber
     private float timer;
     private bool started;
     [SerializeField] bool isActive;
+    [SerializeField] bool canStartOperateWithChip;
 
 
     private void Start()
@@ -75,13 +76,19 @@ public class PotionGenerator : Interactable, ISubscriber
 
         if (player.stateMachine.GetCurrentState() is not PlayerStateBoomerangReturning && !isActive)  //diversamente puo essere attivato con un chip da tutte le forme tranne quando è un boomerang che torna indietro
         {
+            if (!canStartOperateWithChip)
+            {
+                Debug.Log("non posso attivarlo con il chip");
+                return;
+            }
+
             Inventory inventory = player.GetComponent<Inventory>();
 
             if (inventory != null)
             {
                 if (inventory.UseChip())
                 {
-                    isActive = true;
+                    AbilitateGenerator();
                     //mettere animazione utilizzo chip
                 }
 
@@ -91,4 +98,8 @@ public class PotionGenerator : Interactable, ISubscriber
         }
     }
 
+    public void AbilitateGenerator()
+    {
+        isActive = true;
+    }
 }
