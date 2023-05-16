@@ -73,7 +73,7 @@ public class Inventory : MonoBehaviour
 
     public bool UseChip()
     {
-        if (quantitaChiavi != 0)
+        if (quantitaChip != 0)
         {
             quantitaChip--;
             Debug.Log("Ho usato un chip");
