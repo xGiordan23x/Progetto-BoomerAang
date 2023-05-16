@@ -15,7 +15,7 @@ public class Fontanella : Interactable, ISubscriber
     }
     public override void Interact(Player player)
     {
-        if (!activated)
+        if (!activated && player.stateMachine.GetCurrentState() is PlayerStateHumanMovement)
         {
             player.animator.SetTrigger("InteractFountain");
             PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);

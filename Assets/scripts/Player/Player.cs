@@ -88,33 +88,20 @@ public class Player : MonoBehaviour, ISubscriber
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        CurveModifier curveModifier = collision.GetComponent<CurveModifier>();
-
-        if (curveModifier != null && (stateMachine.GetCurrentState() is PlayerStateBoomerangReturning))
-        {
-            lastDirection = curveModifier.newDirection;
-            PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
-            PubSub.Instance.SendMessageSubscriber(nameof(CurveModifier), this);
-            curveModifier.activated = true;
-        }
-
+        
+          
         if(collision.GetComponent<Interactable>() != null && stateMachine.GetCurrentState() is PlayerStateBoomerangReturning)
         {
             collision.GetComponent<Interactable>().Interact(this);
         }
 
+        
+
 
     }
 
 
-    public void FlipSprite(float speed)
-    {
-        if (transform.localScale.x * speed < 0)
-        {
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-        }
-    }
-
+    
     public void Interaction()
     {
         interactionPoint.Interaction(this);
@@ -126,6 +113,10 @@ public class Player : MonoBehaviour, ISubscriber
         if (content is PotionGenerator)
         {
             hasPotion = true;
+        }
+        if(content is CurveModifier)
+        {
+            PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
         }
 
     }
