@@ -29,6 +29,7 @@ public class PlayerStateHumanMovement : State, ISubscriber
             _player.animator.SetBool("transform",true);
            
         }
+        
        
     }
 

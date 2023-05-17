@@ -20,9 +20,6 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
     {
         Debug.Log("Sono in Boomerang ritorno");
 
-        _player.animator.SetBool("BoomerangReturning", true);
-
-
 
         Debug.Log("Creo un collider");
         _player.AddBomerangCollider();
@@ -61,6 +58,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
         {
             StopParabola();
         }
+      
     }
 
 
@@ -99,7 +97,9 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
     public override void OnExit()
     {
         _player.DestroyBoomerangCollider();
-       
+        _player.animator.SetBool("transform", false);
+
+
     }
 
 

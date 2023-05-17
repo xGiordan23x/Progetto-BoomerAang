@@ -88,15 +88,18 @@ public class Player : MonoBehaviour, ISubscriber
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        
-          
+    
         if(collision.GetComponent<Interactable>() != null && stateMachine.GetCurrentState() is PlayerStateBoomerangReturning)
         {
             collision.GetComponent<Interactable>().Interact(this);
         }
 
-        
+        if (collision.GetComponent<BloccoParabola>() != null && stateMachine.GetCurrentState() is PlayerStateHumanMovement)
+        {
+            collision.GetComponent<Interactable>().Interact(this);
+        }
+
+
 
 
     }
@@ -118,6 +121,10 @@ public class Player : MonoBehaviour, ISubscriber
         if(content is CurveModifier)
         {
             PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
+        }
+        if (content is BloccoParabola)
+        {           
+            animator.SetBool("transform", true);
         }
 
     }
@@ -218,15 +225,14 @@ public class Player : MonoBehaviour, ISubscriber
         {
             canMove = false;
             speed = 0;
-            rb.constraints = RigidbodyConstraints2D.FreezePosition;
+           
 
         }
         else
         {
             canMove = true;
             speed = humanSpeed;
-            rb.constraints = RigidbodyConstraints2D.None;
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            
         }
 
     }

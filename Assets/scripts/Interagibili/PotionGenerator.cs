@@ -7,6 +7,7 @@ public class PotionGenerator : Interactable, ISubscriber
 
     private float timer;
     private bool started;
+    private bool bloccoParabola;
     [SerializeField] bool isActive;
     [SerializeField] bool canStartOperateWithChip;
 
@@ -43,7 +44,10 @@ public class PotionGenerator : Interactable, ISubscriber
                 Debug.Log("timer Finito");
                 started = false;
 
-                PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateHumanMovement), this);
+                if (!bloccoParabola)
+                {
+                    PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateHumanMovement), this);
+                }
 
             }
         }
@@ -60,6 +64,10 @@ public class PotionGenerator : Interactable, ISubscriber
         {
             StartTimer();
         }
+        if (content is BloccoParabola)
+        {
+            bloccoParabola = true;
+        }
     }
     public override void Interact(Player player)
     {
@@ -71,6 +79,7 @@ public class PotionGenerator : Interactable, ISubscriber
 
             player.potionGenerator = transform;   //setto questo generatore come punto di ritorno;
             base.Interact(player);
+            bloccoParabola = false;
             StartTimer();
         }
 
