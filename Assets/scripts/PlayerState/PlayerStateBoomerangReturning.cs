@@ -57,6 +57,16 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
       if(content is BloccoStop)
         {
             StopParabola();
+
+        }
+        if(content is BloccoUmanoBoomerang)
+        {
+            StopParabola();
+        }
+
+        if(content is BloccoUmanoBoomerang)
+        {
+            StopParabola();
         }
       
     }
@@ -74,6 +84,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
             float distanceTimer = _player.curve.length * _player.returnTimer / 10;
             float percentage = elapsedTime / distanceTimer;
 
+            if(percentage > 0 || percentage<1) 
             _player.transform.position = _player.curve.GetPointAt(percentage);
 
             if (percentage >= 1)

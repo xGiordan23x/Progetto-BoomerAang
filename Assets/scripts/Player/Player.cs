@@ -94,11 +94,15 @@ public class Player : MonoBehaviour, ISubscriber
             collision.GetComponent<Interactable>().Interact(this);
         }
 
-        if (collision.GetComponent<BloccoParabola>() != null && stateMachine.GetCurrentState() is PlayerStateHumanMovement)
+        if (collision.GetComponent<BloccoUmanoBoomerang>() != null && stateMachine.GetCurrentState() is PlayerStateHumanMovement)
         {
             collision.GetComponent<Interactable>().Interact(this);
         }
 
+        if(collision.GetComponent<Teleport>() != null)
+        {
+            collision.GetComponent<Interactable>().Interact(this);
+        }
 
 
 
@@ -122,9 +126,22 @@ public class Player : MonoBehaviour, ISubscriber
         {
             PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
         }
-        if (content is BloccoParabola)
-        {           
-            animator.SetBool("transform", true);
+        if (content is BloccoUmanoBoomerang)
+        {
+            SetCanMove(0);
+            animator.SetTrigger("humanboomerang");
+            isReturning = true;
+        }
+        if(content is BloccoStop)
+        {
+            SetCanMove(0);
+        }if(content is BloccoUmanoBoomerang)
+        {
+            SetCanMove(0);
+        }
+        if(content is Fontanella)
+        {
+           animator.SetTrigger("InteractFountain");
         }
 
     }
@@ -132,6 +149,7 @@ public class Player : MonoBehaviour, ISubscriber
 
     //Da mettere in GameManager
     public LineRenderer lineaProva;
+
     internal void DrawCurve()
     {
         lineaProva.positionCount = (int)curve.length;

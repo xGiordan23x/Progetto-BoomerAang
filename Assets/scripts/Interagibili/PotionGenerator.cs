@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PotionGenerator : Interactable, ISubscriber
@@ -7,7 +8,7 @@ public class PotionGenerator : Interactable, ISubscriber
 
     private float timer;
     private bool started;
-    private bool bloccoParabola;
+    public bool stopTimer;
     [SerializeField] bool isActive;
     [SerializeField] bool canStartOperateWithChip;
 
@@ -29,6 +30,8 @@ public class PotionGenerator : Interactable, ISubscriber
 
         PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
         started = true;
+        stopTimer= false;
+        
     }
 
     private void Update()
@@ -36,19 +39,22 @@ public class PotionGenerator : Interactable, ISubscriber
 
         if (started)
         {
-            timer -= Time.deltaTime;
-
-            if (timer <= 0)
+            if (!stopTimer)
             {
-                timer = 0;
-                Debug.Log("timer Finito");
-                started = false;
 
-                if (!bloccoParabola)
+                timer -= Time.deltaTime;
+
+                if (timer <= 0)
                 {
-                    PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateHumanMovement), this);
-                }
+                    timer = 0;
+                    Debug.Log("timer Finito");
+                    started = false;
 
+
+                    PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateHumanMovement), this);
+
+
+                }
             }
         }
 
@@ -56,7 +62,7 @@ public class PotionGenerator : Interactable, ISubscriber
 
     public void OnNotify(object content)
     {
-        if (content is Fontanella)  // mettere fontanella
+        if (content is Fontanella) 
         {
             timer += timerToAddFromFountain;
         }
@@ -64,11 +70,18 @@ public class PotionGenerator : Interactable, ISubscriber
         {
             StartTimer();
         }
-        if (content is BloccoParabola)
+        if (content is BloccoUmanoBoomerang)
         {
-            bloccoParabola = true;
+            StopTimer();
         }
     }
+
+    private void StopTimer()
+    {
+       stopTimer= true;
+        started= false;
+    }
+
     public override void Interact(Player player)
     {
 
@@ -79,7 +92,7 @@ public class PotionGenerator : Interactable, ISubscriber
 
             player.potionGenerator = transform;   //setto questo generatore come punto di ritorno;
             base.Interact(player);
-            bloccoParabola = false;
+            stopTimer= false;
             StartTimer();
         }
 

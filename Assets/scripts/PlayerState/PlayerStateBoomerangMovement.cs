@@ -17,7 +17,7 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
     public override void OnEnter()
     {
         Debug.Log("Sono in Boomerang movimento");
-        
+       
         _player.isReturning = false;
         _player.hasPotion = false;
       

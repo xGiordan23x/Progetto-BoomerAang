@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BloccoParabola : Interactable, ISubscriber
+public class BloccoUmanoParabola : Interactable, ISubscriber
 {
+
     public bool activated;
     public Transform stopPosition;
     public bool shouldMovePlayer;
@@ -13,7 +14,7 @@ public class BloccoParabola : Interactable, ISubscriber
 
     private void Start()
     {
-        PubSub.Instance.RegisteredSubscriber(nameof(BloccoParabola), this);
+        PubSub.Instance.RegisteredSubscriber(nameof(CurveModifier), this);
         activated = false;
         anim = GetComponent<Animator>();
 
@@ -26,10 +27,11 @@ public class BloccoParabola : Interactable, ISubscriber
         {
             player.transform.position = stopPosition.position;
         }
-        PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
-        activated = true;
 
         SendMessage();
+
+        PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
+        activated = true;
 
 
     }
@@ -47,6 +49,5 @@ public class BloccoParabola : Interactable, ISubscriber
     public void SendMessage()
     {
         PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
-        PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
     }
 }
