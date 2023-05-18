@@ -7,6 +7,8 @@ public class Porta : Interactable
     [SerializeField] bool isOpen;
     [SerializeField] bool canOpenWithKey;
 
+    
+
 
     public override void Interact(Player player)
     {
