@@ -55,6 +55,8 @@ public class Porta : Interactable
             //apro la porta
             OpenDoor();
 
+            Debug.Log("sono a portata");
+
         }
     }
 
@@ -65,12 +67,19 @@ public class Porta : Interactable
             //chiudo la porta
             CloseDoor();
 
+            Debug.Log("sono uscito");
         }
     }
 
     public void DisableWallDoor()
     {
-        colliderImpatto.enabled = false;
+        if (colliderImpatto.enabled == true)
+        {
+            colliderImpatto.enabled = false;
+
+            Debug.Log("disabilito");
+        }
+
     }
 
     public void AbilitateDoor()         //da usare su un evento se non puo essere aperto da una chiave;
