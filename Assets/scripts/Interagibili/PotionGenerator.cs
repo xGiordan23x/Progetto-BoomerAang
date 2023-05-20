@@ -1,4 +1,4 @@
-using System;
+using TMPro;
 using UnityEngine;
 
 public class PotionGenerator : Interactable, ISubscriber
@@ -11,58 +11,40 @@ public class PotionGenerator : Interactable, ISubscriber
     public bool stopTimer;
     [SerializeField] bool isActive;
     [SerializeField] bool canStartOperateWithChip;
-
+    [SerializeField] TextMeshProUGUI timerTextValue;
 
     private void Start()
     {
         started = false;
         timer = 0;
+        UpdateTimerText();
 
         PubSub.Instance.RegisteredSubscriber(nameof(PotionGenerator), this);
 
     }
 
 
-    internal void StartTimer()
-    {
-        Debug.Log("Timer avviato");
-        timer = timerBoomerang;
 
-        PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
-        started = true;
-        stopTimer= false;
-        
-    }
 
     private void Update()
     {
-
         if (started)
         {
             if (!stopTimer)
             {
-
-                timer -= Time.deltaTime;
-
-                if (timer <= 0)
-                {
-                    timer = 0;
-                    Debug.Log("timer Finito");
-                    started = false;
-
-
-                    PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateHumanMovement), this);
-
-
-                }
+                UpdateTimer();
             }
+           
+               
+            
         }
-
     }
+
+
 
     public void OnNotify(object content)
     {
-        if (content is Fontanella) 
+        if (content is Fontanella)
         {
             timer += timerToAddFromFountain;
         }
@@ -74,12 +56,48 @@ public class PotionGenerator : Interactable, ISubscriber
         {
             StopTimer();
         }
+        if(content is BloccoUmanoParabola)
+        {
+            StopTimer();
+            PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateHumanMovement), this);
+            
+        }
     }
+    internal void StartTimer()
+    {
+        Debug.Log("Timer avviato");
+        timer = timerBoomerang;
+        UpdateTimerText();
+
+        PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
+        started = true;
+        stopTimer = false;
+
+    }
+    public void UpdateTimer()
+    {
+
+        timer -= Time.deltaTime;
+        UpdateTimerText();
+
+        if (timer <= 0)
+        {
+            timer = 0;
+            Debug.Log("timer Finito");
+            started = false;
+
+
+            PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateHumanMovement), this);
+        }
+    }
+
+
 
     private void StopTimer()
     {
-       stopTimer= true;
-        started= false;
+        stopTimer = true;
+        started = false;
+        timer = 0;
     }
 
     public override void Interact(Player player)
@@ -92,7 +110,7 @@ public class PotionGenerator : Interactable, ISubscriber
 
             player.potionGenerator = transform;   //setto questo generatore come punto di ritorno;
             base.Interact(player);
-            stopTimer= false;
+            stopTimer = false;
             StartTimer();
         }
 
@@ -116,12 +134,16 @@ public class PotionGenerator : Interactable, ISubscriber
 
             }
 
-           
+
         }
     }
 
     public void AbilitateGenerator()
     {
         isActive = true;
+    }
+    public void UpdateTimerText()
+    {
+        timerTextValue.text = Mathf.RoundToInt(timer).ToString();
     }
 }

@@ -25,11 +25,8 @@ public class BloccoUmanoBoomerang : Interactable, ISubscriber
         {
             player.transform.position = stopPosition.position;
         }
-
-       
-            SendMessage();
-            PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
-            activated = true;
+        OnInteraction.Invoke();
+        activated = true;
 
         
 
@@ -47,12 +44,11 @@ public class BloccoUmanoBoomerang : Interactable, ISubscriber
     }
 
 
-    public void SendMessage()
+    public void TransformToBoomerang()
     { 
   
             PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
             PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
-        
-       
+            PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
     }
 }

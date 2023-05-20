@@ -27,10 +27,7 @@ public class BloccoUmanoParabola : Interactable, ISubscriber
         {
             player.transform.position = stopPosition.position;
         }
-
-        SendMessage();
-
-        PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
+        OnInteraction.Invoke();
         activated = true;
 
 
@@ -38,7 +35,6 @@ public class BloccoUmanoParabola : Interactable, ISubscriber
 
     public void OnNotify(object content)
     {
-
         if (content is PlayerStateBoomerangMovement)
         {
             activated = false;
@@ -46,8 +42,10 @@ public class BloccoUmanoParabola : Interactable, ISubscriber
     }
 
 
-    public void SendMessage()
+    
+    public void StartParabola()
     {
-        PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
+        
+        PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
     }
 }

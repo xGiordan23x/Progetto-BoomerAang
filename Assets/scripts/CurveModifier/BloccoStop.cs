@@ -27,10 +27,7 @@ public class BloccoStop :Interactable, ISubscriber
         {
             player.transform.position = stopPosition.position;
         }
-
-        SendMessage();
-
-        PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
+        OnInteraction.Invoke();
         activated = true;
 
 
@@ -46,8 +43,9 @@ public class BloccoStop :Interactable, ISubscriber
     }
 
 
-    public void SendMessage()
+    public void TransformToBoomerang()
     {
         PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
+        PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
     }
 }
