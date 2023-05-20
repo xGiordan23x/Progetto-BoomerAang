@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BloccoParabola : Interactable, ISubscriber
+public class BloccoUmanoBoomerang : Interactable, ISubscriber
 {
     public bool activated;
     public Transform stopPosition;
-    public bool shouldMovePlayer;
-
-
+    public bool muovePlayer;
+   
     private Animator anim;
 
     private void Start()
     {
-        PubSub.Instance.RegisteredSubscriber(nameof(BloccoParabola), this);
+        PubSub.Instance.RegisteredSubscriber(nameof(BloccoUmanoBoomerang), this);
         activated = false;
         anim = GetComponent<Animator>();
 
@@ -22,14 +21,15 @@ public class BloccoParabola : Interactable, ISubscriber
 
     public override void Interact(Player player)
     {
-        if (shouldMovePlayer)
+        if (muovePlayer)
         {
             player.transform.position = stopPosition.position;
         }
-        PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
+        OnInteraction.Invoke();
         activated = true;
 
-        SendMessage();
+        
+
 
 
     }
@@ -44,9 +44,11 @@ public class BloccoParabola : Interactable, ISubscriber
     }
 
 
-    public void SendMessage()
-    {
-        PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
-        PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
+    public void TransformToBoomerang()
+    { 
+  
+            PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
+            PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
+            PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
     }
 }

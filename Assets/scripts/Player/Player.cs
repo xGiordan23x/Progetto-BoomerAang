@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour, ISubscriber
 {
@@ -32,10 +30,10 @@ public class Player : MonoBehaviour, ISubscriber
 
     [Header("VariabiliInteractiblePoint")]
     public Interacter interactionPoint;
-    [SerializeField] float MoltiplicationDistance=0.5f;
+    [SerializeField] float MoltiplicationDistance = 0.5f;
 
 
-     public bool isReturning;
+    public bool isReturning;
 
     public bool canMove;
 
@@ -55,14 +53,15 @@ public class Player : MonoBehaviour, ISubscriber
 
         stateMachine.SetState(PlayerStateType.BoomerangMovement);
         speed = humanSpeed;
+
     }
     private void Update()
     {
 
         stateMachine.Update();
-        animator.SetFloat("X",lastDirection.x);
-        animator.SetFloat("Y",lastDirection.y);
-        animator.SetFloat("speed",rb.velocity.magnitude);
+        animator.SetFloat("X", lastDirection.x);
+        animator.SetFloat("Y", lastDirection.y);
+        animator.SetFloat("speed", rb.velocity.magnitude);
 
     }
 
@@ -88,24 +87,32 @@ public class Player : MonoBehaviour, ISubscriber
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-    
-        if(collision.GetComponent<Interactable>() != null && stateMachine.GetCurrentState() is PlayerStateBoomerangReturning)
+
+        if (collision.GetComponent<Interactable>() != null && stateMachine.GetCurrentState() is PlayerStateBoomerangReturning)
         {
             collision.GetComponent<Interactable>().Interact(this);
         }
 
-        if (collision.GetComponent<BloccoParabola>() != null && stateMachine.GetCurrentState() is PlayerStateHumanMovement)
+        if (collision.GetComponent<BloccoUmanoBoomerang>() != null && stateMachine.GetCurrentState() is PlayerStateHumanMovement)
         {
             collision.GetComponent<Interactable>().Interact(this);
         }
 
+        if (collision.GetComponent<Teleport>() != null)
+        {
+            collision.GetComponent<Interactable>().Interact(this);
+        }
+        if (collision.GetComponent<BloccoUmanoParabola>() != null)
+        {
+            collision.GetComponent<Interactable>().Interact(this);
+        }
 
 
 
     }
 
 
-    
+
     public void Interaction()
     {
         interactionPoint.Interaction(this);
@@ -118,13 +125,23 @@ public class Player : MonoBehaviour, ISubscriber
         {
             hasPotion = true;
         }
-        if(content is CurveModifier)
+        if (content is CurveModifier)
         {
             PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
         }
-        if (content is BloccoParabola)
-        {           
-            animator.SetBool("transform", true);
+        if (content is BloccoUmanoBoomerang)
+        {
+            SetCanMove(0);
+            animator.SetTrigger("humanboomerang");
+
+        }      
+        if (content is BloccoStop)
+        {
+            SetCanMove(0);
+        }
+        if (content is Fontanella)
+        {
+            animator.SetTrigger("InteractFountain");
         }
 
     }
@@ -132,6 +149,7 @@ public class Player : MonoBehaviour, ISubscriber
 
     //Da mettere in GameManager
     public LineRenderer lineaProva;
+
     internal void DrawCurve()
     {
         lineaProva.positionCount = (int)curve.length;
@@ -152,7 +170,7 @@ public class Player : MonoBehaviour, ISubscriber
     {
         Transform verse = interactionPoint.GetComponent<Transform>();
 
-        verse.localPosition = lastDirection*MoltiplicationDistance;
+        verse.localPosition = lastDirection * MoltiplicationDistance;
     }
 
     public void ChangeLastDirection(Vector2 movement)
@@ -173,7 +191,8 @@ public class Player : MonoBehaviour, ISubscriber
 
 
     public void Move()
-    {     
+    {
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -189,15 +208,16 @@ public class Player : MonoBehaviour, ISubscriber
             ChangeInteractionVerse();
         }
 
-        rb.velocity = new Vector2(movement.x *  speed, movement.y * speed);
-
+        rb.velocity = new Vector2(movement.x * speed, movement.y * speed);
     }
+
+
 
     public void DestroyBoomerangCollider()
     {
         if (boomerangCollider != null)
         {
-            Destroy(boomerangCollider);           
+            Destroy(boomerangCollider);
         }
     }
 
@@ -225,14 +245,14 @@ public class Player : MonoBehaviour, ISubscriber
         {
             canMove = false;
             speed = 0;
-           
+
 
         }
         else
         {
             canMove = true;
             speed = humanSpeed;
-            
+
         }
 
     }

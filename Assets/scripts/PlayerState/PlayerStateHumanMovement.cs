@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlayerStateHumanMovement : State, ISubscriber
 {
     private Player _player;
-   
+
     public PlayerStateHumanMovement(Player player)
     {
         _player = player;
@@ -18,19 +14,26 @@ public class PlayerStateHumanMovement : State, ISubscriber
         _player.SetCanMove(1);
         Debug.Log("Sono in human movement");
         _player.animator.SetBool("BoomerangMoving", false);
+        PubSub.Instance.SendMessageSubscriber(nameof(Fontanella), this);
 
     }
 
     public void OnNotify(object content)
     {
-        if(content is PotionGenerator)
+        if (content is PotionGenerator)
         {
             //setto animazione trasformazione con funzione SetIsReturning a true
-            _player.animator.SetBool("transform",true);
-           
+            _player.animator.SetBool("transform", true);
+
         }
-        
-       
+        if (content is BloccoUmanoParabola)
+        {
+            //setto animazione trasformazione con funzione SetIsReturning a true
+            _player.animator.SetBool("transform", true);
+
+        }
+
+
     }
 
     public override void OnUpdate()
@@ -48,20 +51,20 @@ public class PlayerStateHumanMovement : State, ISubscriber
                 _player.Interaction();
             }
         }
-       
-
-       
 
 
-            if (_player.isReturning)
-            {
-                _player.stateMachine.SetState(PlayerStateType.BoomerangReturning);
-            
+
+
+
+        if (_player.isReturning)
+        {
+            _player.stateMachine.SetState(PlayerStateType.BoomerangReturning);
+
         }
 
 
 
     }
-    
+
 
 }

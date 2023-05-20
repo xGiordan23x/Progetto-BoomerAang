@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BloccoStop :Interactable, ISubscriber
+public class BloccoUmanoParabola : Interactable, ISubscriber
 {
-    
+
     public bool activated;
     public Transform stopPosition;
     public bool shouldMovePlayer;
@@ -17,13 +17,13 @@ public class BloccoStop :Interactable, ISubscriber
         PubSub.Instance.RegisteredSubscriber(nameof(CurveModifier), this);
         activated = false;
         anim = GetComponent<Animator>();
-       
+
     }
 
-   
+
     public override void Interact(Player player)
     {
-        if(shouldMovePlayer)
+        if (shouldMovePlayer)
         {
             player.transform.position = stopPosition.position;
         }
@@ -35,7 +35,6 @@ public class BloccoStop :Interactable, ISubscriber
 
     public void OnNotify(object content)
     {
-
         if (content is PlayerStateBoomerangMovement)
         {
             activated = false;
@@ -43,9 +42,10 @@ public class BloccoStop :Interactable, ISubscriber
     }
 
 
-    public void TransformToBoomerang()
+    
+    public void StartParabola()
     {
-        PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
-        PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
+        
+        PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
     }
 }

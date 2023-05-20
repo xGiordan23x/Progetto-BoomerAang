@@ -7,6 +7,8 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
 {
     private Player _player;
     private float elapsedTime;
+    float percentage;
+    float distanceTimer;
 
     private bool stopPlayer;
 
@@ -57,8 +59,14 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
       if(content is BloccoStop)
         {
             StopParabola();
+
         }
-      
+        if(content is BloccoUmanoBoomerang)
+        {
+            StopParabola();
+        }
+
+       
     }
 
 
@@ -71,16 +79,18 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
             //Ritono a base parabola
             elapsedTime += Time.deltaTime;
 
-            float distanceTimer = _player.curve.length * _player.returnTimer / 10;
-            float percentage = elapsedTime / distanceTimer;
-
-            _player.transform.position = _player.curve.GetPointAt(percentage);
+          distanceTimer = _player.curve.length * _player.returnTimer / 10;
+          percentage = elapsedTime / distanceTimer;
 
             if (percentage >= 1)
             {
                 StopParabola();
-               
+
             }
+            if (percentage > 0 || percentage < 1) 
+            _player.transform.position = _player.curve.GetPointAt(percentage);
+
+            
         }
 
 
