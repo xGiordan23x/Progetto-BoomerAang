@@ -144,6 +144,6 @@ public class PotionGenerator : Interactable, ISubscriber
     }
     public void UpdateTimerText()
     {
-        timerTextValue.text = Mathf.RoundToInt(timer).ToString();
+        //timerTextValue.text = Mathf.RoundToInt(timer).ToString();       //disabilito al momento  .Fede
     }
 }
