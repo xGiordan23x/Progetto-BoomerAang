@@ -59,7 +59,7 @@ public class PotionGenerator : Interactable, ISubscriber
             
         }
     }
-    internal void StartTimer()
+    public void StartTimer()
     {
         Debug.Log("Timer avviato");
         timer = timerBoomerang;
@@ -107,7 +107,7 @@ public class PotionGenerator : Interactable, ISubscriber
             player.potionGenerator = transform;   //setto questo generatore come punto di ritorno;
             base.Interact(player);
             stopTimer = false;
-            StartTimer();
+            
         }
 
         if (player.stateMachine.GetCurrentState() is not PlayerStateBoomerangReturning && !isActive)  //diversamente puo essere attivato con un chip da tutte le forme tranne quando è un boomerang che torna indietro
@@ -140,7 +140,7 @@ public class PotionGenerator : Interactable, ISubscriber
     }
     public void UpdateTimerText()
     {
-        timerTextValue.text = Mathf.RoundToInt(timer).ToString();       //disabilito al momento  .Fede
+        //timerTextValue.text = Mathf.RoundToInt(timer).ToString();       //disabilito al momento  .Fede
     }
 
     public void IncreaseTimerFontanella(float timerToAdd)
