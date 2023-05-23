@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PotionGenerator : Interactable, ISubscriber
 {
-    public int timerToAddFromFountain;
+   
     public float timerBoomerang;
 
     private float timer;
@@ -44,10 +44,7 @@ public class PotionGenerator : Interactable, ISubscriber
 
     public void OnNotify(object content)
     {
-        if (content is Fontanella)
-        {
-            timer += timerToAddFromFountain;
-        }
+       
         if (content is Player)
         {
             StartTimer();
@@ -59,7 +56,6 @@ public class PotionGenerator : Interactable, ISubscriber
         if(content is BloccoUmanoParabola)
         {
             StopTimer();
-            PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateHumanMovement), this);
             
         }
     }
@@ -144,6 +140,12 @@ public class PotionGenerator : Interactable, ISubscriber
     }
     public void UpdateTimerText()
     {
-        //timerTextValue.text = Mathf.RoundToInt(timer).ToString();       //disabilito al momento  .Fede
+        timerTextValue.text = Mathf.RoundToInt(timer).ToString();       //disabilito al momento  .Fede
     }
+
+    public void IncreaseTimerFontanella(float timerToAdd)
+    {
+        timer += timerToAdd;
+    }
+
 }

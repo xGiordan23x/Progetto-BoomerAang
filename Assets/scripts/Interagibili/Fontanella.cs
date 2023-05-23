@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Fontanella : Interactable, ISubscriber
 {
-
+    public float timerToAdd; 
     public bool activated;
 
     private void Start()
@@ -21,12 +21,8 @@ public class Fontanella : Interactable, ISubscriber
     }
 
     public void UseFountain()
-    {
-
-        PubSub.Instance.SendMessageSubscriber(nameof(Fontanella), this);
-        PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
-        activated = true;
-       
+    {             
+        activated = true;       
     }
     private void Update()
     {
