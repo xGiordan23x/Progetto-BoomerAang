@@ -82,6 +82,25 @@ public class Porta : Interactable
 
     }
 
+    private void ActivateWall()
+    {
+        if (colliderImpatto.enabled == false)
+        {
+            colliderImpatto.enabled = true;
+        }
+    }
+
+    public void DisableDoor()
+    {
+        if (canOpenWithKey)
+        {
+            return;
+        }
+
+        isOpen = false;
+        ActivateWall();
+    }
+
     public void AbilitateDoor()         //da usare su un evento se non puo essere aperto da una chiave;
     {
         if (canOpenWithKey)
