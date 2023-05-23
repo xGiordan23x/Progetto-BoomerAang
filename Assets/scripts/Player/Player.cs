@@ -143,6 +143,10 @@ public class Player : MonoBehaviour, ISubscriber
         {
             animator.SetTrigger("InteractFountain");
         }
+        if (content is BloccoUmanoParabola)
+        {
+            SetCanMove(0);
+        }
 
     }
 
