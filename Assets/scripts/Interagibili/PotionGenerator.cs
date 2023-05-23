@@ -44,7 +44,10 @@ public class PotionGenerator : Interactable, ISubscriber
 
     public void OnNotify(object content)
     {
-       
+       if(content is PlayerStateHumanMovement)
+        {
+            ResetTimer();
+        }
         if (content is Player)
         {
             StartTimer();
@@ -56,7 +59,7 @@ public class PotionGenerator : Interactable, ISubscriber
         if(content is BloccoUmanoParabola)
         {
             StopTimer();
-            
+           
         }
     }
     public void StartTimer()
@@ -140,7 +143,13 @@ public class PotionGenerator : Interactable, ISubscriber
     }
     public void UpdateTimerText()
     {
-        //timerTextValue.text = Mathf.RoundToInt(timer).ToString();       //disabilito al momento  .Fede
+        timerTextValue.text = timer.ToString();
+        timerTextValue.text = Mathf.RoundToInt(timer).ToString();       //disabilito al momento  .Fede
+    }
+    public void ResetTimer()
+    {
+        StopTimer();
+        UpdateTimerText();
     }
 
     public void IncreaseTimerFontanella(float timerToAdd)

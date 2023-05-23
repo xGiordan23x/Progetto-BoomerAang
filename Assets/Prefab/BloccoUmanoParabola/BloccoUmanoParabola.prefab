@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4388248886253353711}
   - component: {fileID: 4388248886253353704}
   - component: {fileID: 4388248886253353698}
-  - component: {fileID: 4388248886253353697}
+  - component: {fileID: 4904458839012330464}
   m_Layer: 0
   m_Name: BloccoUmanoParabola
   m_TagString: Untagged
@@ -198,10 +198,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  boxColliderToAdd: {fileID: 0}
   activated: 0
   stopPosition: {fileID: 4388248886506444698}
   shouldMovePlayer: 0
---- !u!61 &4388248886253353697
+--- !u!61 &4904458839012330464
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,7 +226,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.42}
   m_EdgeRadius: 0
 --- !u!1 &4388248886506444699
 GameObject:

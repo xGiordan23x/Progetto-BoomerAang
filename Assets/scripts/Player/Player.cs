@@ -93,22 +93,6 @@ public class Player : MonoBehaviour, ISubscriber
             collision.GetComponent<Interactable>().Interact(this);
         }
 
-        if (collision.GetComponent<BloccoUmanoBoomerang>() != null && stateMachine.GetCurrentState() is PlayerStateHumanMovement)
-        {
-            collision.GetComponent<Interactable>().Interact(this);
-        }
-
-        if (collision.GetComponent<Teleport>() != null)
-        {
-            collision.GetComponent<Interactable>().Interact(this);
-        }
-        if (collision.GetComponent<BloccoUmanoParabola>() != null)
-        {
-            collision.GetComponent<Interactable>().Interact(this);
-        }
-
-
-
     }
 
 

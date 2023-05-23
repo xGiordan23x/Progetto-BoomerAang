@@ -43,7 +43,6 @@ public class PlayerStateHumanMovement : State, ISubscriber
             //Movement
             _player.Move();
 
-
             //interaction
 
             if (Input.GetButtonDown("Use"))
@@ -58,6 +57,7 @@ public class PlayerStateHumanMovement : State, ISubscriber
 
         if (_player.isReturning)
         {
+            PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator),this);
             _player.stateMachine.SetState(PlayerStateType.BoomerangReturning);
 
         }

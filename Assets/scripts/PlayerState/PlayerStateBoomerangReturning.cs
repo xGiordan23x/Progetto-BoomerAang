@@ -21,8 +21,6 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
     public override void OnEnter()
     {
         Debug.Log("Sono in Boomerang ritorno");
-
-
         Debug.Log("Creo un collider");
         _player.AddBomerangCollider();
 
