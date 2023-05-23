@@ -45,7 +45,7 @@ public class BloccoUmanoParabola : Interactable, ISubscriber
     
     public void StartParabola()
     {
-        
+        PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
         PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
     }
 }
