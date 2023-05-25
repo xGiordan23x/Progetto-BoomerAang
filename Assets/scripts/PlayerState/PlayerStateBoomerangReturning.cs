@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -56,7 +57,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
     
       if(content is BloccoStop)
         {
-            StopParabola();
+            StopParabolaBloccoStop();
 
         }
         if(content is BloccoUmanoBoomerang)
@@ -67,7 +68,12 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
        
     }
 
-
+    private void StopParabolaBloccoStop()
+    {
+        _player.isReturning = false;
+       
+        _player.stateMachine.SetState(PlayerStateType.BoomerangMovement);
+    }
 
     public override void OnUpdate()
     {

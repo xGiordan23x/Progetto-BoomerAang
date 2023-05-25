@@ -1,3 +1,4 @@
+using UnityEditor.Hardware;
 using UnityEngine;
 
 public class PlayerStateBoomerangMovement : State, ISubscriber
@@ -19,6 +20,7 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
         _player.hasPotion = false;
         _player.canMove= true;
         PubSub.Instance.SendMessageSubscriber(nameof(CurveModifier), this);
+        PubSub.Instance.SendMessageSubscriber(nameof(Fontanella), this);
     }
 
     public void OnNotify(object content)

@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour, ISubscriber
 {
@@ -122,6 +123,7 @@ public class Player : MonoBehaviour, ISubscriber
         if (content is BloccoStop)
         {
             SetCanMove(0);
+            animator.SetTrigger("Bloccato"); 
         }
         if (content is Fontanella)
         {
@@ -248,6 +250,11 @@ public class Player : MonoBehaviour, ISubscriber
     {
         PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
         animator.SetBool("DrinkPotion", false);
+    }
+
+    public void nomeDaDare()
+    {
+       animator.SetBool("BoomerangMoving", true);
     }
 
 }
