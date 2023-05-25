@@ -51,4 +51,13 @@ public class BloccoUmanoBoomerang : Interactable, ISubscriber
             PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
             PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Player>().stateMachine.GetCurrentState() is PlayerStateHumanMovement)
+        {
+            Interact(collision.GetComponent<Player>());
+        }
+
+    }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour, ISubscriber
 {
@@ -14,7 +15,7 @@ public class Player : MonoBehaviour, ISubscriber
     public Animator animator;
     public float humanSpeed;
     private float speed;
-    [HideInInspector] public Rigidbody2D rb;
+    public Rigidbody2D Rb;
     [Header("VariabiliBoomerang")]
     public float returnTimer;
     public Transform potionGenerator;
@@ -33,9 +34,9 @@ public class Player : MonoBehaviour, ISubscriber
     [SerializeField] float MoltiplicationDistance = 0.5f;
 
 
-    public bool isReturning;
+    [HideInInspector] public bool isReturning;
 
-    public bool canMove;
+    [HideInInspector] public bool canMove;
 
 
     public StateMachine<PlayerStateType> stateMachine = new();
@@ -45,7 +46,7 @@ public class Player : MonoBehaviour, ISubscriber
         animator = GetComponent<Animator>();
         PubSub.Instance.RegisteredSubscriber(nameof(Player), this);
         points = curve.GetAnchorPoints();
-        rb = GetComponent<Rigidbody2D>();
+        Rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         stateMachine.RegisterState(PlayerStateType.HumanMovement, new PlayerStateHumanMovement(this));
         stateMachine.RegisterState(PlayerStateType.BoomerangMovement, new PlayerStateBoomerangMovement(this));
@@ -61,7 +62,7 @@ public class Player : MonoBehaviour, ISubscriber
         stateMachine.Update();
         animator.SetFloat("X", lastDirection.x);
         animator.SetFloat("Y", lastDirection.y);
-        animator.SetFloat("speed", rb.velocity.magnitude);
+        animator.SetFloat("speed", Rb.velocity.magnitude);
 
     }
 
@@ -93,22 +94,6 @@ public class Player : MonoBehaviour, ISubscriber
             collision.GetComponent<Interactable>().Interact(this);
         }
 
-        if (collision.GetComponent<BloccoUmanoBoomerang>() != null && stateMachine.GetCurrentState() is PlayerStateHumanMovement)
-        {
-            collision.GetComponent<Interactable>().Interact(this);
-        }
-
-        if (collision.GetComponent<Teleport>() != null)
-        {
-            collision.GetComponent<Interactable>().Interact(this);
-        }
-        if (collision.GetComponent<BloccoUmanoParabola>() != null)
-        {
-            collision.GetComponent<Interactable>().Interact(this);
-        }
-
-
-
     }
 
 
@@ -138,6 +123,7 @@ public class Player : MonoBehaviour, ISubscriber
         if (content is BloccoStop)
         {
             SetCanMove(0);
+            animator.SetTrigger("Bloccato"); 
         }
         if (content is Fontanella)
         {
@@ -212,7 +198,7 @@ public class Player : MonoBehaviour, ISubscriber
             ChangeInteractionVerse();
         }
 
-        rb.velocity = new Vector2(movement.x * speed, movement.y * speed);
+        Rb.velocity = new Vector2(movement.x * speed, movement.y * speed);
     }
 
 
@@ -264,6 +250,11 @@ public class Player : MonoBehaviour, ISubscriber
     {
         PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
         animator.SetBool("DrinkPotion", false);
+    }
+
+    public void nomeDaDare()
+    {
+       animator.SetBool("BoomerangMoving", true);
     }
 
 }

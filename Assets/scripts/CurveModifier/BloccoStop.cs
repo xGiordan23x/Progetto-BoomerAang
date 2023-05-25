@@ -40,6 +40,7 @@ public class BloccoStop :Interactable, ISubscriber
         {
             activated = false;
         }
+       
     }
 
 
@@ -47,5 +48,6 @@ public class BloccoStop :Interactable, ISubscriber
     {
         PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
         PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
+
     }
 }

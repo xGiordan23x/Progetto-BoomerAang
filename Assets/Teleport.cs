@@ -29,4 +29,12 @@ public class Teleport : Interactable
         activated= false;
         GetComponent<SpriteRenderer>().color= Color.green;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Player>())
+        {
+            Interact(collision.GetComponent<Player>());
+        }
+        
+    }
 }
