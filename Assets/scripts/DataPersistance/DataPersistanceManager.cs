@@ -5,11 +5,16 @@ using System.Linq;
 
 public class DataPersistanceManager : MonoBehaviour
 {
+    [Header("File Storage Config")]
+    [SerializeField] private string fileName;
     public static DataPersistanceManager instance { get; private set; }
 
     private GameData gameData;
 
     private List<IDataPersistance> dataPersistanceObject;
+
+    private FileDataHandler dataHandler;
+
     private void Awake()
     {
         if (instance != null)
@@ -24,6 +29,7 @@ public class DataPersistanceManager : MonoBehaviour
 
     private void Start()
     {
+        dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         dataPersistanceObject = FindAllDataPersistanceObjects();
         LoadGame();
     }
@@ -35,12 +41,14 @@ public class DataPersistanceManager : MonoBehaviour
 
     public void LoadGame()
     {
+        gameData = dataHandler.Load();
+
         if (gameData == null)
         {
             Debug.Log("salvataggio inesistente");
             NewGame();
         }
-          
+
         {
             foreach (IDataPersistance dataPersistance in dataPersistanceObject)
             {
@@ -58,7 +66,7 @@ public class DataPersistanceManager : MonoBehaviour
             dataPersistance.SaveData(ref gameData);
         }
 
-        Debug.Log("Salvata l'index della stanza : " + gameData.roomIndex);
+        dataHandler.Save(gameData);
     }
 
     private List<IDataPersistance> FindAllDataPersistanceObjects()
@@ -66,6 +74,12 @@ public class DataPersistanceManager : MonoBehaviour
         IEnumerable<IDataPersistance> dataPersistances = FindObjectsOfType<MonoBehaviour>().OfType<IDataPersistance>();
 
         return new List<IDataPersistance>(dataPersistances);
+    }
+
+    private void OnApplicationQuit()
+    {
+        //salvo all'uscita del gioco, da cambiare
+        SaveGame();
     }
 
 
