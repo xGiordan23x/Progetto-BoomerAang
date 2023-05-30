@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour,IDataPersistance
+public class GameManager : MonoBehaviour, IDataPersistance
 {
     public int CurrentRoomIndex = 0;
+    [SerializeField] int SaveRoomIndex=0;
 
     [SerializeField] int maxIndex;
 
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour,IDataPersistance
 
     private void Start()
     {
-        maxIndex = SceneManager.sceneCountInBuildSettings;
+        maxIndex = SceneManager.sceneCountInBuildSettings-1;
         CurrentRoomIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
@@ -37,14 +38,21 @@ public class GameManager : MonoBehaviour,IDataPersistance
         }
         else
         {
-            SceneManager.LoadScene(CurrentRoomIndex++);
+            CurrentRoomIndex++;
+            SceneManager.LoadScene(CurrentRoomIndex);
         }
-        
+
+    }
+
+    public void LoadSavedRoom()
+    {
+        SceneManager.LoadScene(SaveRoomIndex);
     }
 
     public void LoadData(GameData data)
     {
-        CurrentRoomIndex = data.roomIndex;
+        SaveRoomIndex= data.roomIndex;
+        
     }
 
     public void SaveData(ref GameData data)

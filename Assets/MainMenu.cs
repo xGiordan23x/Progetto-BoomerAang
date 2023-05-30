@@ -7,12 +7,12 @@ public class MainMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(1);
     }
 
     public void ContinueGame()
     {
-        //quando faro i salvataggi     .fede
+        GameManager.instance.LoadSavedRoom();
     }
 
     public void QuitGame()
