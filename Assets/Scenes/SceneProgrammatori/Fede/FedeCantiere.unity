@@ -4901,6 +4901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentRoomIndex: 0
+  SaveRoomIndex: 0
   maxIndex: 0
 --- !u!4 &1680871729
 Transform:
@@ -4915,7 +4916,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1789331152
 GameObject:
@@ -5759,7 +5760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3055786985764663846, guid: b1e3436239d49af43b1ce65a71ff80d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.019847281
+      value: -0.173
       objectReference: {fileID: 0}
     - target: {fileID: 3055786985764663846, guid: b1e3436239d49af43b1ce65a71ff80d6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5804,7 +5805,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6410587674801798899, guid: c2b32e874df56474092aa0da89c105db, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6410587674801798899, guid: c2b32e874df56474092aa0da89c105db, type: 3}
       propertyPath: m_LocalPosition.x
