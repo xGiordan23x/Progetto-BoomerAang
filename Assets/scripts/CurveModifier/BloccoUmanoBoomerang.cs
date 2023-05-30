@@ -6,7 +6,7 @@ public class BloccoUmanoBoomerang : Interactable, ISubscriber
 {
     public bool activated;
     public Transform stopPosition;
-    public bool muovePlayer;
+    public bool shouldMuovePlayer;
    
     private Animator anim;
 
@@ -21,7 +21,7 @@ public class BloccoUmanoBoomerang : Interactable, ISubscriber
 
     public override void Interact(Player player)
     {
-        if (muovePlayer)
+        if (shouldMuovePlayer)
         {
             player.transform.position = stopPosition.position;
         }
@@ -41,12 +41,22 @@ public class BloccoUmanoBoomerang : Interactable, ISubscriber
         {
             activated = false;
         }
+        if(content is BloccoStop)
+        {
+
+        }
     }
 
 
     public void TransformToBoomerang()
-    { 
-  
+    {  if (shouldMuovePlayer)
+        {
+            //mettere bloccato
+        }
+        else
+        {
+            //mettere boomerang moving a true
+        }
             PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
             PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
             PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);

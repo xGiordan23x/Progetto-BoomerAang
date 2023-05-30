@@ -9,9 +9,7 @@ public class BloccoUmanoParabola : Interactable, ISubscriber
     public BoxCollider2D boxColliderToAdd;
     public bool activated;
     public Transform stopPosition;
-    public bool shouldMovePlayer;
-
-
+   
     private Animator anim;
 
     private void Start()
@@ -25,10 +23,7 @@ public class BloccoUmanoParabola : Interactable, ISubscriber
 
     public override void Interact(Player player)
     {
-        if (shouldMovePlayer)
-        {
-            player.transform.position = stopPosition.position;
-        }
+       
         OnInteraction.Invoke();
         activated = true;
 

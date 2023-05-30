@@ -40,14 +40,29 @@ public class BloccoStop :Interactable, ISubscriber
         {
             activated = false;
         }
+        if(content is BloccoUmanoBoomerang)
+        {
+
+        }
        
     }
 
 
     public void TransformToBoomerang()
     {
-        PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
-        PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
+        if (shouldMovePlayer)
+        {
+            //mettere bloccato
+            PubSub.Instance.SendMessageSubscriber(nameof(Player), this,true);
+            PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
 
+
+        }
+        else
+        {
+            //mettere  boomerangMoving a true
+        }
+        
+      
     }
 }

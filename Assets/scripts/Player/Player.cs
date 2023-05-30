@@ -114,6 +114,8 @@ public class Player : MonoBehaviour, ISubscriber
         {
             PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
         }
+
+
         if (content is BloccoUmanoBoomerang)
         {
             SetCanMove(0);
@@ -125,6 +127,8 @@ public class Player : MonoBehaviour, ISubscriber
             SetCanMove(0);
             animator.SetTrigger("Bloccato"); 
         }
+
+
         if (content is Fontanella)
         {
             animator.SetTrigger("InteractFountain");
