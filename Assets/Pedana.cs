@@ -19,7 +19,7 @@ public class Pedana : MonoBehaviour
     private void Start()
     {
         oggettiAPortata = new List<GameObject>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
