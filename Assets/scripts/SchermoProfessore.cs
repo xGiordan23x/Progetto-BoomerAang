@@ -7,7 +7,7 @@ public class SchermoProfessore : MonoBehaviour, ISubscriber
     Player player;
     Animator animator;
 
-    public void OnNotify(object content)
+    public void OnNotify(object content, bool vero = false)
     {
         throw new System.NotImplementedException();
     }

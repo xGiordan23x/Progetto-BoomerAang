@@ -29,7 +29,7 @@ public class Fontanella : Interactable, ISubscriber
     {
 
     }
-    public void OnNotify(object content)
+    public void OnNotify(object content, bool vero = false)
     {
         if(content is PlayerStateBoomerangMovement)
         {

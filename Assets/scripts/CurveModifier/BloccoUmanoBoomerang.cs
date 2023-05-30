@@ -6,7 +6,7 @@ public class BloccoUmanoBoomerang : Interactable, ISubscriber
 {
     public bool activated;
     public Transform stopPosition;
-    public bool shouldMuovePlayer;
+    public bool shouldMovePlayer;
    
     private Animator anim;
 
@@ -15,49 +15,49 @@ public class BloccoUmanoBoomerang : Interactable, ISubscriber
         PubSub.Instance.RegisteredSubscriber(nameof(BloccoUmanoBoomerang), this);
         activated = false;
         anim = GetComponent<Animator>();
+        if(shouldMovePlayer)
+        {
+            //set ventola
+        }
+        else
+        {
+            //setlaser
+        }
 
     }
 
 
     public override void Interact(Player player)
     {
-        if (shouldMuovePlayer)
+       
+        OnInteraction.Invoke();
+        activated = true;
+        if (shouldMovePlayer)
+
         {
             player.transform.position = stopPosition.position;
         }
-        OnInteraction.Invoke();
-        activated = true;
-
-        
 
 
 
-    }
 
-    public void OnNotify(object content)
-    {
 
-        if (content is PlayerStateBoomerangMovement)
-        {
-            activated = false;
-        }
-        if(content is BloccoStop)
-        {
-
-        }
     }
 
 
     public void TransformToBoomerang()
-    {  if (shouldMuovePlayer)
-        {
-            //mettere bloccato
+    {  
+        if (shouldMovePlayer)
+        {           
+            PubSub.Instance.SendMessageSubscriber(nameof(Player), this, false);
         }
-        else
+
+        else if (!shouldMovePlayer)
         {
-            //mettere boomerang moving a true
+           
+            PubSub.Instance.SendMessageSubscriber(nameof(Player), this , true);
         }
-            PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
+           
             PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this);
             PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
     }
@@ -69,5 +69,17 @@ public class BloccoUmanoBoomerang : Interactable, ISubscriber
             Interact(collision.GetComponent<Player>());
         }
 
+    }
+
+    public void OnNotify(object content, bool vero = false)
+    {
+        if (content is PlayerStateBoomerangMovement)
+        {
+            activated = false;
+        }
+        if (content is BloccoStop)
+        {
+
+        }
     }
 }

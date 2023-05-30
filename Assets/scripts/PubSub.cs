@@ -76,7 +76,7 @@ public class PubSub : MonoBehaviour
 
         foreach (ISubscriber subscriber in _subscribers[messageType])
         {
-            subscriber.OnNotify(content);
+            subscriber.OnNotify(content,vero);
         }
     }
 

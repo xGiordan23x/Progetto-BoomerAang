@@ -17,23 +17,33 @@ public class BloccoStop :Interactable, ISubscriber
         PubSub.Instance.RegisteredSubscriber(nameof(CurveModifier), this);
         activated = false;
         anim = GetComponent<Animator>();
-       
+        if (shouldMovePlayer)
+        {
+            //set blocco
+        }
+        else
+        {
+            //setlaser
+        }
+
+
     }
 
-   
+
     public override void Interact(Player player)
     {
-        if(shouldMovePlayer)
+       
+        OnInteraction.Invoke();
+        activated = true;
+        if (shouldMovePlayer)
         {
             player.transform.position = stopPosition.position;
         }
-        OnInteraction.Invoke();
-        activated = true;
 
 
     }
 
-    public void OnNotify(object content)
+    public void OnNotify(object content, bool vero )
     {
 
         if (content is PlayerStateBoomerangMovement)
@@ -50,19 +60,22 @@ public class BloccoStop :Interactable, ISubscriber
 
     public void TransformToBoomerang()
     {
+
         if (shouldMovePlayer)
         {
-            //mettere bloccato
-            PubSub.Instance.SendMessageSubscriber(nameof(Player), this,true);
-            PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
-
-
+            PubSub.Instance.SendMessageSubscriber(nameof(Player), this, false);
         }
-        else
+
+        else if (!shouldMovePlayer)
         {
-            //mettere  boomerangMoving a true
+
+            PubSub.Instance.SendMessageSubscriber(nameof(Player),  this, true);
         }
-        
+
       
+        PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
+
     }
+
+   
 }

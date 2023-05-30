@@ -742,7 +742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3025781377422432121, guid: 7b4463b1e5ce3ff44bc511faf0743fc2, type: 3}
       propertyPath: shouldMovePlayer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3025781377760289676, guid: 7b4463b1e5ce3ff44bc511faf0743fc2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1003,6 +1003,10 @@ PrefabInstance:
     - target: {fileID: 5866067114403221217, guid: 5dfaac8cab1ce504c92c948135538c1d, type: 3}
       propertyPath: m_Name
       value: BloccoUmanoBoomerang
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866067114403221222, guid: 5dfaac8cab1ce504c92c948135538c1d, type: 3}
+      propertyPath: shouldMuovePlayer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5866067114403221224, guid: 5dfaac8cab1ce504c92c948135538c1d, type: 3}
       propertyPath: m_RootOrder

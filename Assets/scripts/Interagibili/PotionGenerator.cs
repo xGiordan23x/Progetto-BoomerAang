@@ -42,7 +42,7 @@ public class PotionGenerator : Interactable, ISubscriber
 
 
 
-    public void OnNotify(object content)
+    public void OnNotify(object content,bool vero = false)
     {
        if(content is PlayerStateHumanMovement)
         {
