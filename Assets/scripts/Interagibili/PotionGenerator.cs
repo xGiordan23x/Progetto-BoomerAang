@@ -94,9 +94,11 @@ public class PotionGenerator : Interactable, ISubscriber
 
     private void StopTimer()
     {
+        timer = 0;
         stopTimer = true;
         started = false;
-        timer = 0;
+        UpdateTimerText();
+
     }
 
     public override void Interact(Player player)

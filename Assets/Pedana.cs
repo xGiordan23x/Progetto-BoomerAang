@@ -11,9 +11,15 @@ public class Pedana : MonoBehaviour
     [SerializeField] List<GameObject> oggettiAPortata;
     private bool pressed = false;
 
+    [SerializeField] Sprite unpressedSprite;
+    [SerializeField] Sprite pressedSprite;
+
+    private SpriteRenderer spriteRenderer;
+
     private void Start()
     {
         oggettiAPortata = new List<GameObject>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,7 +51,7 @@ public class Pedana : MonoBehaviour
 
         if (collision.GetComponent<Player>() != null)
         {
-            if (collision.GetComponent<Player>().stateMachine.GetCurrentState() is PlayerStateHumanMovement)
+            if (collision.GetComponent<Player>().stateMachine.GetCurrentState() is PlayerStateHumanMovement || collision.GetComponent<Player>().stateMachine.GetCurrentState() is PlayerStateBoomerangReturning)
             {
                 oggettiAPortata.Remove(collision.gameObject);
                 ObjectCount();
@@ -59,12 +65,16 @@ public class Pedana : MonoBehaviour
         {
             pressed = true;
             pressIn?.Invoke();
+
+            spriteRenderer.sprite = pressedSprite;
         }
 
         if (oggettiAPortata.Count == 0)
         {
             pressed = false;
             pressOut?.Invoke();
+
+            spriteRenderer.sprite = unpressedSprite;
         }
     }
 
