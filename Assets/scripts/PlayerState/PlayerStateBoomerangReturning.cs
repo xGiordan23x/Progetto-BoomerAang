@@ -43,7 +43,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
         _player.DrawCurve();
     }
 
-    public void OnNotify(object content)
+    public void OnNotify(object content, bool vero = false)
     {
         if (content is CurveModifier)
         {

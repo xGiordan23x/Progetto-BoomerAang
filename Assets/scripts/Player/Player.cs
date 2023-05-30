@@ -104,8 +104,9 @@ public class Player : MonoBehaviour, ISubscriber
     }
 
 
-    public void OnNotify(object content)
+    public void OnNotify(object content,bool bloccato)
     {
+       
         if (content is PotionGenerator)
         {
             hasPotion = true;
@@ -114,17 +115,35 @@ public class Player : MonoBehaviour, ISubscriber
         {
             PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
         }
-        if (content is BloccoUmanoBoomerang)
+        if (content is BloccoUmanoBoomerang && !bloccato)
         {
+            SetCanMove(0);
+            animator.SetTrigger("Bloccato");
+
+        }
+        if (content is BloccoUmanoBoomerang && bloccato)
+        {
+          
             SetCanMove(0);
             animator.SetTrigger("humanboomerang");
 
-        }      
-        if (content is BloccoStop)
+        }
+
+        if (content is BloccoStop && !bloccato)
         {
             SetCanMove(0);
-            animator.SetTrigger("Bloccato"); 
+            animator.SetTrigger("Bloccato");
+
         }
+        if (content is BloccoStop && bloccato)
+        {
+
+            SetCanMove(0);
+            SetBoomerangMoving();
+
+        }
+
+
         if (content is Fontanella)
         {
             animator.SetTrigger("InteractFountain");
@@ -252,9 +271,10 @@ public class Player : MonoBehaviour, ISubscriber
         animator.SetBool("DrinkPotion", false);
     }
 
-    public void nomeDaDare()
+    public void SetBoomerangMoving()
     {
        animator.SetBool("BoomerangMoving", true);
     }
 
+    
 }

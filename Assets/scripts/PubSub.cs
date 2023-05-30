@@ -69,14 +69,14 @@ public class PubSub : MonoBehaviour
         }
 
     }
-    public void SendMessageSubscriber(string messageType, object content)
+    public void SendMessageSubscriber(string messageType, object content, bool vero = false)
     {
         if (!_subscribers.ContainsKey(messageType)) return;
 
 
         foreach (ISubscriber subscriber in _subscribers[messageType])
         {
-            subscriber.OnNotify(content);
+            subscriber.OnNotify(content,vero);
         }
     }
 

@@ -26,7 +26,7 @@ public class CurveModifier : Interactable, ISubscriber
         {
             anim.SetBool("Right", true);
         }
-        else if (newDirection == Vector2.left)
+        if (newDirection == Vector2.left)
         {
             anim.SetBool("Left", true);
         }
@@ -42,7 +42,8 @@ public class CurveModifier : Interactable, ISubscriber
     public override void Interact(Player player)
     {
         player.transform.position = stopPosition.position;
-        player.lastDirection = newDirection;        
+        player.lastDirection = newDirection;    
+        
         PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
         activated = true;
        
@@ -51,7 +52,7 @@ public class CurveModifier : Interactable, ISubscriber
 
     }
 
-    public void OnNotify(object content)
+    public void OnNotify(object content, bool vero = false)
     {
       
         if (content is PlayerStateBoomerangMovement)
