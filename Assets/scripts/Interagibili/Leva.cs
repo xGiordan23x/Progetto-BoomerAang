@@ -5,21 +5,29 @@ using UnityEngine.Events;
 
 public class Leva : Interactable
 {
-    [SerializeField] bool oneTime;
-    private bool _onetime;
+    //[SerializeField] bool oneTime;
+    private bool active;
+
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     public override void Interact(Player player)
     {
         if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangReturning)
         {
-            if (_onetime)
+            if (active)
             {
                 Debug.Log("l'ho gia usata");
                 return;
             }
 
             base.Interact(player);
-            _onetime = true;
+            active = true;
+            animator.SetTrigger("Pulled");
         }
         else
         {
