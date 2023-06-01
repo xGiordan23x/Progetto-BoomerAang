@@ -46,6 +46,7 @@ public class Scatola : Interactable
         if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangReturning && isDestroyable)
         {
             //gameObject.SetActive(false);
+            PlayAnimation();
             OnBoomerangHit?.Invoke();
         }
 
@@ -90,7 +91,7 @@ public class Scatola : Interactable
         isMoving = false;
     }
 
-    public void PlayAnimation()
+    private void PlayAnimation()
     {
         animator.SetTrigger("Hit");
     }
