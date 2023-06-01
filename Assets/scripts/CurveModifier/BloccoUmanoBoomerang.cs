@@ -29,13 +29,16 @@ public class BloccoUmanoBoomerang : Interactable, ISubscriber
 
     public override void Interact(Player player)
     {
-       
-        OnInteraction.Invoke();
-        activated = true;
-        if (shouldMovePlayer)
-
+        if (player.stateMachine.GetCurrentState() is PlayerStateHumanMovement)
         {
-            player.transform.position = stopPosition.position;
+
+
+            OnInteraction.Invoke();
+            activated = true;
+            if (shouldMovePlayer)
+            {
+                player.transform.position = stopPosition.position;
+            }
         }
 
 

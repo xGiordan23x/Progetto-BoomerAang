@@ -15,6 +15,7 @@ public class Fontanella : Interactable, ISubscriber
         if (!activated && player.stateMachine.GetCurrentState() is PlayerStateHumanMovement)
         {
             base.Interact(player);
+            UseFountain();
         
         }
 
