@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Scatola : Interactable
 {
@@ -18,7 +19,16 @@ public class Scatola : Interactable
 
     private float timeToMove = 0.5f;
 
-    
+    private Animator animator;
+
+    [SerializeField] UnityEvent OnBoomerangHit;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+
 
 
     public override void Interact(Player player)
@@ -33,9 +43,10 @@ public class Scatola : Interactable
             }
         }
 
-        if(player.stateMachine.GetCurrentState() is PlayerStateBoomerangReturning && isDestroyable)
+        if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangReturning && isDestroyable)
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            OnBoomerangHit?.Invoke();
         }
 
 
@@ -77,6 +88,16 @@ public class Scatola : Interactable
         transform.position = endPosition;
 
         isMoving = false;
+    }
+
+    public void PlayAnimation()
+    {
+        animator.SetTrigger("Hit");
+    }
+
+    public void DisableBox()
+    {
+        gameObject.SetActive(false);
     }
 
 
