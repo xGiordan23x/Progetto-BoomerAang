@@ -189,7 +189,7 @@ MonoBehaviour:
   curveDistance: 10
   animator: {fileID: 0}
   humanSpeed: 10
-  rb: {fileID: 0}
+  Rb: {fileID: 0}
   returnTimer: 1
   potionGenerator: {fileID: 0}
   boomerangCollider: {fileID: 0}
@@ -217,7 +217,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 280f35be6a70ad047b555094dc29b68b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
