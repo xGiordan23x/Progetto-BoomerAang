@@ -6,6 +6,19 @@ public class Teleport : Interactable
     bool activated = false;
     public float cooldown;
 
+    [SerializeField] bool isDxTeleport;
+    Animator Animator;
+    //[SerializeField] Color disableColor;
+
+    private void Start()
+    {
+        Animator = GetComponent<Animator>();
+
+        if (isDxTeleport)
+        {
+            Animator.SetBool("DX", true);
+        }
+    }
 
     public override void Interact(Player player)
     {
@@ -21,13 +34,13 @@ public class Teleport : Interactable
     public void Activate()
     {
         activated = true;
-        GetComponent<SpriteRenderer>().color = Color.red;
+        GetComponentInChildren<SpriteRenderer>().color = Color.gray;
         Invoke(nameof(ResetTimer), cooldown);
     }
     public void ResetTimer()
     {
         activated= false;
-        GetComponent<SpriteRenderer>().color= Color.green;
+        GetComponentInChildren<SpriteRenderer>().color= Color.white;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
