@@ -119,6 +119,7 @@ public class Player : MonoBehaviour, ISubscriber
         if (content is CurveModifier)
         {
             PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
+            spriteRenderer.enabled= true;
         }
         if (content is BloccoUmanoBoomerang && !bloccato)
         {

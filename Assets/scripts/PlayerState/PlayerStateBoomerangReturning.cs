@@ -92,7 +92,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
 
             }
 
-            if (percentage > 0 || percentage < 1)
+            if (percentage > 0 && percentage < 1)
             {
                 _player.transform.position = _player.curve.GetPointAt(percentage);
             }

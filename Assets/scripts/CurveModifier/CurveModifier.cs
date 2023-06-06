@@ -10,6 +10,7 @@ public class CurveModifier : Interactable, ISubscriber
    
     public float timeToWaitBeforeChange;
     private Animator anim;
+    private Player playerRef;
 
     private void Start()
     {
@@ -38,18 +39,23 @@ public class CurveModifier : Interactable, ISubscriber
         {
             anim.SetBool("Up", true);
         }
+       
     }
     public override void Interact(Player player)
     {
-        player.transform.position = stopPosition.position;
-        player.lastDirection = newDirection;    
-        
-        PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
-        activated = true;
-       
-        Invoke(nameof(SendMessage), timeToWaitBeforeChange);
+        if (!activated)
+        {
+            playerRef = player;
+            player.transform.position = stopPosition.position;
+            player.lastDirection = newDirection;
 
-
+            PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
+            activated = true;
+            player.GetComponent<SpriteRenderer>().enabled= false;
+            anim.SetTrigger("Shake");
+            Invoke(nameof(CallShootAnimation), timeToWaitBeforeChange);
+        }
+      
     }
 
     public void OnNotify(object content, bool vero = false)
@@ -61,9 +67,15 @@ public class CurveModifier : Interactable, ISubscriber
         }
     }
 
-   
-    public void SendMessage()
+   public void CallShootAnimation()
+    {
+        anim.SetTrigger("Shoot");
+    }
+    public void ShootPlayer()
     {
         PubSub.Instance.SendMessageSubscriber(nameof(Player),this);
+       
+
     }
+   
 }
