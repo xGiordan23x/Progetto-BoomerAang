@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour, IDataPersistance
 {
+    PauseMenu pauseMenu;
     public int CurrentRoomIndex = 0;
     [SerializeField] int SaveRoomIndex=0;
 
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour, IDataPersistance
     {
         maxIndex = SceneManager.sceneCountInBuildSettings-1;
         CurrentRoomIndex = SceneManager.GetActiveScene().buildIndex;
+        
     }
 
     public void LoadNextRoom()

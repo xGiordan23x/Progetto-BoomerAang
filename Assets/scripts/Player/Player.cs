@@ -58,8 +58,12 @@ public class Player : MonoBehaviour, ISubscriber
     }
     private void Update()
     {
-
         stateMachine.Update();
+    }
+    private void FixedUpdate()
+    {
+
+       
         animator.SetFloat("X", lastDirection.x);
         animator.SetFloat("Y", lastDirection.y);
         animator.SetFloat("speed", Rb.velocity.magnitude);
@@ -100,6 +104,7 @@ public class Player : MonoBehaviour, ISubscriber
 
     public void Interaction()
     {
+        
         interactionPoint.Interaction(this);
     }
 

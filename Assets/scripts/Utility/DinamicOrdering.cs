@@ -31,7 +31,7 @@ public class DinamicOrdering : MonoBehaviour
 
     private void Awake()
     {
-        renderer= GetComponent<SpriteRenderer>();
+        //renderer= GetComponent<SpriteRenderer>();
        
             ChangeLayer();
 
