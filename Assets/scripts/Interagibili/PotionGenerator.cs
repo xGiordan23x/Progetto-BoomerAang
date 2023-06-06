@@ -77,7 +77,9 @@ public class PotionGenerator : Interactable, ISubscriber
     {
 
         timer -= Time.deltaTime;
+
         Debug.Log(Mathf.RoundToInt(timer));
+
         UpdateTimerText();
 
         if (timer <= 0)
@@ -157,9 +159,9 @@ public class PotionGenerator : Interactable, ISubscriber
 
     public void IncreaseTimerFontanella(float timerToAdd)
     {
-        stopTimer= true;
+        //stopTimer= true;
         timer += timerToAdd;   
-        stopTimer= false;
+      // stopTimer= false;
     }
 
 }
