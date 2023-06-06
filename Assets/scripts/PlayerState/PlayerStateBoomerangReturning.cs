@@ -91,8 +91,12 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
                 StopParabola();
 
             }
-            if (percentage > 0 || percentage < 1) 
-            _player.transform.position = _player.curve.GetPointAt(percentage);
+
+            if (percentage > 0 || percentage < 1)
+            {
+                _player.transform.position = _player.curve.GetPointAt(percentage);
+            }
+          
 
             
         }
