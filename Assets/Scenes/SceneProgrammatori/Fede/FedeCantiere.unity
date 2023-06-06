@@ -2597,6 +2597,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406947626}
   m_CullTransparentMesh: 1
+--- !u!114 &523484782 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7388186163300297995, guid: 4e1b20301dfe8d041aab3330a7387244, type: 3}
+  m_PrefabInstance: {fileID: 1828934848}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adeb35af4a5b1154db4eb66081bce550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &616352806
 GameObject:
   m_ObjectHideFlags: 0
@@ -4829,6 +4840,26 @@ PrefabInstance:
     - target: {fileID: 7388186163300297993, guid: 4e1b20301dfe8d041aab3330a7387244, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388186163300297995, guid: 4e1b20301dfe8d041aab3330a7387244, type: 3}
+      propertyPath: OnInteraction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388186163300297995, guid: 4e1b20301dfe8d041aab3330a7387244, type: 3}
+      propertyPath: OnInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388186163300297995, guid: 4e1b20301dfe8d041aab3330a7387244, type: 3}
+      propertyPath: OnInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 523484782}
+    - target: {fileID: 7388186163300297995, guid: 4e1b20301dfe8d041aab3330a7387244, type: 3}
+      propertyPath: OnInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388186163300297995, guid: 4e1b20301dfe8d041aab3330a7387244, type: 3}
+      propertyPath: OnInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PotionGenerator, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7388186163300297995, guid: 4e1b20301dfe8d041aab3330a7387244, type: 3}
       propertyPath: OnInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
