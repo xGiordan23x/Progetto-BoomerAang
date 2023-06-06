@@ -147,9 +147,9 @@ public class PotionGenerator : Interactable, ISubscriber
     }
     public void UpdateTimerText()
     {
-        timerTextValue.text = timer.ToString();
+      
         timerTextValue.text = Mathf.RoundToInt(timer).ToString();
-        Debug.Log(timer);
+       
     }
     public void ResetTimer()
     {
@@ -162,7 +162,7 @@ public class PotionGenerator : Interactable, ISubscriber
         stopTimer= true;
         timer += timerToAdd;  
         stopTimer= false;
-        Debug.Log(timer+"djhahfjgfkeg-------------------------------------------------------------------");
+       
     }
 
 }
