@@ -4122,29 +4122,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1002799729}
     m_Modifications:
-    - target: {fileID: 1357046786178124500, guid: 6e35b444088155a43bbaf0d6747f8660, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 142a119af3a83c440b28d0f842a6ed64, type: 3}
-    - target: {fileID: 1357046786178124501, guid: 6e35b444088155a43bbaf0d6747f8660, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1357046786178124501, guid: 6e35b444088155a43bbaf0d6747f8660, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1357046786330203922, guid: 6e35b444088155a43bbaf0d6747f8660, type: 3}
       propertyPath: m_Name
       value: Porta
-      objectReference: {fileID: 0}
-    - target: {fileID: 1357046786330203928, guid: 6e35b444088155a43bbaf0d6747f8660, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1357046786330203929, guid: 6e35b444088155a43bbaf0d6747f8660, type: 3}
-      propertyPath: isOpen
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1357046786330203932, guid: 6e35b444088155a43bbaf0d6747f8660, type: 3}
       propertyPath: m_RootOrder
@@ -4190,17 +4170,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7539862717082116879, guid: 6e35b444088155a43bbaf0d6747f8660, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9184975903081956793, guid: 6e35b444088155a43bbaf0d6747f8660, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2622200570877777110, guid: 6e35b444088155a43bbaf0d6747f8660, type: 3}
-    - {fileID: 860782758768894455, guid: 6e35b444088155a43bbaf0d6747f8660, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e35b444088155a43bbaf0d6747f8660, type: 3}
 --- !u!1001 &2160176534582781265
 PrefabInstance:
