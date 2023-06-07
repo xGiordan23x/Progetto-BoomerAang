@@ -41,11 +41,17 @@ TagManager:
   - name: Terrain
     uniqueID: 2107836077
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: PavimentoDettaglio
+    uniqueID: 281208959
+    locked: 0
+  - name: PavimentoRigaNera
+    uniqueID: 2720863177
     locked: 0
   - name: GroundWalls
     uniqueID: 2871256707
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Player
     uniqueID: 3775881391
