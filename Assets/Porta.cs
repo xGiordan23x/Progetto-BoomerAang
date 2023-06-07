@@ -17,7 +17,10 @@ public class Porta : Interactable
 
         if (isOpen)
         {
-            DisableWallDoor();
+            //DisableWallDoor();
+
+            OpenDoor();
+
         }
     }
     public override void Interact(Player player)
@@ -38,6 +41,8 @@ public class Porta : Interactable
                 {
                     AbilitateDoor();
                     OpenDoor();
+
+                    //animazione
                 }
 
             }
@@ -71,7 +76,7 @@ public class Porta : Interactable
         }
     }
 
-    public void DisableWallDoor()
+    public void DisableWallDoor()       //solo unity animation event
     {
         if (colliderImpatto.enabled == true)
         {
@@ -82,7 +87,7 @@ public class Porta : Interactable
 
     }
 
-    private void ActivateWall()
+    private void ActivateWall()     
     {
         if (colliderImpatto.enabled == false)
         {
@@ -90,7 +95,7 @@ public class Porta : Interactable
         }
     }
 
-    public void DisableDoor()
+    public void DisableDoor()           //da usare su un evento se non puo essere chiusa da una chiave;
     {
         if (canOpenWithKey)
         {
@@ -99,6 +104,7 @@ public class Porta : Interactable
 
         isOpen = false;
         ActivateWall();
+        CloseDoor(); //momentaneo
     }
 
     public void AbilitateDoor()         //da usare su un evento se non puo essere aperto da una chiave;
@@ -109,7 +115,9 @@ public class Porta : Interactable
         }
 
         isOpen = true;
-        
+
+        OpenDoor(); //momentaneo
+
     }
 
     private void OpenDoor()
@@ -121,7 +129,9 @@ public class Porta : Interactable
 
     private void CloseDoor()
     {
+        //animazione chiusura porta
         animator.SetBool("Active", false);
+
     }
 
 }
