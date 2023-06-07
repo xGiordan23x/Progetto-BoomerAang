@@ -152,7 +152,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357046786330203922}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -176,7 +176,7 @@ MonoBehaviour:
   OnInteraction:
     m_PersistentCalls:
       m_Calls: []
-  isOpen: 1
+  isOpen: 0
   canOpenWithKey: 0
   colliderImpatto: {fileID: 1357046786681123677}
 --- !u!95 &1357046786330203931
