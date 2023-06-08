@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CurveModifier : Interactable, ISubscriber
+public class Booster : Interactable, ISubscriber
 {
     public Transform stopPosition;
     public Vector2 newDirection;
@@ -12,9 +12,16 @@ public class CurveModifier : Interactable, ISubscriber
     private Animator anim;
     private Player playerRef;
 
+
+    [Header("Audio")]
+    AudioClip ClipBoosterTrema;
+    AudioClip ClipBoosterSpara;
+
+
+
     private void Start()
     {
-        PubSub.Instance.RegisteredSubscriber(nameof(CurveModifier), this);
+        PubSub.Instance.RegisteredSubscriber(nameof(Booster), this);
         activated = false;
         anim = GetComponent<Animator>();
         SetUpAnimator();
@@ -74,8 +81,16 @@ public class CurveModifier : Interactable, ISubscriber
     public void ShootPlayer()
     {
         PubSub.Instance.SendMessageSubscriber(nameof(Player),this);
-       
-
+      
     }
-   
+
+    public void PlayAudioClipTrema()
+    {
+        AudioManager.instance.PlayAduioClip(ClipBoosterTrema);
+    }
+    public void PlayAudioClipSpara()
+    {
+        AudioManager.instance.PlayAduioClip(ClipBoosterSpara);
+    }
+
 }

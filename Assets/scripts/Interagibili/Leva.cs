@@ -15,6 +15,9 @@ public class Leva : Interactable
         animator = GetComponent<Animator>();
     }
 
+    [Header("Audio")]
+    AudioClip ClipAttivaLeva;
+
     public override void Interact(Player player)
     {
         if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangReturning)
@@ -36,5 +39,9 @@ public class Leva : Interactable
 
         
 
+    }
+    public void PlayAudioClipAttivaLeva()
+    {
+        AudioManager.instance.PlayAduioClip(ClipAttivaLeva);
     }
 }

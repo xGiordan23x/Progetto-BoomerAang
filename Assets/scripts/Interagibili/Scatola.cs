@@ -23,6 +23,11 @@ public class Scatola : Interactable
 
     [SerializeField] UnityEvent OnBoomerangHit;
 
+    [Header("Audio")]
+ 
+    AudioClip ClipRotturaCassa;
+    AudioClip ClipSpostamentoCassa;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -101,5 +106,14 @@ public class Scatola : Interactable
         gameObject.SetActive(false);
     }
 
+
+    public void PlayAudioClipSpostaCassa()
+    {
+        AudioManager.instance.PlayAduioClip(ClipSpostamentoCassa);
+    }
+    public void PlayAudioClipRotturaCassa()
+    {
+        AudioManager.instance.PlayAduioClip(ClipRotturaCassa);
+    }
 
 }

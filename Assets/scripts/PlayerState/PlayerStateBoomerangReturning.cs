@@ -45,7 +45,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
 
     public void OnNotify(object content, bool vero = false)
     {
-        if (content is CurveModifier)
+        if (content is Booster)
         {
             SetCurve(_player.lastDirection);
             stopPlayer = true;
