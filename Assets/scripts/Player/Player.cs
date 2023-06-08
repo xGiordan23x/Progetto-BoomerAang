@@ -156,6 +156,8 @@ public class Player : MonoBehaviour, ISubscriber
         if (content is BloccoUmanoParabola)
         {
             SetCanMove(0);
+
+            
         }
 
     }
