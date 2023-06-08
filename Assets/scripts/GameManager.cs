@@ -7,9 +7,41 @@ public class GameManager : MonoBehaviour, IDataPersistance
 {
     PauseMenu pauseMenu;
     public int CurrentRoomIndex = 0;
-    [SerializeField] int SaveRoomIndex=0;
-
+    [SerializeField] int SaveRoomIndex= 0;
     [SerializeField] int maxIndex;
+
+    private int _chiaviCounter;
+    private int _chipCounter;
+
+    public int ChiaviCounter
+    {
+        get => _chiaviCounter;
+
+        set
+        {
+            _chiaviCounter = value;
+            OnkeyPickUp.Invoke(_chiaviCounter);
+        }
+    }
+
+    public int ChipCounter
+    {
+        get => _chipCounter;
+
+        set
+        {
+            _chipCounter = value;
+            OnChipPickUp.Invoke(_chipCounter);
+        }
+    }
+
+    public delegate void OnKeyPickUpFunction(int value);
+    public event OnKeyPickUpFunction OnkeyPickUp;
+
+    public delegate void OnChipPickUpFunction(int value);
+    public event OnChipPickUpFunction OnChipPickUp;
+
+
 
     public static GameManager instance { get; private set; }
 
