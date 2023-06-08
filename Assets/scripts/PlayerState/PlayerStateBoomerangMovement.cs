@@ -19,7 +19,7 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
         _player.isReturning = false;
         _player.hasPotion = false;
         _player.canMove= true;
-        PubSub.Instance.SendMessageSubscriber(nameof(CurveModifier), this);
+        PubSub.Instance.SendMessageSubscriber(nameof(Booster), this);
         PubSub.Instance.SendMessageSubscriber(nameof(Fontanella), this);
     }
 

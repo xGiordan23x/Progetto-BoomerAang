@@ -12,6 +12,9 @@ public class Keys : Interactable
 {
     public KeyType tipologiaChiave = KeyType.Chiave;
 
+    [Header("Audio")]
+    AudioClip ClipRaccogliChiaveChip;
+
     public override void Interact(Player player)
     {
         Inventory inventory = player.GetComponent<Inventory>();
@@ -23,5 +26,8 @@ public class Keys : Interactable
 
     }
 
-
+    public void PlayAudioClipRaccogliChiaveChip()
+    {
+        AudioManager.instance.PlayAduioClip(ClipRaccogliChiaveChip);
+    }
 }

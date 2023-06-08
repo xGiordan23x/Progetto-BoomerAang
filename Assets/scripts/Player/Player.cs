@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
@@ -22,21 +24,26 @@ public class Player : MonoBehaviour, ISubscriber
     public CircleCollider2D boomerangCollider;
     public float boomerangReturningRange;
 
-
     public bool Interact;
     public bool hasPotion;
-
-
     private SpriteRenderer spriteRenderer;
-
     [Header("VariabiliInteractiblePoint")]
     public Interacter interactionPoint;
     [SerializeField] float MoltiplicationDistance = 0.5f;
 
 
     [HideInInspector] public bool isReturning;
-
     [HideInInspector] public bool canMove;
+
+    [Header("Audio")]
+    private List<AudioClip> previouslyPlayedClips;
+    List<AudioClip> ClipListPassiUmani;
+    List<AudioClip> ClipListPassiBoomerang;
+    AudioClip ClipTrasformazione;
+    AudioClip ClipSpostaCassa;
+    AudioClip ClipSpostaCassaFallisce;
+
+    
 
 
     public StateMachine<PlayerStateType> stateMachine = new();
@@ -116,9 +123,10 @@ public class Player : MonoBehaviour, ISubscriber
         {
             hasPotion = true;
         }
-        if (content is CurveModifier)
+        if (content is Booster)
         {
             PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
+            spriteRenderer.enabled= true;
         }
         if (content is BloccoUmanoBoomerang && !bloccato)
         {
@@ -281,5 +289,57 @@ public class Player : MonoBehaviour, ISubscriber
        animator.SetBool("BoomerangMoving", true);
     }
 
-    
+
+    public void PlayAudioClipTrasformazione()
+    {
+        AudioManager.instance.PlayAduioClip(ClipTrasformazione);
+    }
+    public void PlayAudioClipMuoviCassa()
+    {
+        AudioManager.instance.PlayAduioClip(ClipSpostaCassa);
+    }
+    public void PlayAudioClipMuoviCassaFallisce()
+    {
+        AudioManager.instance.PlayAduioClip(ClipSpostaCassaFallisce);
+    }
+    public void PlayAudioCLipList(int valorePerDistinguereListe)
+    {
+        //se valore 0 clipBoomerang
+        if(valorePerDistinguereListe == 0)
+        {
+            PlayRandomClip(ClipListPassiBoomerang);
+        }
+
+        //Senno clipUmano
+        else
+        {
+            PlayRandomClip(ClipListPassiUmani);
+        }
+    }   
+    private void PlayRandomClip(List<AudioClip> ListClipToPLay)
+    {
+        AudioClip clip = GetRandomClip(ListClipToPLay);
+        //PLayClip
+        AudioManager.instance.PlayAduioClip(clip);
+        AddToPreviouslyPlayedClips(clip);
+    }
+    private AudioClip GetRandomClip(List<AudioClip> ListClipToPLay)
+    {
+        AudioClip clip = ListClipToPLay[UnityEngine.Random.Range(0,ListClipToPLay.Count)];
+        while (previouslyPlayedClips.Contains(clip))
+        {
+            clip = ListClipToPLay[UnityEngine.Random.Range(0, ListClipToPLay.Count)];
+        }
+        return clip;
+    }
+
+    //Potrebbe Funzionare Male Da Provare
+    private void AddToPreviouslyPlayedClips(AudioClip clip)
+    {
+        previouslyPlayedClips.Add(clip);
+        if (previouslyPlayedClips.Count > 3)
+        {
+            previouslyPlayedClips.RemoveAt(0);
+        }
+    }  
 }
