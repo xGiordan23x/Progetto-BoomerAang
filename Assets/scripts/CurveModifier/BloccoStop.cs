@@ -11,6 +11,10 @@ public class BloccoStop :Interactable, ISubscriber
 
 
     private Animator anim;
+    [Header("Audio")]
+    AudioClip ClipRisucchio;
+    AudioClip ClipRilascio;
+
 
     private void Start()
     {
@@ -77,5 +81,14 @@ public class BloccoStop :Interactable, ISubscriber
 
     }
 
-   
+    public void PlayAudioClipRilascio()
+    {
+        AudioManager.instance.PlayAduioClip(ClipRilascio);
+    }
+    public void PlayAudioClipRisucchio()
+    {
+        AudioManager.instance.PlayAduioClip(ClipRisucchio);
+    }
+
+
 }

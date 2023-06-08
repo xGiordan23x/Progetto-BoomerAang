@@ -10,6 +10,11 @@ public class BloccoUmanoBoomerang : Interactable, ISubscriber
    
     private Animator anim;
 
+    [Header("Audio")]
+    AudioClip ClipRisucchio;
+    AudioClip ClipRilascio;
+
+
     private void Start()
     {
         PubSub.Instance.RegisteredSubscriber(nameof(BloccoUmanoBoomerang), this);
@@ -84,5 +89,14 @@ public class BloccoUmanoBoomerang : Interactable, ISubscriber
         {
 
         }
+    }
+
+    public void PlayAudioClipRilascio()
+    {
+        AudioManager.instance.PlayAduioClip(ClipRilascio);
+    }
+    public void PlayAudioClipRisucchio()
+    {
+        AudioManager.instance.PlayAduioClip(ClipRisucchio);
     }
 }
