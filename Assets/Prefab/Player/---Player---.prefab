@@ -238,7 +238,7 @@ MonoBehaviour:
   returnTimer: 1
   potionGenerator: {fileID: 0}
   boomerangCollider: {fileID: 0}
-  boomerangReturningRange: 0
+  boomerangReturningRange: 1
   Interact: 0
   hasPotion: 0
   interactionPoint: {fileID: 4637255634766621748}

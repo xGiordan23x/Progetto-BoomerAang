@@ -10,6 +10,10 @@ public class Porta : Interactable
     [SerializeField] BoxCollider2D colliderImpatto;
 
     private Animator animator;
+    [Header("Audio")]
+    AudioClip ClipApriPorta;
+    AudioClip ClipChiudiPorta;
+    AudioClip ClipUtilizzoChiave;
 
     private void Start()
     {
@@ -40,6 +44,9 @@ public class Porta : Interactable
                 if (inventory.UseKey())
                 {
                     AbilitateDoor();
+
+                    //Attivo audio utilizzo chiave
+                    PlayAudioClipUtilizzaChiave();
                     OpenDoor();
 
                     //animazione
@@ -47,8 +54,6 @@ public class Porta : Interactable
                 }
 
             }
-
-
 
         }
 
@@ -133,6 +138,19 @@ public class Porta : Interactable
         //animazione chiusura porta
         animator.SetBool("Active", false);
 
+    }
+
+    public void PlayAudioClipApriPorta()
+    {
+        AudioManager.instance.PlayAduioClip(ClipApriPorta);
+    }
+    public void PlayAudioClipChiudiPorta()
+    {
+        AudioManager.instance.PlayAduioClip(ClipChiudiPorta);
+    }
+    public void PlayAudioClipUtilizzaChiave()
+    {
+        AudioManager.instance.PlayAduioClip(ClipUtilizzoChiave);
     }
 
 }

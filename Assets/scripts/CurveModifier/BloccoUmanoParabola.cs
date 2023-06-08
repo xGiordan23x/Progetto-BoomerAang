@@ -14,7 +14,7 @@ public class BloccoUmanoParabola : Interactable, ISubscriber
 
     private void Start()
     {
-        PubSub.Instance.RegisteredSubscriber(nameof(CurveModifier), this);
+        PubSub.Instance.RegisteredSubscriber(nameof(Booster), this);
         activated = false;
         anim = GetComponent<Animator>();
 

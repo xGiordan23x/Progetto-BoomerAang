@@ -16,6 +16,11 @@ public class Pedana : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    [Header("Audio")]
+    AudioClip ClipAttivaPedana;
+    AudioClip ClipDisattivaPedana;
+
+
     private void Start()
     {
         oggettiAPortata = new List<GameObject>();
@@ -88,5 +93,14 @@ public class Pedana : MonoBehaviour
         {
             Debug.Log("non sono piu premuto");
         }
+    }
+
+    public void PlayAudioClipAttivaPedana()
+    {
+        AudioManager.instance.PlayAduioClip(ClipAttivaPedana);
+    }
+    public void PlayAudioClipDisattivaPedanap()
+    {
+        AudioManager.instance.PlayAduioClip(ClipDisattivaPedana);
     }
 }

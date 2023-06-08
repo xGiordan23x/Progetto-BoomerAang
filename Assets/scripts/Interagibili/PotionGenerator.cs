@@ -13,6 +13,8 @@ public class PotionGenerator : Interactable, ISubscriber
     [SerializeField] bool isActive;
     [SerializeField] bool canStartOperateWithChip;
     [SerializeField] TextMeshProUGUI timerTextValue;
+    [Header("Audio")]
+    AudioClip ClipUtilizzaChip;
 
     private void Start()
     {
@@ -133,6 +135,7 @@ public class PotionGenerator : Interactable, ISubscriber
                 {
                     AbilitateGenerator();
                     //mettere animazione utilizzo chip
+                    
                 }
 
             }
@@ -164,5 +167,11 @@ public class PotionGenerator : Interactable, ISubscriber
         stopTimer= false;
        
     }
+
+    public void PlayAudioClipUtilizzaChiave()
+    {
+        AudioManager.instance.PlayAduioClip(ClipUtilizzaChip);
+    }
+
 
 }
