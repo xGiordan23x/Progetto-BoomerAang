@@ -43,6 +43,7 @@ public class Porta : Interactable
                     OpenDoor();
 
                     //animazione
+                    
                 }
 
             }
