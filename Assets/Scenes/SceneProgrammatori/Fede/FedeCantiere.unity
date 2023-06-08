@@ -786,7 +786,7 @@ Tilemap:
   - m_RefCount: 47
     m_Data: {r: 1, g: 0.8042412, b: 0.2688679, a: 1}
   - m_RefCount: 1
-    m_Data: {r: 1, g: 0.9487194, b: 0, a: 0.6862745}
+    m_Data: {r: 1, g: 0.9487194, b: 0, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2639,11 +2639,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4637255635221018917, guid: 4c2084da29a60a84d8da823177a36e9a, type: 3}
   m_PrefabInstance: {fileID: 2116121516}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &894705631 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 4637255635221018916, guid: 4c2084da29a60a84d8da823177a36e9a, type: 3}
-  m_PrefabInstance: {fileID: 2116121516}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &904538394
 GameObject:
   m_ObjectHideFlags: 0
@@ -3375,10 +3370,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4637255635221018919, guid: 4c2084da29a60a84d8da823177a36e9a, type: 3}
-      propertyPath: Rb
-      value: 
-      objectReference: {fileID: 894705631}
     - target: {fileID: 4637255635221018919, guid: 4c2084da29a60a84d8da823177a36e9a, type: 3}
       propertyPath: curve
       value: 

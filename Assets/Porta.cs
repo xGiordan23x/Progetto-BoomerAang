@@ -50,7 +50,8 @@ public class Porta : Interactable
                     OpenDoor();
 
                     //animazione
-                    
+                    player.animator.SetTrigger("OpenDoor");
+                    player.SetCanMove(0);
                 }
 
             }
