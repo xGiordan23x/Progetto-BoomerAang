@@ -3570,6 +3570,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta
       objectReference: {fileID: 0}
+    - target: {fileID: 1357046786330203929, guid: 6e35b444088155a43bbaf0d6747f8660, type: 3}
+      propertyPath: canOpenWithKey
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1357046786330203932, guid: 6e35b444088155a43bbaf0d6747f8660, type: 3}
       propertyPath: m_RootOrder
       value: 8

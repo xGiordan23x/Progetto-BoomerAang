@@ -43,15 +43,21 @@ public class Porta : Interactable
             {
                 if (inventory.UseKey())
                 {
-                    AbilitateDoor();
+                    isOpen = true;
+
 
                     //Attivo audio utilizzo chiave
-                    PlayAudioClipUtilizzaChiave();
-                    OpenDoor();
+                    PlayAudioClipUtilizzaChiave();          
+
 
                     //animazione
-                    player.animator.SetTrigger("OpenDoor");
+
                     player.SetCanMove(0);
+                    player.animator.SetTrigger("OpenDoor");
+                    OpenDoor();
+                    
+                    
+
                 }
 
             }
@@ -60,7 +66,9 @@ public class Porta : Interactable
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+   
+
+    private void OnTriggerEnter2D(Collider2D collision)         //non utilizzato al momento
     {
         if (collision.GetComponent<Player>() != null && isOpen)
         {
@@ -72,7 +80,7 @@ public class Porta : Interactable
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)      //non utilizzato al momento
     {
         if (collision.GetComponent<Player>() != null && isOpen)
         {
