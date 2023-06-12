@@ -47,13 +47,23 @@ public class Porta : Interactable
 
 
                     //Attivo audio utilizzo chiave
-                    PlayAudioClipUtilizzaChiave();          
+                    PlayAudioClipUtilizzaChiave();
 
 
                     //animazione
 
-                    player.SetCanMove(0);
-                    player.animator.SetTrigger("OpenDoor");
+                    if (player.stateMachine.GetCurrentState() is PlayerStateHumanMovement)
+                    {
+                        player.SetCanMove(0);
+                        player.animator.SetTrigger("OpenDoor");
+                    }
+
+                    if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangMovement)
+                    {
+                        player.SetCanMove(0);
+                        player.animator.SetTrigger("BoomerangInteract");
+                    }
+
                     OpenDoor();
                     
                     
