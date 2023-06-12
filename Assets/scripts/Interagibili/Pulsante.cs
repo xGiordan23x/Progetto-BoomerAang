@@ -21,6 +21,18 @@ public class Pulsante : Interactable
             active = true;
             animator.SetTrigger("Pressed");
 
+            if (player.stateMachine.GetCurrentState() is PlayerStateHumanMovement)
+            {
+                player.SetCanMove(0);
+                player.animator.SetTrigger("OpenDoor");
+            }
+
+            if(player.stateMachine.GetCurrentState() is PlayerStateBoomerangMovement)
+            {
+                player.SetCanMove(0);
+                player.animator.SetTrigger("BoomerangInteract");
+            }
+
         }
 
     }
