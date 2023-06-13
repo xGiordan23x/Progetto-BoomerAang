@@ -8,7 +8,6 @@ public class Teleport : Interactable
 
     [SerializeField] bool isDxTeleport;
     Animator Animator;
-    //[SerializeField] Color disableColor;
 
     private void Start()
     {
@@ -27,20 +26,48 @@ public class Teleport : Interactable
             player.transform.position = teleportToReach.transform.position;
             teleportToReach.Activate();
             Activate();
-           
+
         }
     }
 
     public void Activate()
     {
         activated = true;
-        GetComponentInChildren<SpriteRenderer>().color = Color.gray;
+        //GetComponentInChildren<SpriteRenderer>().color = Color.gray;
         Invoke(nameof(ResetTimer), cooldown);
+
+        //animazione
+
+        if (isDxTeleport)
+        {
+            Animator.SetBool("ActivationDX", true);
+        }
+        else
+        {
+            Animator.SetBool("ActivationSX", true);
+        }
+
+
+
+
     }
     public void ResetTimer()
     {
-        activated= false;
-        GetComponentInChildren<SpriteRenderer>().color= Color.white;
+        activated = false;
+        GetComponentInChildren<SpriteRenderer>().color = Color.white;
+
+        //animazione
+
+        if (isDxTeleport)
+        {
+            Animator.SetBool("ActivationDX", false);
+            Animator.SetTrigger("Activation");
+        }
+        else
+        {
+            Animator.SetBool("ActivationSX", false);
+            Animator.SetTrigger("Activation");
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -48,6 +75,8 @@ public class Teleport : Interactable
         {
             Interact(collision.GetComponent<Player>());
         }
-        
+
     }
+
+    
 }
