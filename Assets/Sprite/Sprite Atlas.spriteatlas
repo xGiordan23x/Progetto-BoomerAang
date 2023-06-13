@@ -773,9 +773,11 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 0c094a5abea79694ab6bb35d23767346, type: 3}
   - {fileID: 21300000, guid: 192de36a2485fb74aa9ebd4db450df49, type: 3}
   - {fileID: 21300000, guid: d698ed6ad53cfef4b8411c40bffc519a, type: 3}
+  - {fileID: 21300000, guid: e99faf6ade89a9444b43468b10115c39, type: 3}
   - {fileID: 21300000, guid: 0519a17a2ba968243b06c855c132ceb9, type: 3}
   - {fileID: 21300000, guid: fa45d57a31a8e694491ef0115bb4c7a5, type: 3}
   - {fileID: 21300000, guid: b448638a05f9e0848ada8df4dec12dae, type: 3}
+  - {fileID: 21300000, guid: 86027c8ab661349478821e6632d08bd1, type: 3}
   - {fileID: 21300000, guid: 2464529a74d3db544ae87a92af91561b, type: 3}
   - {fileID: 21300000, guid: 6b30d59ac8b1d864d9c79149272192bc, type: 3}
   - {fileID: 21300000, guid: f86a2b9a0348f4d40bce9f4bce50007c, type: 3}
@@ -845,6 +847,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 8772c4cd302d7424d899487f5a8dae6d, type: 3}
   - {fileID: 21300000, guid: 1a6ccecddd03e3641b41e74515b847b2, type: 3}
   - {fileID: 21300000, guid: 485d15ddde45ec14183b91ec27bc043c, type: 3}
+  - {fileID: 21300000, guid: f35c0eddf43ca574995e203a67d9877f, type: 3}
   - {fileID: 21300000, guid: 7eda9eddcea818c4dbb4cee5596040d5, type: 3}
   - {fileID: 21300000, guid: 81d7dded15bd4db4390881081839b607, type: 3}
   - {fileID: 21300000, guid: b90369fdac156ae409536c72ea6fa8c0, type: 3}
@@ -929,6 +932,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 49e1c84f88cab4543afd230a5b6c2bc1, type: 3}
   - {fileID: 21300000, guid: 08786d4f81acb0149a2225062c00fe77, type: 3}
   - {fileID: 21300000, guid: fab1dd5f7b203804bbd6851fd2c75978, type: 3}
+  - {fileID: 21300000, guid: 6dd10a6f077ff564bb7238d11ece549b, type: 3}
   - {fileID: 21300000, guid: e9ea188f1c5d1644cb47e612a0cd1bb7, type: 3}
   - {fileID: 21300000, guid: 58e17e9f0111cad4ab9f3649c39e64c8, type: 3}
   - {fileID: 21300000, guid: bc616baf0d737a640a4e56726d12b463, type: 3}
@@ -1287,9 +1291,11 @@ SpriteAtlas:
   - trasforma b11
   - 6
   - Leva3
+  - remakeCamminataLateraleDX1
   - run down5
   - Idle L2
   - HumanWalkBack4
+  - remakeCamminataLateraleDX4
   - Idle L1
   - teleport flipped3
   - int porta up4
@@ -1359,6 +1365,7 @@ SpriteAtlas:
   - BoomWalkSide1
   - int porta up3
   - 12
+  - remakeCamminataLateraleDX3
   - trasforma b11
   - Idle R2
   - BoosterBottomEject9
@@ -1443,6 +1450,7 @@ SpriteAtlas:
   - HumanWalkLeft1
   - trasforma in umano 7
   - BoosterBottomEject10
+  - remakeCamminataLateraleDX2
   - Piastrone32x32
   - BoosterBottomEject14
   - trasforma in umano 5
