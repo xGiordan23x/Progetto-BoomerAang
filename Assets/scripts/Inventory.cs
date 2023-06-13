@@ -5,15 +5,15 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     [SerializeField] int maxChiavi = 1;
-    [SerializeField] int quantitaChiavi;
+    [SerializeField] int quantitaChiavi=0;
     [SerializeField] int maxChip = 1;
-    [SerializeField] int quantitaChip;
+    [SerializeField] int quantitaChip=0;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -33,6 +33,7 @@ public class Inventory : MonoBehaviour
                 if (quantitaChiavi < maxChiavi)
                 {
                     quantitaChiavi++;
+                    GameManager.instance.ChiaviCounter = quantitaChiavi;
                     Destroy(interactable.gameObject);
                 }
                 else
@@ -46,6 +47,7 @@ public class Inventory : MonoBehaviour
                 if (quantitaChip < maxChip)
                 {
                     quantitaChip++;
+                    GameManager.instance.ChipCounter = quantitaChip;
                     Destroy(interactable.gameObject);
                 }
                 else
@@ -62,6 +64,7 @@ public class Inventory : MonoBehaviour
         {
             quantitaChiavi--;
             Debug.Log("Ho usato una chiave");
+            GameManager.instance.ChiaviCounter = quantitaChiavi;
             return true;
         }
         else
@@ -77,6 +80,7 @@ public class Inventory : MonoBehaviour
         {
             quantitaChip--;
             Debug.Log("Ho usato un chip");
+            GameManager.instance.ChipCounter=quantitaChip;
             return true;
         }
         else

@@ -44,9 +44,21 @@ public class Scatola : Interactable
             {
                 StartCoroutine(MoveBox(player.lastDirection));
 
+                //player animation
+                player.SetCanMove(0);
+                player.animator.SetTrigger("HumanBox");
+
                 base.Interact(player);          //per effetti visivi/sonori
             }
         }
+
+        if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangMovement && canMove)       //solo per animazione
+        {
+            //player animation
+            player.SetCanMove(0);
+            player.animator.SetTrigger("BoomerangBox");
+        }
+
 
         if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangReturning && isDestroyable)
         {

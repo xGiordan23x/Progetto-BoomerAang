@@ -19,7 +19,7 @@ public class Keys : Interactable
     {
         Inventory inventory = player.GetComponent<Inventory>();
 
-        if(inventory != null)
+        if (inventory != null)
         {
             inventory.AddObject(this);
         }
