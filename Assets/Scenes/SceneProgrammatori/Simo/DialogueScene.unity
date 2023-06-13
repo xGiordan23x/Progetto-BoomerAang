@@ -1849,6 +1849,7 @@ GameObject:
   - component: {fileID: 1388495164}
   - component: {fileID: 1388495163}
   - component: {fileID: 1388495166}
+  - component: {fileID: 1388495167}
   m_Layer: 0
   m_Name: ReadableObject
   m_TagString: Untagged
@@ -1934,6 +1935,25 @@ MonoBehaviour:
   OnInteraction:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1388495167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388495160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18b824843ec3b8b4db341f6cc640ca9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Prof. Ang
+    sentences:
+    - Ho recentemente osservato per caso uno strano composto nel quale mi sono imbattuto.
+    - A contatto con l'aria esso rilascia schiuma, eppure sono oltremodo convinto
+      che non si tratti di sapone...
+    - Che sia per caso un qualcosa di simile alla borra?
 --- !u!1 &1393621858
 GameObject:
   m_ObjectHideFlags: 0
