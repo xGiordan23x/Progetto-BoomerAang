@@ -2446,22 +2446,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1002799729}
     m_Modifications:
-    - target: {fileID: 828793186606554048, guid: 32704621798f27046860012fb5c96032, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.0756195
-      objectReference: {fileID: 0}
-    - target: {fileID: 828793186606554048, guid: 32704621798f27046860012fb5c96032, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5776763
-      objectReference: {fileID: 0}
-    - target: {fileID: 828793187419343707, guid: 32704621798f27046860012fb5c96032, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.9245605
-      objectReference: {fileID: 0}
-    - target: {fileID: 828793187419343707, guid: 32704621798f27046860012fb5c96032, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0776664
-      objectReference: {fileID: 0}
     - target: {fileID: 828793187485036321, guid: 32704621798f27046860012fb5c96032, type: 3}
       propertyPath: m_Name
       value: Teleport
@@ -3159,6 +3143,7 @@ MonoBehaviour:
   isActive: 1
   canStartOperateWithChip: 0
   timerTextValue: {fileID: 1944603168}
+  ClipUtilizzaChip: {fileID: 0}
 --- !u!212 &1541728229
 SpriteRenderer:
   m_ObjectHideFlags: 0
