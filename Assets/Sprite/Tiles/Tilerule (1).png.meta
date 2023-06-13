@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cf8f81ae345cfda46bf279e73e23edce
+guid: 4dd05cd3e5ea1994e86f81aa86135f92
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,70 +105,70 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TileruleWall_0
+      name: Tilerule (1)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 80
+        y: 128
         width: 16
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d80585c1b02fb94eab2ff6d011dff2b
-      internalID: 967022074
+      spriteID: fe745ef542e565346bae82d0acd624bf
+      internalID: 931628099
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_1
+      name: Tilerule (1)_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 80
+        y: 128
         width: 16
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07cb11068ae15ee4c9ca207ca239fc14
-      internalID: 1341262206
+      spriteID: 1c363cf77403b53498e9bc2b9f28fead
+      internalID: -196419850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_2
+      name: Tilerule (1)_2
       rect:
         serializedVersion: 2
         x: 32
-        y: 80
+        y: 128
         width: 16
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f4fce2128027c749967dd119ac4756a
-      internalID: 119154808
+      spriteID: 29e570abc075cae46927235020103ed5
+      internalID: -1494571686
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_3
+      name: Tilerule (1)_3
       rect:
         serializedVersion: 2
         x: 48
@@ -176,20 +176,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed731c91babf7b145994368681b87340
-      internalID: -770471308
+      spriteID: ba9f2653b891a914288f10cc9d487920
+      internalID: 1207192583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_4
+      name: Tilerule (1)_4
       rect:
         serializedVersion: 2
         x: 64
@@ -197,20 +197,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e172a72e8838c16478a639462d0927ea
-      internalID: 1077548079
+      spriteID: 567c1904baaaf2146ac80e8ba87e5eb2
+      internalID: 1181191262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_5
+      name: Tilerule (1)_5
       rect:
         serializedVersion: 2
         x: 80
@@ -218,20 +218,83 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 476250d1e7396bf46ab3ea275cf8082c
-      internalID: 428741921
+      spriteID: 105d59ca16552f84da81b75268927d12
+      internalID: 651797531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_9
+      name: Tilerule (1)_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2841409ea4ffeb40b227187d895cb82
+      internalID: -1349562747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilerule (1)_7
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d9a187302c07c4ebf7ae5a26b2ea67
+      internalID: -1797590215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilerule (1)_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fadc3c31ebfd4b4eb1de817dd3c1ac4
+      internalID: -1851116286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilerule (1)_9
       rect:
         serializedVersion: 2
         x: 48
@@ -239,20 +302,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03ee96e4cf2071847af54b5775b7cac2
-      internalID: 759908008
+      spriteID: f7d3757d7307f6c409fffca2b37b97e0
+      internalID: -1674919633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_10
+      name: Tilerule (1)_10
       rect:
         serializedVersion: 2
         x: 64
@@ -260,20 +323,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f4d03c198a88c0409a275f7e56427b9
-      internalID: -987687460
+      spriteID: 8e6db150bc777c94cba65497e593c629
+      internalID: -1242921855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_11
+      name: Tilerule (1)_11
       rect:
         serializedVersion: 2
         x: 80
@@ -281,20 +344,83 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b44d6600acf871f41a387d5cc0290692
-      internalID: -1950859412
+      spriteID: 51b1e0bfae8b6aa4fb444e0d61c9a337
+      internalID: -1698372330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_15
+      name: Tilerule (1)_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b3ede61efacb7f41ab5817243077b07
+      internalID: -1214995206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilerule (1)_13
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 890a506f90f38a74d8c2f27e7dc82737
+      internalID: 646367975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilerule (1)_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a8df50af0ee2d44bb628d2d1bd7f02c
+      internalID: -1912689566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilerule (1)_15
       rect:
         serializedVersion: 2
         x: 48
@@ -302,20 +428,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f84cfe077fb958c48b7222a2d11e871b
-      internalID: -1571701391
+      spriteID: 6906b7e8d0eade04480734c93b527eb1
+      internalID: 181746404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_16
+      name: Tilerule (1)_16
       rect:
         serializedVersion: 2
         x: 64
@@ -323,20 +449,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c30dfbe3b6449d448658a3c8d6122db
-      internalID: -1364914617
+      spriteID: ef6e14fb3bb5ccc47ac7362ed17c02f2
+      internalID: 1078991587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_17
+      name: Tilerule (1)_17
       rect:
         serializedVersion: 2
         x: 80
@@ -344,20 +470,83 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95a705444ee471342b116b7f4ceeef5c
-      internalID: -1831423849
+      spriteID: 763ae0a735e45bb498de224904b21021
+      internalID: -164768371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_21
+      name: Tilerule (1)_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d8d2e388e069354c960b451f0f0917a
+      internalID: 620477726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilerule (1)_19
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53073f77ff107ca46870f3a5f91eb7db
+      internalID: 1497727151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilerule (1)_20
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aba44d9608a222459a962d5e7ced89d
+      internalID: 580915112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilerule (1)_21
       rect:
         serializedVersion: 2
         x: 48
@@ -365,20 +554,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a78774fd52e528c4b9ceb3e519670244
-      internalID: -594057503
+      spriteID: bded24ea726aa97439ca74af0d090d1a
+      internalID: 23139871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_22
+      name: Tilerule (1)_22
       rect:
         serializedVersion: 2
         x: 64
@@ -386,20 +575,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90d76da1b5efcff4585b3ed3ccf75710
-      internalID: 136302459
+      spriteID: e30250bdebc666c4c92746a870dfaaa9
+      internalID: -1485621805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_23
+      name: Tilerule (1)_23
       rect:
         serializedVersion: 2
         x: 80
@@ -407,461 +596,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 322acc0a48d8b1f4181df5fc37ef5e10
-      internalID: 832388317
+      spriteID: 851dd6416ebd07142988ed9b9590f29f
+      internalID: 843060701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_27
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3cb0f4994d36c04428be038a3c412402
-      internalID: 986154066
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_28
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11f9c56975951be448dda2b84512706b
-      internalID: 481033754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_29
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fa3719a96f57e8e49b9f4013de3a4309
-      internalID: -1491641243
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_30
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2537dbb3e8d16834987efa8c81e6503c
-      internalID: 324277921
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_33
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b56a91ffb37e69948a003db9e3cfd2d6
-      internalID: 501775218
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_34
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ec99b3fe2e15634e84d966af89136c5
-      internalID: -1238641001
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_35
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 090d306fe0ecac64cb2c99fe44352d80
-      internalID: -1157834122
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_36
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 761b281766baebf419b18a7d088ae5bc
-      internalID: 1899534472
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_37
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc9667e3c3f65884a8b53d2f8e3c7f67
-      internalID: -1967937417
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_38
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 685c6da57694f804085cb668b7cf0e71
-      internalID: -1865195158
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_39
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c709b1aa2a4954f4984fa3cd6fdbd557
-      internalID: -638931355
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_40
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0512b9388682b5c4ab676f92b4498c6a
-      internalID: -1737823119
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_41
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 882253bea74cd8b4e997478c51433769
-      internalID: -287677071
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_42
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0341abe2198a76245803097163925c92
-      internalID: -855917954
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_43
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 66f0adb906c9d5b44ae5826b4a737d60
-      internalID: 1788540302
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_44
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3be998f8f9e03c4d96c5e4b76ee6482
-      internalID: 1157084877
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_45
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 773500cc7136ebd4399cd377976ca019
-      internalID: -1415315830
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_46
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b14dfbf66e1a5d48905553b29081ac5
-      internalID: 91759685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_47
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 94218cddd133f57419c7070831d8e871
-      internalID: -398847402
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_48
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c28b663b83a6b6b4f84ca3c88937215a
-      internalID: 432869991
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_49
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c3d420c2da841ef4eb285a6b8ceb3c94
-      internalID: 1322768575
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileruleWall_24
+      name: Tilerule (1)_24
       rect:
         serializedVersion: 2
         x: 0
@@ -869,20 +617,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35646c94b33089143b9301f2cc398885
-      internalID: -391927186
+      spriteID: 8cff8c4f90406804d9d4c346c0c89358
+      internalID: -103382532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_25
+      name: Tilerule (1)_25
       rect:
         serializedVersion: 2
         x: 16
@@ -890,20 +638,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4ae98791da42b547a92f67e11fb1210
-      internalID: 1252981257
+      spriteID: fbbd20a23c08146458fe41f3750d7b2f
+      internalID: 2039752934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_26
+      name: Tilerule (1)_26
       rect:
         serializedVersion: 2
         x: 32
@@ -911,56 +659,56 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e45f82f2bab9f94b96cb8c71b6f5b74
-      internalID: 981032483
+      spriteID: a794d92c3925bfe4597871eb858fb55b
+      internalID: -2070305664
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_31
+      name: Tilerule (1)_27
       rect:
         serializedVersion: 2
-        x: 16
-        y: 48
+        x: 48
+        y: 64
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8e6043e815197740a2b9900f1a14065
-      internalID: -541507522
+      spriteID: c752d041f28ba644c94cb874598732be
+      internalID: 282985290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileruleWall_32
+      name: Tilerule (1)_28
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
+        x: 64
+        y: 64
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac3813ff0f510ee4694503c330e53daa
-      internalID: -1345517709
+      spriteID: 0198d156d90a9534ca246b9b66d7d0c9
+      internalID: -1755498777
       vertices: []
       indices: 
       edges: []
@@ -976,56 +724,35 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TileruleWall_8: 1839705862
-      TileruleWall_38: -1865195158
-      TileruleWall_6: 1556692063
-      TileruleWall_2: 119154808
-      TileruleWall_13: 149874373
-      TileruleWall_14: -1801852983
-      TileruleWall_41: -287677071
-      TileruleWall_36: 1899534472
-      TileruleWall_44: 1157084877
-      TileruleWall_25: 1252981257
-      TileruleWall_18: -1311601243
-      TileruleWall_27: 986154066
-      TileruleWall_32: -1345517709
-      TileruleWall_1: 1341262206
-      TileruleWall_26: 981032483
-      TileruleWall_22: 136302459
-      TileruleWall_17: -1831423849
-      TileruleWall_34: -1238641001
-      TileruleWall_39: -638931355
-      TileruleWall_24: -391927186
-      TileruleWall_4: 1077548079
-      TileruleWall_0: 967022074
-      TileruleWall_15: -1571701391
-      TileruleWall_16: -1364914617
-      TileruleWall_29: -1491641243
-      TileruleWall_11: -1950859412
-      TileruleWall_45: -1415315830
-      TileruleWall_31: -541507522
-      TileruleWall_5: 428741921
-      TileruleWall_28: 481033754
-      TileruleWall_10: -987687460
-      TileruleWall_20: -343239050
-      TileruleWall_23: 832388317
-      TileruleWall_33: 501775218
-      TileruleWall_42: -855917954
-      TileruleWall_48: 432869991
-      TileruleWall_43: 1788540302
-      TileruleWall_35: -1157834122
-      TileruleWall_46: 91759685
-      TileruleWall_37: -1967937417
-      TileruleWall_30: 324277921
-      TileruleWall_49: 1322768575
-      TileruleWall_47: -398847402
-      TileruleWall_19: -964839339
-      TileruleWall_40: -1737823119
-      TileruleWall_12: -1242434571
-      TileruleWall_3: -770471308
-      TileruleWall_7: -1847899589
-      TileruleWall_9: 759908008
-      TileruleWall_21: -594057503
+      Tilerule (1)_28: -1755498777
+      Tilerule (1)_9: -1674919633
+      Tilerule (1)_7: -1797590215
+      Tilerule (1)_14: -1912689566
+      Tilerule (1)_12: -1214995206
+      Tilerule (1)_10: -1242921855
+      Tilerule (1)_27: 282985290
+      Tilerule (1)_0: 931628099
+      Tilerule (1)_6: -1349562747
+      Tilerule (1)_3: 1207192583
+      Tilerule (1)_26: -2070305664
+      Tilerule (1)_13: 646367975
+      Tilerule (1)_1: -196419850
+      Tilerule (1)_20: 580915112
+      Tilerule (1)_23: 843060701
+      Tilerule (1)_15: 181746404
+      Tilerule (1)_24: -103382532
+      Tilerule (1)_16: 1078991587
+      Tilerule (1)_5: 651797531
+      Tilerule (1)_18: 620477726
+      Tilerule (1)_2: -1494571686
+      Tilerule (1)_4: 1181191262
+      Tilerule (1)_21: 23139871
+      Tilerule (1)_17: -164768371
+      Tilerule (1)_8: -1851116286
+      Tilerule (1)_11: -1698372330
+      Tilerule (1)_25: 2039752934
+      Tilerule (1)_19: 1497727151
+      Tilerule (1)_22: -1485621805
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
