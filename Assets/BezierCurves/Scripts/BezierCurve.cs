@@ -245,22 +245,43 @@ public class BezierCurve : MonoBehaviour {
 			p1 = points[points.Length - 1];
 			p2 = points[0];
 		}
+		if(!close && p1 == null)
+		{
+			p1 = points[points.Length - 1];
+			p2 = points[0];
+		}
 		
 		t -= totalPercent;
 		
 		return GetPoint(p1, p2, t / curvePercent);
 	}
-	
-	/// <summary>
-	/// 	- Get the index of the given point in this curve
-	/// </summary>
-	/// <returns>
-	/// 	- The index, or -1 if the point is not found
-	/// </returns>
-	/// <param name='point'>
-	/// 	- Point to search for
-	/// </param>
-	public int GetPointIndex(BezierPoint point)
+    public static Vector3 GetPoint(BezierPoint p1, BezierPoint p2, float t)
+    {
+        if (p1.handle2 != Vector3.zero)
+        {
+            if (p2.handle1 != Vector3.zero) return GetCubicCurvePoint(p1.position, p1.globalHandle2, p2.globalHandle1, p2.position, t);
+            else return GetQuadraticCurvePoint(p1.position, p1.globalHandle2, p2.position, t);
+        }
+
+        else
+        {
+            if (p2.handle1 != Vector3.zero) return GetQuadraticCurvePoint(p1.position, p2.globalHandle1, p2.position, t);
+            else return GetLinearPoint(p1.position, p2.position, t);
+        }
+
+    }
+
+
+    /// <summary>
+    /// 	- Get the index of the given point in this curve
+    /// </summary>
+    /// <returns>
+    /// 	- The index, or -1 if the point is not found
+    /// </returns>
+    /// <param name='point'>
+    /// 	- Point to search for
+    /// </param>
+    public int GetPointIndex(BezierPoint point)
 	{
 		int result = -1;
 		for(int i = 0; i < points.Length; i++)
@@ -330,21 +351,7 @@ public class BezierCurve : MonoBehaviour {
 	/// <param name='t'>
 	/// 	- Value between 0 and 1 representing the percent along the curve (0 = 0%, 1 = 100%)
 	/// </param>
-	public static Vector3 GetPoint(BezierPoint p1, BezierPoint p2, float t)
-	{
-		if(p1.handle2 != Vector3.zero)
-		{
-			if(p2.handle1 != Vector3.zero) return GetCubicCurvePoint(p1.position, p1.globalHandle2, p2.globalHandle1, p2.position, t);
-			else return GetQuadraticCurvePoint(p1.position, p1.globalHandle2, p2.position, t);
-		}
-		
-		else
-		{
-			if(p2.handle1 != Vector3.zero) return GetQuadraticCurvePoint(p1.position, p2.globalHandle1, p2.position, t);
-			else return GetLinearPoint(p1.position, p2.position, t);
-		}	
-	}
-
+	
 	/// <summary>
 	/// 	- Gets the point 't' percent along a third-order curve
 	/// </summary>
