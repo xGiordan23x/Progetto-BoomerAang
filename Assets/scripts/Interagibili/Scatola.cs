@@ -24,9 +24,9 @@ public class Scatola : Interactable
     [SerializeField] UnityEvent OnBoomerangHit;
 
     [Header("Audio")]
- 
-    AudioClip ClipRotturaCassa;
-    AudioClip ClipSpostamentoCassa;
+
+    [SerializeField] AudioClip ClipRotturaCassa;
+    [SerializeField] AudioClip ClipSpostamentoCassa;
 
     private void Start()
     {

@@ -14,8 +14,8 @@ public class Booster : Interactable, ISubscriber
 
 
     [Header("Audio")]
-    AudioClip ClipBoosterTrema;
-    AudioClip ClipBoosterSpara;
+    [SerializeField] AudioClip ClipBoosterTrema;
+    [SerializeField] AudioClip ClipBoosterSpara;
 
 
 

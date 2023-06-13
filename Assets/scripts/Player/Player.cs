@@ -37,11 +37,11 @@ public class Player : MonoBehaviour, ISubscriber
 
     [Header("Audio")]
     private List<AudioClip> previouslyPlayedClips;
-    List<AudioClip> ClipListPassiUmani;
-    List<AudioClip> ClipListPassiBoomerang;
-    AudioClip ClipTrasformazione;
-    AudioClip ClipSpostaCassa;
-    AudioClip ClipSpostaCassaFallisce;
+    [SerializeField] List<AudioClip> ClipListPassiUmani;
+    [SerializeField] List<AudioClip> ClipListPassiBoomerang;
+    [SerializeField] AudioClip ClipTrasformazione;
+    [SerializeField] AudioClip ClipSpostaCassa;
+    [SerializeField] AudioClip ClipSpostaCassaFallisce;
 
     
 

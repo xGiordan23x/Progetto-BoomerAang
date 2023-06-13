@@ -11,9 +11,9 @@ public class Porta : Interactable
 
     private Animator animator;
     [Header("Audio")]
-    AudioClip ClipApriPorta;
-    AudioClip ClipChiudiPorta;
-    AudioClip ClipUtilizzoChiave;
+    [SerializeField] AudioClip ClipApriPorta;
+    [SerializeField] AudioClip ClipChiudiPorta;
+    [SerializeField] AudioClip ClipUtilizzoChiave;
 
     private void Start()
     {

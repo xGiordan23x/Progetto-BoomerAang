@@ -16,7 +16,7 @@ public class Leva : Interactable
     }
 
     [Header("Audio")]
-    AudioClip ClipAttivaLeva;
+    [SerializeField] AudioClip ClipAttivaLeva;
 
     public override void Interact(Player player)
     {

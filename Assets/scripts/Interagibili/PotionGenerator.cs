@@ -14,7 +14,7 @@ public class PotionGenerator : Interactable, ISubscriber
     [SerializeField] bool canStartOperateWithChip;
     [SerializeField] TextMeshProUGUI timerTextValue;
     [Header("Audio")]
-    AudioClip ClipUtilizzaChip;
+    [SerializeField] AudioClip ClipUtilizzaChip;
 
     private void Start()
     {

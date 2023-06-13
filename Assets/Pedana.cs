@@ -17,8 +17,8 @@ public class Pedana : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     [Header("Audio")]
-    AudioClip ClipAttivaPedana;
-    AudioClip ClipDisattivaPedana;
+    [SerializeField] AudioClip ClipAttivaPedana;
+    [SerializeField] AudioClip ClipDisattivaPedana;
 
 
     private void Start()

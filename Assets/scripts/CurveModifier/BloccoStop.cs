@@ -12,8 +12,8 @@ public class BloccoStop :Interactable, ISubscriber
 
     private Animator anim;
     [Header("Audio")]
-    AudioClip ClipRisucchio;
-    AudioClip ClipRilascio;
+    [SerializeField] AudioClip ClipRisucchio;
+    [SerializeField] AudioClip ClipRilascio;
 
 
     private void Start()
