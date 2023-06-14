@@ -240,12 +240,20 @@ MonoBehaviour:
   potionGenerator: {fileID: 0}
   boomerangCollider: {fileID: 0}
   boomerangReturningRange: 1
+  footCollider: {fileID: 4637255635221018905}
+  yColliderHuman: -0.74
+  yColliderBoomerang: -0.48
   Interact: 0
   hasPotion: 0
   interactionPoint: {fileID: 4637255634766621748}
   MoltiplicationDistance: 0.5
   isReturning: 0
   canMove: 0
+  ClipListPassiUmani: []
+  ClipListPassiBoomerang: []
+  ClipTrasformazione: {fileID: 0}
+  ClipSpostaCassa: {fileID: 0}
+  ClipSpostaCassaFallisce: {fileID: 0}
   lineaProva: {fileID: 0}
 --- !u!50 &4637255635221018916
 Rigidbody2D:
