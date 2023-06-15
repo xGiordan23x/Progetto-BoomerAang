@@ -2790,6 +2790,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2df705c08cfce4f4d93469387fc3d94e, type: 3}
+--- !u!1 &980768499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1978901724092581425, guid: 752e32964b8060b4292cbb88b7a4b5a2, type: 3}
+  m_PrefabInstance: {fileID: 1938480450}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &980768505
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980768499}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5428139f8c7463143865be58712be1b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1002799728
 GameObject:
   m_ObjectHideFlags: 0
@@ -3150,7 +3175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1978901724092581428, guid: 752e32964b8060b4292cbb88b7a4b5a2, type: 3}
       propertyPath: isActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1978901724092581428, guid: 752e32964b8060b4292cbb88b7a4b5a2, type: 3}
       propertyPath: timerTextValue
@@ -3158,7 +3183,7 @@ PrefabInstance:
       objectReference: {fileID: 1944603168}
     - target: {fileID: 1978901724092581428, guid: 752e32964b8060b4292cbb88b7a4b5a2, type: 3}
       propertyPath: canStartOperateWithChip
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 752e32964b8060b4292cbb88b7a4b5a2, type: 3}

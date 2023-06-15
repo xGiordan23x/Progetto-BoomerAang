@@ -10,6 +10,7 @@ public class PotionGenerator : Interactable, ISubscriber
     private float timer;
     private bool started;
     public bool stopTimer;
+    Animator animator;
     [SerializeField] bool isActive;
     [SerializeField] bool canStartOperateWithChip;
     [SerializeField] TextMeshProUGUI timerTextValue;
@@ -18,11 +19,17 @@ public class PotionGenerator : Interactable, ISubscriber
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         started = false;
         timer = 0;
         UpdateTimerText();
 
         PubSub.Instance.RegisteredSubscriber(nameof(PotionGenerator), this);
+
+        if (isActive)
+        {
+            animator.SetBool("Activate", true);
+        }
 
     }
 
@@ -135,7 +142,19 @@ public class PotionGenerator : Interactable, ISubscriber
                 {
                     AbilitateGenerator();
                     //mettere animazione utilizzo chip
-                    
+
+                    if (player.stateMachine.GetCurrentState() is PlayerStateHumanMovement)
+                    {
+                        player.SetCanMove(0);
+                        player.animator.SetTrigger("OpenDoor");
+                    }
+
+                    if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangMovement)
+                    {
+                        player.SetCanMove(0);
+                        player.animator.SetTrigger("BoomerangInteract");
+                    }
+
                 }
 
             }
@@ -147,6 +166,7 @@ public class PotionGenerator : Interactable, ISubscriber
     public void AbilitateGenerator()
     {
         isActive = true;
+        animator.SetBool("Activate", true);
     }
     public void UpdateTimerText()
     {
