@@ -7,7 +7,12 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     [SerializeField] GameObject pauseMenuUI;
+    private Player player;
 
+    private void Awake()
+    {
+        player = FindAnyObjectByType<Player>();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -15,10 +20,14 @@ public class PauseMenu : MonoBehaviour
             if (GameIsPaused)
             {
                 Resume();
+               
+
             }
             else
             {
                 Pause();
+                
+
             }
         }
     }
@@ -28,6 +37,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        player.enabled = true;
     }
 
     private void Pause()
@@ -35,7 +45,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-        
+        player.enabled = false;
+
     }
 
     public void Save()
