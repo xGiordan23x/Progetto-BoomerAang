@@ -97,10 +97,10 @@ public class Pedana : MonoBehaviour
 
     public void PlayAudioClipAttivaPedana()
     {
-        AudioManager.instance.PlayAduioClip(ClipAttivaPedana);
+        AudioManager.instance.PlayAudioClip(ClipAttivaPedana);
     }
     public void PlayAudioClipDisattivaPedanap()
     {
-        AudioManager.instance.PlayAduioClip(ClipDisattivaPedana);
+        AudioManager.instance.PlayAudioClip(ClipDisattivaPedana);
     }
 }

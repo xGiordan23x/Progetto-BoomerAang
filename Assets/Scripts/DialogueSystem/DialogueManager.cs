@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueManager : MonoBehaviour,ISubscriber
 {
+    public bool canInteract;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     public Image dialogeBox;
@@ -15,13 +17,29 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
+        canInteract= false;
         sentences = new Queue<string>();
         ActivateDialogeBox(false);
+        PubSub.Instance.RegisteredSubscriber(nameof(DialogueManager), this);
     }
-
+    private void Update()
+    {
+        if (canInteract)
+        {
+            if (Input.GetButtonDown("Use"))
+            {
+                ShowNextSentence();
+            }
+        }
+    }
     public void StartDialogue(Dialogue dialogue)
     {
         ActivateDialogeBox(true);
+        PubSub.Instance.SendMessageSubscriber(nameof(Player), this,true);
+        PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this,true);
+
+
+       
 
         nameText.text = dialogue.name;
 
@@ -33,6 +51,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         ShowNextSentence();
+       
     }
 
     private void ActivateDialogeBox(bool value)
@@ -50,6 +69,7 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
+        
     }
 
     IEnumerator TypeSentence(string frase)
@@ -60,10 +80,27 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             yield return null;
         }
+        canInteract = true;
     }
 
     void EndDialogue()
     {
+
+        canInteract= false;
         ActivateDialogeBox(false);
+        PubSub.Instance.SendMessageSubscriber(nameof(DialogueTrigger), this);
+        PubSub.Instance.SendMessageSubscriber(nameof(Player), this, false);
+        PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this, false);
+
+
+    }
+
+    public void OnNotify(object content, bool vero = false)
+    {
+        if(content is PotionGenerator)
+        {
+            EndDialogue();
+            
+        }
     }
 }

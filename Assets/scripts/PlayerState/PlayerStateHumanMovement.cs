@@ -45,12 +45,16 @@ public class PlayerStateHumanMovement : State, ISubscriber
             _player.Move();
 
             //interaction
-
+            
             if (Input.GetButtonDown("Use"))
             {
                 _player.Interaction();
             }
+            
         }
+        
+        
+
 
 
 

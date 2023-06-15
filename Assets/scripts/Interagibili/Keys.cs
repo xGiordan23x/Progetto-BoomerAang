@@ -28,6 +28,6 @@ public class Keys : Interactable
 
     public void PlayAudioClipRaccogliChiaveChip()
     {
-        AudioManager.instance.PlayAduioClip(ClipRaccogliChiaveChip);
+        AudioManager.instance.PlayAudioClip(ClipRaccogliChiaveChip);
     }
 }

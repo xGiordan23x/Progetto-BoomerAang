@@ -39,12 +39,14 @@ public class Player : MonoBehaviour, ISubscriber
 
     [HideInInspector] public bool isReturning;
     [HideInInspector] public bool canMove;
+    [HideInInspector] public bool canInteract;
 
     [Header("Audio")]
     private List<AudioClip> previouslyPlayedClips;
     [SerializeField] List<AudioClip> ClipListPassiUmani;
     [SerializeField] List<AudioClip> ClipListPassiBoomerang;
-    [SerializeField] AudioClip ClipTrasformazione;
+    [SerializeField] AudioClip ClipTrasformazioneUmanoBoomerang;
+    [SerializeField] AudioClip ClipTrasformazioneBoomerangUmano;
     [SerializeField] AudioClip ClipSpostaCassa;
     [SerializeField] AudioClip ClipSpostaCassaFallisce;
 
@@ -171,6 +173,19 @@ public class Player : MonoBehaviour, ISubscriber
 
             
         }
+        if(content is DialogueManager && bloccato)
+        {
+
+            SetCanMove(0);
+            
+            
+        } 
+        if(content is DialogueManager && !bloccato)
+        {
+            SetCanMove(1);
+           
+        }
+        
 
     }
 
@@ -273,6 +288,7 @@ public class Player : MonoBehaviour, ISubscriber
         {
             canMove = false;
             speed = 0;
+            Rb.velocity = Vector2.zero;
 
 
         }
@@ -296,17 +312,21 @@ public class Player : MonoBehaviour, ISubscriber
     }
 
 
-    public void PlayAudioClipTrasformazione()
+    public void PlayAudioClipTrasformazioneUmanoBoomerang()
     {
-        AudioManager.instance.PlayAduioClip(ClipTrasformazione);
+        AudioManager.instance.PlayAudioClip(ClipTrasformazioneUmanoBoomerang);
+    }
+    public void PlayAudioClipTrasformazioneBoomerangUmano()
+    {
+        AudioManager.instance.PlayAudioClip(ClipTrasformazioneBoomerangUmano);
     }
     public void PlayAudioClipMuoviCassa()
     {
-        AudioManager.instance.PlayAduioClip(ClipSpostaCassa);
+        AudioManager.instance.PlayAudioClip(ClipSpostaCassa);
     }
     public void PlayAudioClipMuoviCassaFallisce()
     {
-        AudioManager.instance.PlayAduioClip(ClipSpostaCassaFallisce);
+        AudioManager.instance.PlayAudioClip(ClipSpostaCassaFallisce);
     }
     public void PlayAudioCLipList(int valorePerDistinguereListe)
     {
@@ -325,16 +345,16 @@ public class Player : MonoBehaviour, ISubscriber
     private void PlayRandomClip(List<AudioClip> ListClipToPLay)
     {
         AudioClip clip = GetRandomClip(ListClipToPLay);
-        //PLayClip
-        AudioManager.instance.PlayAduioClip(clip);
+       
+        AudioManager.instance.PlayAudioClip(clip);
         AddToPreviouslyPlayedClips(clip);
     }
     private AudioClip GetRandomClip(List<AudioClip> ListClipToPLay)
     {
-        AudioClip clip = ListClipToPLay[UnityEngine.Random.Range(0,ListClipToPLay.Count)];
-        while (previouslyPlayedClips.Contains(clip))
+        AudioClip clip = ListClipToPLay[UnityEngine.Random.Range(0,ListClipToPLay.Count-1)];
+        while (previouslyPlayedClips.Contains(clip) && previouslyPlayedClips.Count >0)
         {
-            clip = ListClipToPLay[UnityEngine.Random.Range(0, ListClipToPLay.Count)];
+            clip = ListClipToPLay[UnityEngine.Random.Range(0, ListClipToPLay.Count-1)];
         }
         return clip;
     }

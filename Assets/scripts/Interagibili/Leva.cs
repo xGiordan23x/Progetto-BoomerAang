@@ -42,6 +42,6 @@ public class Leva : Interactable
     }
     public void PlayAudioClipAttivaLeva()
     {
-        AudioManager.instance.PlayAduioClip(ClipAttivaLeva);
+        AudioManager.instance.PlayAudioClip(ClipAttivaLeva);
     }
 }

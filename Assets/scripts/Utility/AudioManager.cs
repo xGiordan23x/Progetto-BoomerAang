@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    public void PlayAduioClip(AudioClip clipToPLay)
+    public void PlayAudioClip(AudioClip clipToPLay)
     {
         audioSource.clip = clipToPLay;
         audioSource.Play();

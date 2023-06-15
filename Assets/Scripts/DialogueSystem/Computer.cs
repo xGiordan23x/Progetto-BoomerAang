@@ -28,11 +28,11 @@ public class Computer : Interactable
 
     public void PlayAudioClipTurnOn()
     {
-        AudioManager.instance.PlayAduioClip(ClipTurnOn);
+        AudioManager.instance.PlayAudioClip(ClipTurnOn);
     }
 
     public void PlayAudioClipTurnOff()
     {
-        AudioManager.instance.PlayAduioClip(ClipTurnOff);
+        AudioManager.instance.PlayAudioClip(ClipTurnOff);
     }
 }
