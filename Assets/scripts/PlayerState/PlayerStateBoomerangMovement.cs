@@ -18,9 +18,11 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
         
         _player.isReturning = false;
         _player.hasPotion = false;
-        _player.canMove= true;
+        _player.canMove = true;
+        _player.footCollider.offset = new Vector2(0, _player.yColliderBoomerang);
         PubSub.Instance.SendMessageSubscriber(nameof(Booster), this);
         PubSub.Instance.SendMessageSubscriber(nameof(Fontanella), this);
+
     }
 
     public void OnNotify(object content, bool vero = false)

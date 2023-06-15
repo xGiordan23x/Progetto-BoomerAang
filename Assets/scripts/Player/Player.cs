@@ -23,6 +23,11 @@ public class Player : MonoBehaviour, ISubscriber
     public Transform potionGenerator;
     public CircleCollider2D boomerangCollider;
     public float boomerangReturningRange;
+    [Header("Foot collider")]
+    public CircleCollider2D footCollider;
+    public float yColliderHuman;
+    public float yColliderBoomerang;
+
 
     public bool Interact;
     public bool hasPotion;
