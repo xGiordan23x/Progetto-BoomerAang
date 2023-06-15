@@ -115,8 +115,7 @@ public class Player : MonoBehaviour, ISubscriber
 
 
     public void Interaction()
-    {
-        
+    {        
         interactionPoint.Interaction(this);
     }
 

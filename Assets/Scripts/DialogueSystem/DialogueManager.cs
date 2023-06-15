@@ -1,26 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
-
-    private Animator animator;
+    public Image dialogeBox;
 
     private Queue<string> sentences;
 
     void Start()
     {
         sentences = new Queue<string>();
+        ActivateDialogeBox(false);
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
-        animator.SetBool("isOpen", true);
-        Debug.Log("kcgajyfej");
+        ActivateDialogeBox(true);
 
         nameText.text = dialogue.name;
 
@@ -32,6 +33,11 @@ public class DialogueManager : MonoBehaviour
         }
 
         ShowNextSentence();
+    }
+
+    private void ActivateDialogeBox(bool value)
+    {
+       dialogeBox.gameObject.SetActive(value);
     }
 
     public void ShowNextSentence()
@@ -58,6 +64,6 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        animator.SetBool("isOpen", false);
+        ActivateDialogeBox(false);
     }
 }

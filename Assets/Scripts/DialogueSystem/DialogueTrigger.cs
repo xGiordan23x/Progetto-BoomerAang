@@ -3,9 +3,15 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
+    private DialogueManager manager;
+    private void Awake()
+    {
+        manager = FindObjectOfType<DialogueManager>();
+    }
+
 
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        manager.StartDialogue(dialogue);
     }
 }
