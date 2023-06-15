@@ -47,8 +47,14 @@ TagManager:
   - name: PavimentoRigaNera
     uniqueID: 2720863177
     locked: 0
-  - name: GroundWalls
+  - name: Muro
     uniqueID: 2871256707
+    locked: 0
+  - name: MuroDettaglio
+    uniqueID: 847501983
+    locked: 0
+  - name: Cavi
+    uniqueID: 2530929735
     locked: 0
   - name: Default
     uniqueID: 0
