@@ -524,7 +524,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 500344f1447abd4448efea1b0dbf11ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: abd9a1dffe1f7bd45a1f52a02ba8003f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -699,6 +699,9 @@ MonoBehaviour:
   potionGenerator: {fileID: 0}
   boomerangCollider: {fileID: 0}
   boomerangReturningRange: 1
+  footCollider: {fileID: 619004301}
+  yColliderHuman: 0
+  yColliderBoomerang: 0
   Interact: 0
   hasPotion: 0
   interactionPoint: {fileID: 1909706723}
@@ -1911,8 +1914,9 @@ GameObject:
   - component: {fileID: 1388495161}
   - component: {fileID: 1388495164}
   - component: {fileID: 1388495163}
-  - component: {fileID: 1388495166}
+  - component: {fileID: 1388495169}
   - component: {fileID: 1388495167}
+  - component: {fileID: 1388495168}
   m_Layer: 0
   m_Name: Computer
   m_TagString: Untagged
@@ -1983,33 +1987,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.125}
   m_EdgeRadius: 0
---- !u!114 &1388495166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388495160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1fed6ffc48aa504599c2f5687d412a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnInteraction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1388495167}
-        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
-        m_MethodName: TriggerDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1388495167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2029,6 +2006,43 @@ MonoBehaviour:
     - A contatto con l'aria esso rilascia schiuma, eppure sono oltremodo convinto
       che non si tratti di sapone...
     - Che sia per caso un qualcosa di simile alla borra?
+--- !u!95 &1388495168
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388495160}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 28e989b647a07bf4cb6eea5e98fd3d09, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1388495169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388495160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1fed6ffc48aa504599c2f5687d412a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInteraction:
+    m_PersistentCalls:
+      m_Calls: []
+  ClipTurnOn: {fileID: 0}
+  ClipTurnOff: {fileID: 0}
 --- !u!1 &1393621858
 GameObject:
   m_ObjectHideFlags: 0
@@ -4026,7 +4040,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 830095611}
   dialogueText: {fileID: 1408804331}
-  animator: {fileID: 275143282}
 --- !u!4 &2108118912
 Transform:
   m_ObjectHideFlags: 0
