@@ -53,13 +53,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isDestroyable: 1
-  canMove: 1
+  canMove: 0
   mask:
     serializedVersion: 2
     m_Bits: 136
   OnBoomerangHit:
     m_PersistentCalls:
       m_Calls: []
+  ClipRotturaCassa: {fileID: 0}
+  ClipSpostamentoCassa: {fileID: 0}
 --- !u!61 &956278114083313531
 BoxCollider2D:
   m_ObjectHideFlags: 0
