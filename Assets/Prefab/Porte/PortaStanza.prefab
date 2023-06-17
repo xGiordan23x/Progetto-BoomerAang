@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 1825845216}
   - component: {fileID: 1357046786330203929}
   - component: {fileID: 1357046786330203931}
+  - component: {fileID: 6487564804020006110}
   m_Layer: 3
   m_Name: PortaStanza
   m_TagString: Untagged
@@ -203,7 +204,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isOpen: 1
-  canOpenWithKey: 1
+  canOpenWithKey: 0
   colliderImpatto: {fileID: 1825845216}
   ClipApriPorta: {fileID: 0}
   ClipChiudiPorta: {fileID: 0}
@@ -228,6 +229,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &6487564804020006110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357046786330203922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1baf8c45c3490504c9a241d9fe1d44a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 1357046786178124500}
 --- !u!1 &5170353107123430688
 GameObject:
   m_ObjectHideFlags: 0
