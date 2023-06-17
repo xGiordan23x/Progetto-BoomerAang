@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 1602077747875092959}
   - component: {fileID: 1602077747875092957}
   - component: {fileID: 2329784853897286837}
+  - component: {fileID: 189494299427384860}
   m_Layer: 3
   m_Name: PortaCorridoio
   m_TagString: Untagged
@@ -281,6 +282,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &189494299427384860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602077747875092948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1baf8c45c3490504c9a241d9fe1d44a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 1602077747793921042}
 --- !u!1 &4840880472894925798
 GameObject:
   m_ObjectHideFlags: 0
