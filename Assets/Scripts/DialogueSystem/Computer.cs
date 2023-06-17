@@ -20,8 +20,7 @@ public class Computer : Interactable
     {
         if (player.stateMachine.GetCurrentState() is not PlayerStateBoomerangReturning)
         {
-            animator.SetTrigger("On");
-            Debug.Log("Ho Interagito con Boomerang");
+            animator.SetTrigger("On");           
             base.Interact(player);
         }
     }

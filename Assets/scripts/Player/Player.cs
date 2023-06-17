@@ -42,6 +42,7 @@ public class Player : MonoBehaviour, ISubscriber
     [HideInInspector] public bool canInteract;
 
     [Header("Audio")]
+    [SerializeField] public int numeroClipDaNonRipetere;
     private List<AudioClip> previouslyPlayedClips = new();
     [SerializeField] List<AudioClip> ClipListPassiUmani;
     [SerializeField] List<AudioClip> ClipListPassiBoomerang;
@@ -363,7 +364,7 @@ public class Player : MonoBehaviour, ISubscriber
     private void AddToPreviouslyPlayedClips(AudioClip clip)
     {
         previouslyPlayedClips.Add(clip);
-        if (previouslyPlayedClips.Count > 3)
+        if (previouslyPlayedClips.Count > numeroClipDaNonRipetere)
         {
             previouslyPlayedClips.RemoveAt(0);
         }
