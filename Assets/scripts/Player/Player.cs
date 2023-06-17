@@ -344,8 +344,7 @@ public class Player : MonoBehaviour, ISubscriber
     }   
     private void PlayRandomClip(List<AudioClip> ListClipToPLay)
     {
-        AudioClip clip = GetRandomClip(ListClipToPLay);
-       
+        AudioClip clip = GetRandomClip(ListClipToPLay);      
         AudioManager.instance.PlayAudioClip(clip);
         AddToPreviouslyPlayedClips(clip);
     }
