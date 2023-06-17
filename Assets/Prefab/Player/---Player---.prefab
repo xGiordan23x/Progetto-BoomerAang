@@ -235,7 +235,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   curveDistance: 10
   animator: {fileID: 0}
-  humanSpeed: 10
+  humanSpeed: 7
   Rb: {fileID: 4637255635221018916}
   returnTimer: 1
   potionGenerator: {fileID: 0}
@@ -253,11 +253,11 @@ MonoBehaviour:
   canInteract: 0
   ClipListPassiUmani: []
   ClipListPassiBoomerang:
-  - {fileID: 8300000, guid: b41caf5178f5189468ce2e883bf62d25, type: 3}
-  - {fileID: 8300000, guid: a9ae5c15807d37a4190a35bd5a3da61c, type: 3}
   - {fileID: 8300000, guid: c6b560ebaaa4ff144a6905ec863c3d7b, type: 3}
   - {fileID: 8300000, guid: 0452509d7c928c3458af7d8f691c3352, type: 3}
-  - {fileID: 8300000, guid: f0fa821d8c31d214eb31715f8cf6c6ef, type: 3}
+  - {fileID: 8300000, guid: c6b560ebaaa4ff144a6905ec863c3d7b, type: 3}
+  - {fileID: 8300000, guid: 0452509d7c928c3458af7d8f691c3352, type: 3}
+  - {fileID: 8300000, guid: 0452509d7c928c3458af7d8f691c3352, type: 3}
   - {fileID: 8300000, guid: 19c9e14c277dc2843a8cc49348099df0, type: 3}
   ClipTrasformazioneUmanoBoomerang: {fileID: 8300000, guid: 332e00cc87c9a644e8d1fec908ab5f10, type: 3}
   ClipTrasformazioneBoomerangUmano: {fileID: 8300000, guid: 332e00cc87c9a644e8d1fec908ab5f10, type: 3}
