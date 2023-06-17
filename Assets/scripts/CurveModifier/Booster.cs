@@ -86,11 +86,11 @@ public class Booster : Interactable, ISubscriber
 
     public void PlayAudioClipTrema()
     {
-        AudioManager.instance.PlayAduioClip(ClipBoosterTrema);
+        AudioManager.instance.PlayAudioClip(ClipBoosterTrema);
     }
     public void PlayAudioClipSpara()
     {
-        AudioManager.instance.PlayAduioClip(ClipBoosterSpara);
+        AudioManager.instance.PlayAudioClip(ClipBoosterSpara);
     }
 
 }

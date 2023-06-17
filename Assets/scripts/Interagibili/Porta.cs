@@ -136,15 +136,15 @@ public class Porta : Interactable
 
     public void PlayAudioClipApriPorta()
     {
-        AudioManager.instance.PlayAduioClip(ClipApriPorta);
+        AudioManager.instance.PlayAudioClip(ClipApriPorta);
     }
     public void PlayAudioClipChiudiPorta()
     {
-        AudioManager.instance.PlayAduioClip(ClipChiudiPorta);
+        AudioManager.instance.PlayAudioClip(ClipChiudiPorta);
     }
     public void PlayAudioClipUtilizzaChiave()
     {
-        AudioManager.instance.PlayAduioClip(ClipUtilizzoChiave);
+        AudioManager.instance.PlayAudioClip(ClipUtilizzoChiave);
     }
 
 }

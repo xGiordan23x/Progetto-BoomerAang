@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class BloccoUmanoParabola : Interactable, ISubscriber
 {
-    public BoxCollider2D boxColliderToAdd;
+    
     public bool activated;
     public Transform stopPosition;
    
@@ -52,16 +52,10 @@ public class BloccoUmanoParabola : Interactable, ISubscriber
     {
         if (collision.GetComponent<Player>().stateMachine.GetCurrentState() is PlayerStateHumanMovement)
         {
-            boxColliderToAdd.enabled= true;
+          
             Interact(collision.GetComponent<Player>());
         }
 
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Player>())
-        {
-            boxColliderToAdd.enabled= false;
-        }
-    }
+   
 }
