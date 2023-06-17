@@ -42,7 +42,7 @@ public class Player : MonoBehaviour, ISubscriber
     [HideInInspector] public bool canInteract;
 
     [Header("Audio")]
-    private List<AudioClip> previouslyPlayedClips;
+    private List<AudioClip> previouslyPlayedClips = new();
     [SerializeField] List<AudioClip> ClipListPassiUmani;
     [SerializeField] List<AudioClip> ClipListPassiBoomerang;
     [SerializeField] AudioClip ClipTrasformazioneUmanoBoomerang;
@@ -68,7 +68,7 @@ public class Player : MonoBehaviour, ISubscriber
 
         stateMachine.SetState(PlayerStateType.BoomerangMovement);
         speed = humanSpeed;
-
+       
     }
     private void Update()
     {
@@ -352,10 +352,11 @@ public class Player : MonoBehaviour, ISubscriber
     private AudioClip GetRandomClip(List<AudioClip> ListClipToPLay)
     {
         AudioClip clip = ListClipToPLay[UnityEngine.Random.Range(0,ListClipToPLay.Count-1)];
-        while (previouslyPlayedClips.Contains(clip) && previouslyPlayedClips.Count >0)
+        while (previouslyPlayedClips.Contains(clip))
         {
-            clip = ListClipToPLay[UnityEngine.Random.Range(0, ListClipToPLay.Count-1)];
+            clip = ListClipToPLay[UnityEngine.Random.Range(0, ListClipToPLay.Count - 1)];
         }
+        Debug.Log(clip);
         return clip;
     }
 
