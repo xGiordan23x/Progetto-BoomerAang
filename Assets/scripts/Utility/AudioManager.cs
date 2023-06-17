@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.clip = clipToPLay;
         audioSource.Play();
-        Invoke(nameof(RemoveClip),clipToPLay.length);
+       // Invoke(nameof(RemoveClip),clipToPLay.length);
         
     }
 
