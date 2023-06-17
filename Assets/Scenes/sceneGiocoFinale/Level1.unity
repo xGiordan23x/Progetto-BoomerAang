@@ -160,12 +160,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65198305}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.03288269, y: 0, z: 10}
-  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_LocalPosition: {x: 1.2630844, y: -28.681894, z: 0.114108525}
+  m_LocalScale: {x: 40, y: 40, z: 0.4078}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 519420032}
-  m_RootOrder: 0
+  m_Father: {fileID: 1863970307}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &65198307
 Animator:
@@ -1547,8 +1547,7 @@ Transform:
   m_LocalPosition: {x: 1.2630844, y: -27.681894, z: -9.885892}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 65198306}
+  m_Children: []
   m_Father: {fileID: 1098538971}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15884,6 +15883,7 @@ Transform:
   - {fileID: 1512420570}
   - {fileID: 1840198183}
   - {fileID: 570408939}
+  - {fileID: 65198306}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16034,9 +16034,9 @@ PolygonCollider2D:
       - {x: -8.5, y: 37.5}
       - {x: -8.5, y: -6.5}
       - {x: 17, y: -6.5}
-      - {x: 17, y: 20.75}
-      - {x: -8.5, y: 20.75}
-      - {x: 17, y: 20.75}
+      - {x: 17, y: 20.5}
+      - {x: -8.5, y: 20.5}
+      - {x: 17, y: 20.5}
 --- !u!1001 &1902223242
 PrefabInstance:
   m_ObjectHideFlags: 0
