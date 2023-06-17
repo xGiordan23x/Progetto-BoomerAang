@@ -1140,14 +1140,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 63bd4f34ce220e64e9eb767bdb6eecf2, type: 3}
     - target: {fileID: 4637255635221018919, guid: 4c2084da29a60a84d8da823177a36e9a, type: 3}
-      propertyPath: ClipTrasformazioneBoomerangUmano
-      value: 
-      objectReference: {fileID: 8300000, guid: 332e00cc87c9a644e8d1fec908ab5f10, type: 3}
-    - target: {fileID: 4637255635221018919, guid: 4c2084da29a60a84d8da823177a36e9a, type: 3}
-      propertyPath: ClipTrasformazioneUmanoBoomerang
-      value: 
-      objectReference: {fileID: 8300000, guid: 332e00cc87c9a644e8d1fec908ab5f10, type: 3}
-    - target: {fileID: 4637255635221018919, guid: 4c2084da29a60a84d8da823177a36e9a, type: 3}
       propertyPath: ClipListPassiBoomerang.Array.size
       value: 6
       objectReference: {fileID: 0}

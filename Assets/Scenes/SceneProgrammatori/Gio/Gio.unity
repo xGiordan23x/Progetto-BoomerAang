@@ -5194,6 +5194,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 513544154185614498, guid: 4c2084da29a60a84d8da823177a36e9a, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4637255634766621750, guid: 4c2084da29a60a84d8da823177a36e9a, type: 3}
       propertyPath: m_Layer
       value: 8
