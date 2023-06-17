@@ -38,9 +38,6 @@ public class DialogueManager : MonoBehaviour,ISubscriber
         PubSub.Instance.SendMessageSubscriber(nameof(Player), this,true);
         PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this,true);
 
-
-       
-
         nameText.text = dialogue.name;
 
         sentences.Clear();
