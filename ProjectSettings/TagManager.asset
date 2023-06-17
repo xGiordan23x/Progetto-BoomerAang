@@ -71,3 +71,6 @@ TagManager:
   - name: FloorWallDecoration
     uniqueID: 3632089781
     locked: 0
+  - name: ScreenColor
+    uniqueID: 40441923
+    locked: 0
