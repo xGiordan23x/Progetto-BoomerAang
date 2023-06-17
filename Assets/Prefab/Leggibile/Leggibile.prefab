@@ -123,11 +123,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Prof. Ang
+    name: 
     sentences:
-    - ' Prova 1'
-    - prova 2
-    - Prova 3
+    - 
 --- !u!1 &6803978018307501507
 GameObject:
   m_ObjectHideFlags: 0
