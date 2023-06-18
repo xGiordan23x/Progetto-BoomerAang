@@ -5,6 +5,7 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
     private DialogueManager manager;
+    private bool canPlayDialogue = true;
    
     private void Awake()
     {
@@ -16,9 +17,18 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-     
-         manager.StartDialogue(dialogue);          
+        if (canPlayDialogue)
+        {
+            manager.StartDialogue(dialogue);
+            canPlayDialogue= false;
+            Invoke(nameof(SetCanPlayDialogue),1f);
+        }
+               
     }
 
-   
+  public void SetCanPlayDialogue()
+    {
+        canPlayDialogue= true;
+        Debug.Log("Puoi Interagire");
+    }
 }
