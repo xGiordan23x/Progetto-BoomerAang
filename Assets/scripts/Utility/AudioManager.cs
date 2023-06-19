@@ -28,7 +28,8 @@ public class AudioManager : MonoBehaviour
     {
         GameObject temp = Instantiate(prefabEmpty);
         temp.GetComponent<AudioSource>().clip = clipToPLay;
-        temp.AddComponent<AudioSource>().PlayOneShot(clipToPLay);
+        //temp.AddComponent<AudioSource>().PlayOneShot(clipToPLay);
+        temp.GetComponent<AudioSource>().Play();
         Destroy(temp,clipToPLay.length);
     }
 
