@@ -16,6 +16,7 @@ public class PlayerStateHumanMovement : State, ISubscriber
         _player.animator.SetBool("BoomerangMoving", false);
         PubSub.Instance.SendMessageSubscriber(nameof(Fontanella), this);
         _player.footCollider.offset = new Vector2(0, _player.yColliderHuman);
+        _player.foot.transform.localPosition = new Vector3(0, _player.yPiediHuman);
 
     }
 

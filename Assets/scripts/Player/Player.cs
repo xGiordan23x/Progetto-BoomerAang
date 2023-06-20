@@ -23,10 +23,15 @@ public class Player : MonoBehaviour, ISubscriber
     public Transform potionGenerator;
     public CircleCollider2D boomerangCollider;
     public float boomerangReturningRange;
-    [Header("Foot collider")]
+    [Header("Foot collider")]           // da levare, c'è solo per la questione degli sprite
     public CircleCollider2D footCollider;
     public float yColliderHuman;
     public float yColliderBoomerang;
+
+    public GameObject foot;
+    public float yPiediHuman = -1.1f;
+    public float yPiediBoomerang = -0.52f;
+
 
 
     public bool Interact;

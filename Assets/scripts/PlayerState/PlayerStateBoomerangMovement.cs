@@ -20,6 +20,7 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
         _player.hasPotion = false;
         _player.canMove = true;
         _player.footCollider.offset = new Vector2(0, _player.yColliderBoomerang);
+        _player.foot.transform.localPosition = new Vector3(0, _player.yPiediBoomerang);
         PubSub.Instance.SendMessageSubscriber(nameof(Booster), this);
         PubSub.Instance.SendMessageSubscriber(nameof(Fontanella), this);
 
