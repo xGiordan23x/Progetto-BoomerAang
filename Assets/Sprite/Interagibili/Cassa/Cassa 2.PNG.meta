@@ -108,10 +108,10 @@ TextureImporter:
       name: Cassa 2_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 14
+        x: 0
+        y: 0
         width: 16
-        height: 25
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
