@@ -356,7 +356,7 @@ public class Player : MonoBehaviour, ISubscriber
         {
             clip = ListClipToPLay[UnityEngine.Random.Range(0, ListClipToPLay.Count - 1)];
         }
-        Debug.Log(clip);
+        
         return clip;
     }
 
