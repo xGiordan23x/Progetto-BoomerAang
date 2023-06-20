@@ -8,7 +8,7 @@ public class PotionGenerator : Interactable, ISubscriber
     public float timerBoomerang;
 
     private float timer;
-    private bool started;
+    [SerializeField] bool started;
     public bool stopTimer;
     Animator animator;
     [SerializeField] bool isActive;
@@ -16,6 +16,11 @@ public class PotionGenerator : Interactable, ISubscriber
     [SerializeField] TextMeshProUGUI timerTextValue;
     [Header("Audio")]
     [SerializeField] AudioClip ClipUtilizzaChip;
+
+    private void Awake()
+    {
+        timerTextValue = FindObjectOfType<GeneratorTimer>().gameObject.GetComponent<TextMeshProUGUI>();
+    }
 
     private void Start()
     {
@@ -44,14 +49,14 @@ public class PotionGenerator : Interactable, ISubscriber
             {
                 UpdateTimer();
             }
-           
-                         
+
+
         }
     }
 
 
 
-    public void OnNotify(object content,bool vero = false)
+    public void OnNotify(object content, bool vero = false)
     {
         if (content is PlayerStateHumanMovement)
         {
@@ -59,7 +64,7 @@ public class PotionGenerator : Interactable, ISubscriber
         }
         if (content is Player)
         {
-            StartTimer();
+            //StartTimer();
         }
         if (content is BloccoUmanoBoomerang)
         {
@@ -68,16 +73,22 @@ public class PotionGenerator : Interactable, ISubscriber
         if (content is BloccoUmanoParabola)
         {
             StopTimer();
-           
+
         }
         if (content is DialogueManager && vero)
         {
-            stopTimer= true;
-        } 
+            stopTimer = true;
+        }
         if (content is DialogueManager && !vero)
         {
-            stopTimer= false;
+            stopTimer = false;
         }
+
+
+        //if(content is Fontanella)
+        //{
+
+        //}
     }
     public void StartTimer()
     {
@@ -131,7 +142,10 @@ public class PotionGenerator : Interactable, ISubscriber
             player.potionGenerator = transform;   //setto questo generatore come punto di ritorno;
             base.Interact(player);
             stopTimer = false;
-            
+
+            //fede solution
+            StartTimer();
+
         }
 
         if (player.stateMachine.GetCurrentState() is not PlayerStateBoomerangReturning && !isActive)  //diversamente puo essere attivato con un chip da tutte le forme tranne quando è un boomerang che torna indietro

@@ -147,32 +147,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnInteraction:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8416626617325889106}
-        m_TargetAssemblyTypeName: Fontanella, Assembly-CSharp
-        m_MethodName: UseFountain
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PotionGenerator, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   activated: 0
+  timerToAdd: 3
 --- !u!58 &8416626617325889103
 CircleCollider2D:
   m_ObjectHideFlags: 0
