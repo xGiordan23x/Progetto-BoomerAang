@@ -51,7 +51,7 @@ public class Player : MonoBehaviour, ISubscriber
     [SerializeField] AudioClip ClipSpostaCassa;
     [SerializeField] AudioClip ClipSpostaCassaFallisce;
 
-    
+
 
 
     public StateMachine<PlayerStateType> stateMachine = new();
@@ -69,7 +69,7 @@ public class Player : MonoBehaviour, ISubscriber
 
         stateMachine.SetState(PlayerStateType.BoomerangMovement);
         speed = humanSpeed;
-       
+
     }
     private void Update()
     {
@@ -78,7 +78,7 @@ public class Player : MonoBehaviour, ISubscriber
     private void FixedUpdate()
     {
 
-       
+
         animator.SetFloat("X", lastDirection.x);
         animator.SetFloat("Y", lastDirection.y);
         animator.SetFloat("speed", Rb.velocity.magnitude);
@@ -118,14 +118,14 @@ public class Player : MonoBehaviour, ISubscriber
 
 
     public void Interaction()
-    {        
+    {
         interactionPoint.Interaction(this);
     }
 
 
-    public void OnNotify(object content,bool bloccato)
+    public void OnNotify(object content, bool bloccato)
     {
-       
+
         if (content is PotionGenerator)
         {
             hasPotion = true;
@@ -133,7 +133,7 @@ public class Player : MonoBehaviour, ISubscriber
         if (content is Booster)
         {
             PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangReturning), this);
-            spriteRenderer.enabled= true;
+            spriteRenderer.enabled = true;
         }
         if (content is BloccoUmanoBoomerang && !bloccato)
         {
@@ -143,7 +143,7 @@ public class Player : MonoBehaviour, ISubscriber
         }
         if (content is BloccoUmanoBoomerang && bloccato)
         {
-          
+
             SetCanMove(0);
             animator.SetTrigger("humanboomerang");
 
@@ -172,21 +172,21 @@ public class Player : MonoBehaviour, ISubscriber
         {
             SetCanMove(0);
 
-            
+
         }
-        if(content is DialogueManager && bloccato)
+        if (content is DialogueManager && bloccato)
         {
 
             SetCanMove(0);
-            
-            
-        } 
-        if(content is DialogueManager && !bloccato)
+
+
+        }
+        if (content is DialogueManager && !bloccato)
         {
             SetCanMove(1);
-           
+
         }
-        
+
 
     }
 
@@ -309,7 +309,7 @@ public class Player : MonoBehaviour, ISubscriber
 
     public void SetBoomerangMoving()
     {
-       animator.SetBool("BoomerangMoving", true);
+        animator.SetBool("BoomerangMoving", true);
     }
 
 
@@ -332,7 +332,7 @@ public class Player : MonoBehaviour, ISubscriber
     public void PlayAudioCLipList(int valorePerDistinguereListe)
     {
         //se valore 0 clipBoomerang
-        if(valorePerDistinguereListe == 0)
+        if (valorePerDistinguereListe == 0)
         {
             PlayRandomClip(ClipListPassiBoomerang);
         }
@@ -342,21 +342,21 @@ public class Player : MonoBehaviour, ISubscriber
         {
             PlayRandomClip(ClipListPassiUmani);
         }
-    }   
+    }
     private void PlayRandomClip(List<AudioClip> ListClipToPLay)
     {
-        AudioClip clip = GetRandomClip(ListClipToPLay);      
+        AudioClip clip = GetRandomClip(ListClipToPLay);
         AudioManager.instance.PlayAudioClip(clip);
         AddToPreviouslyPlayedClips(clip);
     }
     private AudioClip GetRandomClip(List<AudioClip> ListClipToPLay)
     {
-        AudioClip clip = ListClipToPLay[UnityEngine.Random.Range(0,ListClipToPLay.Count-1)];
+        AudioClip clip = ListClipToPLay[UnityEngine.Random.Range(0, ListClipToPLay.Count - 1)];
         while (previouslyPlayedClips.Contains(clip))
         {
             clip = ListClipToPLay[UnityEngine.Random.Range(0, ListClipToPLay.Count - 1)];
         }
-        
+
         return clip;
     }
 
@@ -368,5 +368,12 @@ public class Player : MonoBehaviour, ISubscriber
         {
             previouslyPlayedClips.RemoveAt(0);
         }
-    }  
+    }
+
+
+    // fede soluzione
+    public PotionGenerator GetPotionGenerator()
+    {
+        return potionGenerator.gameObject.GetComponent<PotionGenerator>();
+    }
 }
