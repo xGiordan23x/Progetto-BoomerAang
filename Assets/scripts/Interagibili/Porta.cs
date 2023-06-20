@@ -76,31 +76,6 @@ public class Porta : Interactable
 
     }
 
-   
-
-    private void OnTriggerEnter2D(Collider2D collision)         //non utilizzato al momento
-    {
-        if (collision.GetComponent<Player>() != null && isOpen)
-        {
-            //apro la porta
-            OpenDoor();
-
-            Debug.Log("sono a portata");
-
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)      //non utilizzato al momento
-    {
-        if (collision.GetComponent<Player>() != null && isOpen)
-        {
-            //chiudo la porta
-            CloseDoor();
-
-            Debug.Log("sono uscito");
-        }
-    }
-
     public void DisableWallDoor()       //solo unity animation event
     {
         if (colliderImpatto.enabled == true)
@@ -161,15 +136,15 @@ public class Porta : Interactable
 
     public void PlayAudioClipApriPorta()
     {
-        AudioManager.instance.PlayAduioClip(ClipApriPorta);
+        AudioManager.instance.PlayAudioClip(ClipApriPorta);
     }
     public void PlayAudioClipChiudiPorta()
     {
-        AudioManager.instance.PlayAduioClip(ClipChiudiPorta);
+        AudioManager.instance.PlayAudioClip(ClipChiudiPorta);
     }
     public void PlayAudioClipUtilizzaChiave()
     {
-        AudioManager.instance.PlayAduioClip(ClipUtilizzoChiave);
+        AudioManager.instance.PlayAudioClip(ClipUtilizzoChiave);
     }
 
 }

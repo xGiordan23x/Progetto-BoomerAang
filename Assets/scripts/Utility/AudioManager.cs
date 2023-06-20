@@ -1,13 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance { get; private set; }
-    AudioSource audioSource;
-
+    public GameObject prefabEmpty;
+   
     private void Awake()
     {
         if (instance != null)
@@ -17,21 +19,18 @@ public class AudioManager : MonoBehaviour
         else
         {
             instance = this;
-            audioSource = GetComponent<AudioSource>();
+            
         }
     }
 
 
-    public void PlayAduioClip(AudioClip clipToPLay)
+    public void PlayAudioClip(AudioClip clipToPLay)
     {
-        audioSource.clip = clipToPLay;
-        audioSource.Play();
-        Invoke(nameof(RemoveClip),clipToPLay.length);
-        
+        GameObject temp = Instantiate(prefabEmpty);
+        temp.GetComponent<AudioSource>().clip = clipToPLay;
+        //temp.AddComponent<AudioSource>().PlayOneShot(clipToPLay);
+        temp.GetComponent<AudioSource>().Play();
+        Destroy(temp,clipToPLay.length);
     }
 
-    private void RemoveClip()
-    {
-       audioSource.clip = null;
-    }
 }

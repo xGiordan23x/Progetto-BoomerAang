@@ -53,7 +53,7 @@ public class PotionGenerator : Interactable, ISubscriber
 
     public void OnNotify(object content,bool vero = false)
     {
-       if(content is PlayerStateHumanMovement)
+        if (content is PlayerStateHumanMovement)
         {
             ResetTimer();
         }
@@ -65,10 +65,18 @@ public class PotionGenerator : Interactable, ISubscriber
         {
             StopTimer();
         }
-        if(content is BloccoUmanoParabola)
+        if (content is BloccoUmanoParabola)
         {
             StopTimer();
            
+        }
+        if (content is DialogueManager && vero)
+        {
+            stopTimer= true;
+        } 
+        if (content is DialogueManager && !vero)
+        {
+            stopTimer= false;
         }
     }
     public void StartTimer()
@@ -96,7 +104,7 @@ public class PotionGenerator : Interactable, ISubscriber
             Debug.Log("timer Finito");
             started = false;
 
-
+            PubSub.Instance.SendMessageSubscriber(nameof(DialogueManager), this);
             PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateHumanMovement), this);
         }
     }
@@ -190,7 +198,7 @@ public class PotionGenerator : Interactable, ISubscriber
 
     public void PlayAudioClipUtilizzaChiave()
     {
-        AudioManager.instance.PlayAduioClip(ClipUtilizzaChip);
+        AudioManager.instance.PlayAudioClip(ClipUtilizzaChip);
     }
 
 

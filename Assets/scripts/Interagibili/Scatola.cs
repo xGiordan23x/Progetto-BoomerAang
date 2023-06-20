@@ -121,11 +121,11 @@ public class Scatola : Interactable
 
     public void PlayAudioClipSpostaCassa()
     {
-        AudioManager.instance.PlayAduioClip(ClipSpostamentoCassa);
+        AudioManager.instance.PlayAudioClip(ClipSpostamentoCassa);
     }
     public void PlayAudioClipRotturaCassa()
     {
-        AudioManager.instance.PlayAduioClip(ClipRotturaCassa);
+        AudioManager.instance.PlayAudioClip(ClipRotturaCassa);
     }
 
 }

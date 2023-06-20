@@ -50,6 +50,7 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
                 _player.stateMachine.SetState(PlayerStateType.HumanMovement);
             }
         }
+       
 
     }
 }

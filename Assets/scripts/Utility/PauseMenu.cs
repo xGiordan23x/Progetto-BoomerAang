@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     [SerializeField] GameObject pauseMenuUI;
     private Player player;
+    bool inMainMenu = true;
 
     private void Awake()
     {
@@ -15,12 +17,13 @@ public class PauseMenu : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)&&inMainMenu)
         {
             if (GameIsPaused)
             {
                 Resume();
-               
+                
+
 
             }
             else
@@ -34,6 +37,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        
+        
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -53,6 +58,20 @@ public class PauseMenu : MonoBehaviour
     {
         //quando si potrà salvare     .Fede
         Debug.Log("Ho salvato");
+    }
+
+    public void MenuSelection(GameObject menuUi)
+    {
+        pauseMenuUI.SetActive(false);
+        menuUi.SetActive(true);
+        inMainMenu = false;
+    }
+
+    public void BackSeletion(GameObject menuUI)
+    {
+        pauseMenuUI.SetActive(true);
+        menuUI.SetActive(false);
+        inMainMenu = true;
     }
 
     public void ReturnMenu()

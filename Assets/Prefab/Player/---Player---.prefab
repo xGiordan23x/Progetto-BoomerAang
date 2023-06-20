@@ -234,7 +234,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   curveDistance: 10
   animator: {fileID: 0}
-  humanSpeed: 10
+  humanSpeed: 7
   Rb: {fileID: 4637255635221018916}
   returnTimer: 1
   potionGenerator: {fileID: 0}
@@ -249,9 +249,15 @@ MonoBehaviour:
   MoltiplicationDistance: 0.5
   isReturning: 0
   canMove: 0
+  canInteract: 0
+  numeroClipDaNonRipetere: 1
   ClipListPassiUmani: []
-  ClipListPassiBoomerang: []
-  ClipTrasformazione: {fileID: 0}
+  ClipListPassiBoomerang:
+  - {fileID: 8300000, guid: c6b560ebaaa4ff144a6905ec863c3d7b, type: 3}
+  - {fileID: 8300000, guid: 0452509d7c928c3458af7d8f691c3352, type: 3}
+  - {fileID: 8300000, guid: 19c9e14c277dc2843a8cc49348099df0, type: 3}
+  ClipTrasformazioneUmanoBoomerang: {fileID: 8300000, guid: 332e00cc87c9a644e8d1fec908ab5f10, type: 3}
+  ClipTrasformazioneBoomerangUmano: {fileID: 8300000, guid: 332e00cc87c9a644e8d1fec908ab5f10, type: 3}
   ClipSpostaCassa: {fileID: 0}
   ClipSpostaCassaFallisce: {fileID: 0}
   lineaProva: {fileID: 0}

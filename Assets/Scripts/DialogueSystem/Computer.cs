@@ -20,19 +20,18 @@ public class Computer : Interactable
     {
         if (player.stateMachine.GetCurrentState() is not PlayerStateBoomerangReturning)
         {
-            animator.SetTrigger("On");
-
+            animator.SetTrigger("On");           
             base.Interact(player);
         }
     }
 
     public void PlayAudioClipTurnOn()
     {
-        AudioManager.instance.PlayAduioClip(ClipTurnOn);
+        AudioManager.instance.PlayAudioClip(ClipTurnOn);
     }
 
     public void PlayAudioClipTurnOff()
     {
-        AudioManager.instance.PlayAduioClip(ClipTurnOff);
+        AudioManager.instance.PlayAudioClip(ClipTurnOff);
     }
 }

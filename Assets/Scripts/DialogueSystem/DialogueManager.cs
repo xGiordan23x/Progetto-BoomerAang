@@ -1,25 +1,42 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueManager : MonoBehaviour,ISubscriber
 {
+    public bool canInteract;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
-
-    private Animator animator;
+    public Image dialogeBox;
 
     private Queue<string> sentences;
 
     void Start()
     {
+        canInteract= false;
         sentences = new Queue<string>();
+        ActivateDialogeBox(false);
+        PubSub.Instance.RegisteredSubscriber(nameof(DialogueManager), this);
     }
-
+    private void Update()
+    {
+        if (canInteract)
+        {
+            if (Input.GetButtonDown("Use"))
+            {
+                ShowNextSentence();
+            }
+        }
+    }
     public void StartDialogue(Dialogue dialogue)
     {
-        animator.SetBool("isOpen", true);
+        ActivateDialogeBox(true);
+        PubSub.Instance.SendMessageSubscriber(nameof(Player), this,true);
+        PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this,true);
 
         nameText.text = dialogue.name;
 
@@ -31,6 +48,12 @@ public class DialogueManager : MonoBehaviour
         }
 
         ShowNextSentence();
+       
+    }
+
+    private void ActivateDialogeBox(bool value)
+    {
+       dialogeBox.gameObject.SetActive(value);
     }
 
     public void ShowNextSentence()
@@ -43,6 +66,7 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
+        
     }
 
     IEnumerator TypeSentence(string frase)
@@ -53,10 +77,27 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             yield return null;
         }
+        canInteract = true;
     }
 
     void EndDialogue()
     {
-        animator.SetBool("isOpen", false);
+
+        canInteract= false;
+        ActivateDialogeBox(false);
+       
+        PubSub.Instance.SendMessageSubscriber(nameof(Player), this, false);
+        PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this, false);
+
+
+    }
+
+    public void OnNotify(object content, bool vero = false)
+    {
+        if(content is PotionGenerator)
+        {
+            EndDialogue();
+            
+        }
     }
 }

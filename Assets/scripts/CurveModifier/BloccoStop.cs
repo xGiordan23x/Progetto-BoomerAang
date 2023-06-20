@@ -83,11 +83,11 @@ public class BloccoStop :Interactable, ISubscriber
 
     public void PlayAudioClipRilascio()
     {
-        AudioManager.instance.PlayAduioClip(ClipRilascio);
+        AudioManager.instance.PlayAudioClip(ClipRilascio);
     }
     public void PlayAudioClipRisucchio()
     {
-        AudioManager.instance.PlayAduioClip(ClipRisucchio);
+        AudioManager.instance.PlayAudioClip(ClipRisucchio);
     }
 
 
