@@ -205,6 +205,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: fdd026f2da2104147af16dab4dc20f04, type: 3}
   - {fileID: 21300000, guid: c98fb8f2ee36fee45a5968afe626c5e4, type: 3}
   - {fileID: 21300000, guid: bc3e9403f7e26854e955396ccc0eafbb, type: 3}
+  - {fileID: 21300000, guid: fef4a70330d53c849a420d77a93cedfb, type: 3}
   - {fileID: 21300000, guid: f2db8e03bca11c94eaf3827ed5603b54, type: 3}
   - {fileID: 21300000, guid: 21d6c413af81abe4d9a858664a4370ad, type: 3}
   - {fileID: 21300000, guid: 9474a7130ed6a7741bbdaf3678f52227, type: 3}
@@ -490,6 +491,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: f74c0537e779732479a753a80396bdb0, type: 3}
   - {fileID: 21300000, guid: a6f28637bdf63984baa9bf75ae921767, type: 3}
   - {fileID: 21300000, guid: 41948637f9b2cec458e3c58c2be1fe6c, type: 3}
+  - {fileID: 21300000, guid: 86b496379753e9f438341d8a367f5d16, type: 3}
   - {fileID: 21300000, guid: 99230047796f1754a895b954e5ee37ce, type: 3}
   - {fileID: 21300000, guid: d190b347496ca6144b688f9ee6558598, type: 3}
   - {fileID: 21300000, guid: 34022c470155274449569dde0f07e758, type: 3}
@@ -752,6 +754,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 8dcc9d8c8f5b5ec4695f114fb59782e1, type: 3}
   - {fileID: 21300000, guid: 585a6b9c64bc3044a913e5c692d0c568, type: 3}
   - {fileID: 21300000, guid: fce3c9aca017943419578fc865b998da, type: 3}
+  - {fileID: 21300000, guid: 7a8f05bc87ae1c947892ba9776418b7f, type: 3}
   - {fileID: 21300000, guid: 918128bc793d1564b8a8872f75d2753b, type: 3}
   - {fileID: 21300000, guid: 9431c3ccc220ad740ad73fcabf358be7, type: 3}
   - {fileID: 21300000, guid: e0d795cc663abbb438f416fde577395b, type: 3}
@@ -772,6 +775,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: d072035d069804541ae2a7677101bd67, type: 3}
   - {fileID: 21300000, guid: 47b16a5d4bbb27642978aeaefe68fd68, type: 3}
   - {fileID: 21300000, guid: 0999666d1979d4f4cbb5961c50ae8f27, type: 3}
+  - {fileID: 21300000, guid: 03fee86d78700c74ab7aeebd36073383, type: 3}
   - {fileID: 21300000, guid: dbb9907d1c764114184fc6ac5703c481, type: 3}
   - {fileID: 21300000, guid: 41a2957da13f0524d8628039dc36a469, type: 3}
   - {fileID: 21300000, guid: af34548dc3cc67741aff81ff9ba9bee3, type: 3}
@@ -1095,6 +1099,7 @@ SpriteAtlas:
   - cassa animazione sx13
   - cassa flippata4
   - cassa frontale spostata4
+  - 14
   - cassa frontale spostata14(1)
   - cassa frontale spostata2
   - run down3
@@ -1380,6 +1385,7 @@ SpriteAtlas:
   - run down4
   - cassa frontale spostata9
   - trasforma b17
+  - 13
   - portale creazione 4
   - cassa dietro13
   - teleport flipped4
@@ -1642,6 +1648,7 @@ SpriteAtlas:
   - Distributore rotto4
   - 10
   - cassa frontale spostata10(1)
+  - 15
   - boomerang camminata retro3
   - Dr B2 Drink14
   - cassa dietro13
@@ -1662,6 +1669,7 @@ SpriteAtlas:
   - GridBrokenRight
   - trasforma b8
   - portale creazione 10
+  - 16
   - int fontana R3
   - int fontana L6
   - cassa animazioneremake1
