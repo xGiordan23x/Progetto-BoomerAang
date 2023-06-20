@@ -205,7 +205,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isOpen: 0
-  canOpenWithKey: 1
+  canOpenWithKey: 0
   colliderImpatto: {fileID: 355375240278122790}
   ClipApriPorta: {fileID: 0}
   ClipChiudiPorta: {fileID: 0}
