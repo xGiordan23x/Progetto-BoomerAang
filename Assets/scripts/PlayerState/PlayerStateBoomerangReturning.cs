@@ -24,7 +24,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
         Debug.Log("Sono in Boomerang ritorno");
 
         _player.GetComponentInChildren<DinamicOrdering>().enabled = false;
-        _player.GetComponent<SpriteRenderer>().sortingLayerName = "Muro";
+        _player.GetComponent<SpriteRenderer>().sortingLayerName = "Tetto";
         _player.GetComponent<SpriteRenderer>().sortingOrder = 100;
 
         _player.AddBomerangCollider();
