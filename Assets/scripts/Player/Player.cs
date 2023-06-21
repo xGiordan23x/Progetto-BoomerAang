@@ -196,9 +196,15 @@ public class Player : MonoBehaviour, ISubscriber
             SetCanMove(1);
 
         }
-        if (content is TutorialDisplay)
+        if (content is TutorialDisplay && !bloccato)
         {
             SetCanMove(1);
+
+            //Debug.Log("totorial time");
+        }
+        if (content is TutorialDisplay && bloccato)
+        {
+            SetCanMove(0);
 
             //Debug.Log("totorial time");
         }
