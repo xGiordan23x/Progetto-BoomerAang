@@ -11,14 +11,21 @@ public class AudioOSTPlayer : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Player>() != null)
         {
-            if(collision.gameObject.GetComponent<Player>().stateMachine.GetCurrentState() is PlayerStateBoomerangMovement)
+            if(collision.gameObject.GetComponent<Player>().stateMachine.GetCurrentState() is PlayerStateBoomerangMovement || collision.gameObject.GetComponent<Player>().stateMachine.GetCurrentState() is PlayerStateHumanMovement)
             {
                 onTriggerEnter.Invoke();
-                GetComponent<AudioOSTPlayer>().enabled = false;
+                
+                GetComponent<BoxCollider2D>().enabled = false;
             }
             
         }
         
 
+    }
+
+    public void ResetVariables()
+    {
+        GetComponent<BoxCollider2D>().enabled = true;
+        GetComponent<AudioSource>().Stop();
     }
 }
