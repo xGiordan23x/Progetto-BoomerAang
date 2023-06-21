@@ -65,6 +65,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 955dc33095b37f641bd8c9417fee6797, type: 3}
   - {fileID: 21300000, guid: 920ba930a7e833a4c9923c67902e39d4, type: 3}
   - {fileID: 21300000, guid: 29f35d30d30e93d48a63c4c345e5a86c, type: 3}
+  - {fileID: 21300000, guid: 56e97f3096d1ed54bb42243b930f66a0, type: 3}
   - {fileID: 21300000, guid: 481b614029351604fbc9bf6ca7afe924, type: 3}
   - {fileID: 21300000, guid: fca8d140b22e85346b11ca8471ebddd9, type: 3}
   - {fileID: 21300000, guid: 48669d4023316f741b2cb10be6256ab2, type: 3}
@@ -1134,6 +1135,7 @@ SpriteAtlas:
   - pulsante sx1
   - trasforma b8
   - StartMenuMonitorFx11
+  - tavolo centro
   - int fontana L3
   - StartMenuMonitorFx28
   - run L1
