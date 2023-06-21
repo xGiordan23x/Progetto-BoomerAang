@@ -53,6 +53,9 @@ TagManager:
   - name: Parete
     uniqueID: 1292991157
     locked: 0
+  - name: MuroDettaglio
+    uniqueID: 847501983
+    locked: 0
   - name: Cavi
     uniqueID: 2530929735
     locked: 0
@@ -64,9 +67,6 @@ TagManager:
     locked: 0
   - name: Muro
     uniqueID: 2871256707
-    locked: 0
-  - name: MuroDettaglio
-    uniqueID: 847501983
     locked: 0
   - name: ObjectsBottom
     uniqueID: 3119521151
