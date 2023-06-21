@@ -85,7 +85,7 @@ public class DialogueManager : MonoBehaviour,ISubscriber
 
         canInteract= false;
         ActivateDialogeBox(false);
-       
+        PubSub.Instance.SendMessageSubscriber(nameof(DialogueTrigger), this, false);
         PubSub.Instance.SendMessageSubscriber(nameof(Player), this, false);
         PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this, false);
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
-public class DialogueTrigger : MonoBehaviour
+public class DialogueTrigger : MonoBehaviour, ISubscriber
 {
     public Dialogue dialogue;
     private DialogueManager manager;
@@ -10,6 +10,7 @@ public class DialogueTrigger : MonoBehaviour
     private void Awake()
     {
         manager = FindObjectOfType<DialogueManager>();
+        PubSub.Instance.RegisteredSubscriber(nameof(DialogueTrigger), this);
         
        
     }
@@ -21,7 +22,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             manager.StartDialogue(dialogue);
             canPlayDialogue= false;
-            Invoke(nameof(SetCanPlayDialogue),1f);
+           
         }
                
     }
@@ -30,5 +31,13 @@ public class DialogueTrigger : MonoBehaviour
     {
         canPlayDialogue= true;
         Debug.Log("Puoi Interagire");
+    }
+
+    public void OnNotify(object content, bool vero = false)
+    {
+        if(content is DialogueManager)
+        {
+            Invoke(nameof(SetCanPlayDialogue), 1f);
+        }
     }
 }

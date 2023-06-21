@@ -27353,6 +27353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PortaChiave
       objectReference: {fileID: 0}
+    - target: {fileID: 1357046786330203929, guid: 32dd926f81f6413429da1c51f2aadc9e, type: 3}
+      propertyPath: ClipInterazionePortaChiusa
+      value: 
+      objectReference: {fileID: 8300000, guid: 5394ae2ab1edbc34da8866de3b7b5591, type: 3}
     - target: {fileID: 1357046786330203932, guid: 32dd926f81f6413429da1c51f2aadc9e, type: 3}
       propertyPath: m_RootOrder
       value: 3

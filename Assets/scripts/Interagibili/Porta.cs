@@ -14,6 +14,8 @@ public class Porta : Interactable
     [SerializeField] AudioClip ClipApriPorta;
     [SerializeField] AudioClip ClipChiudiPorta;
     [SerializeField] AudioClip ClipUtilizzoChiave;
+    [SerializeField] AudioClip ClipInterazionePortaChiusa;
+
 
     private void Start()
     {
@@ -65,9 +67,14 @@ public class Porta : Interactable
                     }
 
                     OpenDoor();
-                    
-                    
 
+
+
+                }
+                else
+                {
+                    Debug.Log("Non posso aprire la porta senza chiave");
+                    PlayAudioClipInterazionePortaChiusa();
                 }
 
             }
@@ -145,6 +152,10 @@ public class Porta : Interactable
     public void PlayAudioClipUtilizzaChiave()
     {
         AudioManager.instance.PlayAudioClip(ClipUtilizzoChiave);
+    }
+    public void PlayAudioClipInterazionePortaChiusa()
+    {
+        AudioManager.instance.PlayAudioClip(ClipInterazionePortaChiusa);
     }
 
 }
