@@ -13,7 +13,7 @@ public class InteractionZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Interacter>() != null)
+        if (collision.GetComponent<Player>() != null)
         {
             boxTest.ActivateBox();
         }
@@ -21,7 +21,7 @@ public class InteractionZone : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.GetComponent<Interacter>() != null)
+        if(collision.GetComponent<Player>() != null)
         {
             boxTest.DisabilitateBox();
         }

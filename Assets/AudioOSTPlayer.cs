@@ -12,6 +12,7 @@ public class AudioOSTPlayer : MonoBehaviour
         if(collision.GetComponent<Player>().stateMachine.GetCurrentState() is not PlayerStateBoomerangReturning)
         {
             onTriggerEnter.Invoke();
+            GetComponent<BoxCollider2D>().enabled = false;
         }
        
     }

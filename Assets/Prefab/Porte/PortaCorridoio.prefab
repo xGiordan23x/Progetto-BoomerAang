@@ -207,10 +207,9 @@ MonoBehaviour:
   isOpen: 0
   canOpenWithKey: 0
   colliderImpatto: {fileID: 355375240278122790}
-  ClipApriPorta: {fileID: 8300000, guid: 81bbfe02227972e409365c43dad9ba36, type: 3}
+  ClipApriPorta: {fileID: 0}
   ClipChiudiPorta: {fileID: 0}
   ClipUtilizzoChiave: {fileID: 0}
-  ClipInterazionePortaChiusa: {fileID: 8300000, guid: 5394ae2ab1edbc34da8866de3b7b5591, type: 3}
 --- !u!95 &1602077747875092957
 Animator:
   serializedVersion: 5

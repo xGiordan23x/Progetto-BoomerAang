@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.Experimental.GraphView.GraphView;
@@ -13,6 +14,7 @@ public class DialogueManager : MonoBehaviour,ISubscriber
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     public Image dialogeBox;
+    public float textSpeed;
 
     private Queue<string> sentences;
 
@@ -76,8 +78,10 @@ public class DialogueManager : MonoBehaviour,ISubscriber
         dialogueText.text = "";
         foreach (char letter in frase.ToCharArray())
         {
+           
             dialogueText.text += letter;
-            yield return null;
+            yield return new WaitForSeconds(1/textSpeed);
+            
         }
         canInteract = true;
     }
