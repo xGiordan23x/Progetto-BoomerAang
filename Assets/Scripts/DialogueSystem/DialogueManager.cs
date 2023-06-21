@@ -80,7 +80,7 @@ public class DialogueManager : MonoBehaviour,ISubscriber
         {
            
             dialogueText.text += letter;
-            yield return new WaitForSeconds(1/textSpeed);
+            yield return new WaitForSecondsRealtime(1/textSpeed);
             
         }
         canInteract = true;
