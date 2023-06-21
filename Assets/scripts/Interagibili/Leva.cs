@@ -20,7 +20,7 @@ public class Leva : Interactable
 
     public override void Interact(Player player)
     {
-        if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangReturning)
+        if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangReturning && !active)
         {
             if (active)
             {
