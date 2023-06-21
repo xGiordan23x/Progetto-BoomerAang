@@ -4035,6 +4035,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialStarted
       objectReference: {fileID: 0}
+    - target: {fileID: 2468057208824803717, guid: 7d398b66a530bdd49ae02eab86107183, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2468057208824803719, guid: 7d398b66a530bdd49ae02eab86107183, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4079,9 +4083,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2468057209754524891, guid: 7d398b66a530bdd49ae02eab86107183, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2468057209814244127, guid: 7d398b66a530bdd49ae02eab86107183, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4861529318031359594, guid: 7d398b66a530bdd49ae02eab86107183, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5232968757171561368, guid: 7d398b66a530bdd49ae02eab86107183, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659795375999416520, guid: 7d398b66a530bdd49ae02eab86107183, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659795375999416520, guid: 7d398b66a530bdd49ae02eab86107183, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6731613522756010959, guid: 7d398b66a530bdd49ae02eab86107183, type: 3}
       propertyPath: m_AnchoredPosition.x

@@ -35,7 +35,7 @@ public class TutorialDisplay : Interactable
 
     public override void Interact(Player player)
     {
-        if (player.stateMachine.GetCurrentState() is not PlayerStateBoomerangReturning && !display)
+        if (player.stateMachine.GetCurrentState() is not PlayerStateBoomerangReturning && !display && !canInteract)
         {
            ActivateTutorialScreen();
         }
@@ -50,11 +50,9 @@ public class TutorialDisplay : Interactable
         PubSub.Instance.SendMessageSubscriber(nameof(Player), this, true);
         animator.SetBool("Display", true);
         animator.SetTrigger(tutorialType.ToString());
-        //canInteract= true;
-        Invoke(nameof(SetCanInteract), 1f);
-        Debug.Log("Sentiamo");
-
-
+        
+        Invoke(nameof(SetCanInteractTrue), 1f);
+       
     } 
     public void DeactivateTutorialScreen()
     {
@@ -62,11 +60,15 @@ public class TutorialDisplay : Interactable
         animator.SetBool("Display", false);
         PubSub.Instance.SendMessageSubscriber(nameof(Player), this, false);
         TutorialScreen.SetActive(false);
-        canInteract= false;
-        Debug.Log("non sentiamo");
+        Invoke(nameof(SetCanInteractFalse), 1f);
+      
     }
-    public void SetCanInteract()
+    public void SetCanInteractTrue()
     {
         canInteract= true;
+    } 
+    public void SetCanInteractFalse()
+    {
+        canInteract= false;
     }
 }
