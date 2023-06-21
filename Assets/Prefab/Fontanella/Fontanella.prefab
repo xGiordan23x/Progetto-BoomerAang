@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 8416626617325889103}
   - component: {fileID: 8416626617325889102}
   - component: {fileID: 7367478715593689112}
+  - component: {fileID: 386447800935300268}
   m_Layer: 3
   m_Name: Fontanella
   m_TagString: Untagged
@@ -200,3 +201,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4033344397af1946a2d752d8bd7e060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &386447800935300268
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8416626617325889109}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
