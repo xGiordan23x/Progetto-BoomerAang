@@ -252,6 +252,8 @@ public class Player : MonoBehaviour, ISubscriber
 
         Vector2 movement = new Vector2(horizontal, vertical).normalized;
 
+
+
         if (movement != Vector2.zero)//controllo cosi che lastDirection non sia 0,0
         {
             lastDirection = movement;
@@ -263,6 +265,7 @@ public class Player : MonoBehaviour, ISubscriber
         }
 
         Rb.velocity = new Vector2(movement.x * speed, movement.y * speed);
+
     }
 
 
