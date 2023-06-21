@@ -88,7 +88,7 @@ MonoBehaviour:
   stopPosition: {fileID: 3263355571288067812}
   newDirection: {x: 0, y: -1}
   activated: 0
-  timeToWaitBeforeChange: 2
+  timeToWaitBeforeChange: 1
   ClipBoosterTrema: {fileID: 0}
   ClipBoosterSpara: {fileID: 0}
 --- !u!212 &3263355572558196794
