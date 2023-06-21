@@ -22,7 +22,11 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
     public override void OnEnter()
     {
         Debug.Log("Sono in Boomerang ritorno");
-        Debug.Log("Creo un collider");
+
+        _player.GetComponentInChildren<DinamicOrdering>().enabled = false;
+        _player.GetComponent<SpriteRenderer>().sortingLayerName = "Muro";
+        _player.GetComponent<SpriteRenderer>().sortingOrder = 100;
+
         _player.AddBomerangCollider();
 
 
@@ -114,6 +118,11 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
 
     public override void OnExit()
     {
+        _player.GetComponentInChildren<DinamicOrdering>().enabled = true;
+        _player.GetComponent<SpriteRenderer>().sortingLayerName = "Default";
+        _player.GetComponent<SpriteRenderer>().sortingOrder = 0;
+
+
         _player.DestroyBoomerangCollider();
         _player.animator.SetBool("transform", false);
 

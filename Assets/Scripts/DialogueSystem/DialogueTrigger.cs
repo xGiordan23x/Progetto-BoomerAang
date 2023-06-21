@@ -22,7 +22,12 @@ public class DialogueTrigger : MonoBehaviour, ISubscriber
         {
             manager.StartDialogue(dialogue);
             canPlayDialogue= false;
-           
+
+        }
+        else
+        {
+            Debug.Log("aspetta per interagire");
+            return;
         }
                
     }
@@ -30,14 +35,14 @@ public class DialogueTrigger : MonoBehaviour, ISubscriber
   public void SetCanPlayDialogue()
     {
         canPlayDialogue= true;
-        Debug.Log("Puoi Interagire");
+       
     }
 
     public void OnNotify(object content, bool vero = false)
     {
         if(content is DialogueManager)
         {
-            Invoke(nameof(SetCanPlayDialogue), 1f);
+            Invoke("SetCanPlayDialogue", 2f);
         }
     }
 }

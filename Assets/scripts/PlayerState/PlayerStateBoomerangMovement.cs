@@ -18,21 +18,36 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
         
         _player.isReturning = false;
         _player.hasPotion = false;
-        _player.canMove = true;
+       
         _player.footCollider.offset = new Vector2(0, _player.yColliderBoomerang);
         _player.foot.transform.localPosition = new Vector3(0, _player.yPiediBoomerang);
         PubSub.Instance.SendMessageSubscriber(nameof(Booster), this);
         PubSub.Instance.SendMessageSubscriber(nameof(Fontanella), this);
+        PubSub.Instance.SendMessageSubscriber(nameof(DialogueManager), this);
 
     }
 
     public void OnNotify(object content, bool vero = false)
     {
+        if(content is Player)
+        {
+            PubSub.Instance.SendMessageSubscriber(nameof(DialogueManager), this);
+        }
+        if (content is DialogueManager && vero == true)
+        {
+            _player.canMove = false;
+        }
+        if (content is DialogueManager && vero == false)
+        {
+            _player.SetCanMove(1);
+            _player.canMove = true;
+        }
 
     }
 
     public override void OnUpdate()
     {
+       
         if (_player.canMove)
         {
             //Movement

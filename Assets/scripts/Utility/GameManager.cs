@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -61,6 +62,9 @@ public class GameManager : MonoBehaviour, IDataPersistance
     {
         maxIndex = SceneManager.sceneCountInBuildSettings-1;
         CurrentRoomIndex = SceneManager.GetActiveScene().buildIndex;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         
     }
 

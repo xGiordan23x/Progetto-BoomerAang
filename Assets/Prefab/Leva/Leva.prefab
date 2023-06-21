@@ -208,7 +208,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  ClipAttivaLeva: {fileID: 8300000, guid: 1b2da2c1b00088547ac4f100047e0f81, type: 3}
+  ClipAttivaLeva: {fileID: 8300000, guid: 1076a0a320fff4b40952311f976008c7, type: 3}
 --- !u!95 &1637116929
 Animator:
   serializedVersion: 5

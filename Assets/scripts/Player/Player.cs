@@ -6,6 +6,11 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class Player : MonoBehaviour, ISubscriber
 {
 
+    //Ho levato al fine animazione BoomerangToBoomerang il setCanMove a 1 , vedere se funziona tutto
+
+
+
+
     [Header("Curva")]
     public BezierCurve curve;
     public BezierPoint[] points;
@@ -380,5 +385,9 @@ public class Player : MonoBehaviour, ISubscriber
     public PotionGenerator GetPotionGenerator()
     {
         return potionGenerator.gameObject.GetComponent<PotionGenerator>();
+    }
+    public void CheckForDialogue()
+    {
+        PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangMovement), this);
     }
 }

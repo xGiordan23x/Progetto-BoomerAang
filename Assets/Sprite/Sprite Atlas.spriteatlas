@@ -186,6 +186,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: c525b37228b93314bb28d1769be13dd7, type: 3}
   - {fileID: 1988970273, guid: c80cef72b7dadf84ba7af4c3fa07e3d2, type: 3}
   - {fileID: 21300000, guid: 521250825de153c4f9cdb8d436c465f2, type: 3}
+  - {fileID: 21300000, guid: 25f15682e8a0400448c9073e3f7f03bd, type: 3}
   - {fileID: 21300000, guid: 4b5af9828a15df44cac649e2c97fe4df, type: 3}
   - {fileID: 21300000, guid: d2521a82089f9d949b49b5ae5510ab94, type: 3}
   - {fileID: 21300000, guid: d6862292693094645a1e2860b5bc3a69, type: 3}
@@ -471,6 +472,7 @@ SpriteAtlas:
   - {fileID: -556720568, guid: 265286368b6b1e34aa33d86ca14d1a11, type: 3}
   - {fileID: 1648945515, guid: 265286368b6b1e34aa33d86ca14d1a11, type: 3}
   - {fileID: -667207158, guid: 265286368b6b1e34aa33d86ca14d1a11, type: 3}
+  - {fileID: 21300000, guid: 069337362a77a7a42a3400ad5ea0018f, type: 3}
   - {fileID: 21300000, guid: 6d2097366273fa74397f925fc30c8fae, type: 3}
   - {fileID: 21300000, guid: 5feafd365d505934c8a28293b3df52b5, type: 3}
   - {fileID: 21300000, guid: ddc01056456398d41a5a1e897f144ce9, type: 3}
@@ -482,6 +484,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 7d084476be94e324893dc53cf59aeca8, type: 3}
   - {fileID: 21300000, guid: dc66287655a2a3e40a6bbe10988bb847, type: 3}
   - {fileID: 21300000, guid: bd7539762be2c80408a50413c5c63b15, type: 3}
+  - {fileID: 21300000, guid: dc6ff386461072144ad166fc00a2c8e9, type: 3}
   - {fileID: 21300000, guid: 83208b86f874ae44bb24c3d671e349d1, type: 3}
   - {fileID: 21300000, guid: edcafb8641d661c41b189d599f737cf6, type: 3}
   - {fileID: 21300000, guid: 5e6f799645d766442b53fb8e7fb69650, type: 3}
@@ -737,6 +740,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b3e0389bf1921cc4bb1fc6e65e59d0ad, type: 3}
   - {fileID: 21300000, guid: 2e064b9b1b906334f9552ecee5cbd3bc, type: 3}
   - {fileID: 21300000, guid: 7c5435ab277ca344d98a9987ee20d504, type: 3}
+  - {fileID: 21300000, guid: 1c5112bbf349b134aaeac083f156ae72, type: 3}
   - {fileID: 21300000, guid: 93acc5bb190e68144be9713cb151c219, type: 3}
   - {fileID: -1548400637, guid: 8a1e27bb88a54db43aada6179070d587, type: 3}
   - {fileID: 21300000, guid: f09b1cbbde44ef6449b444f8748f027e, type: 3}
@@ -818,10 +822,12 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 03fee86d78700c74ab7aeebd36073383, type: 3}
   - {fileID: 21300000, guid: dbb9907d1c764114184fc6ac5703c481, type: 3}
   - {fileID: 21300000, guid: 41a2957da13f0524d8628039dc36a469, type: 3}
+  - {fileID: 21300000, guid: d899b08d955e0e14eba69cd7bf2c1d32, type: 3}
   - {fileID: 21300000, guid: af34548dc3cc67741aff81ff9ba9bee3, type: 3}
   - {fileID: 21300000, guid: 5a3c568d2be3913459331ade90eb1fba, type: 3}
   - {fileID: 21300000, guid: 89f58f8dd74206d479335c8f4ddc2d11, type: 3}
   - {fileID: 21300000, guid: f3d6639d5fff1684da7212f831a0e46d, type: 3}
+  - {fileID: 21300000, guid: e21d7a9d9b201a94ea970ee1127a7509, type: 3}
   - {fileID: 21300000, guid: a7edfe9dbcb6dcb42ae4430dcca892e2, type: 3}
   - {fileID: 21300000, guid: dcbf4cad92b024942b03ffe975aefd9c, type: 3}
   - {fileID: 21300000, guid: a50a0ead93c78e94bb75c25f67fd4cf0, type: 3}
@@ -1125,6 +1131,7 @@ SpriteAtlas:
   - I_Porta1Orizzontale7
   - 1_0
   - BoomWalkSide4
+  - LoadingFrame6
   - DoorModify10
   - push up2
   - cassa dietro8
@@ -1410,6 +1417,7 @@ SpriteAtlas:
   - 4_1
   - 4_2
   - 4_3
+  - LoadingFrame3
   - int porta up1
   - I_Porta1Orizzontale7
   - Idle down3
@@ -1421,6 +1429,7 @@ SpriteAtlas:
   - trasforma in umano 2
   - I_Porta1OrizzontaleNew1
   - int fontana down6
+  - LoadingFrame5
   - cassa animazione sx9
   - int porta R4
   - PortaChiaveChiusaStanza9
@@ -1676,6 +1685,7 @@ SpriteAtlas:
   - Dr B2 Drink8
   - run down8
   - teleport4
+  - LoadingFrame4
   - trasforma in umano 8
   - TileruleWallExtra_0
   - frame 8
@@ -1757,10 +1767,12 @@ SpriteAtlas:
   - 16
   - int fontana R3
   - int fontana L6
+  - LoadingFrame1
   - cassa animazioneremake1
   - teleport1
   - int fontana up4
   - BoosterBottomShake2
+  - LoadingFrame2
   - cassa frontale spostata1(1)
   - push down 4
   - teleport5

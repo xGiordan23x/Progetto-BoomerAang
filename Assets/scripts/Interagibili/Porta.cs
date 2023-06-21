@@ -31,11 +31,13 @@ public class Porta : Interactable
     }
     public override void Interact(Player player)
     {
+        
         if (player.stateMachine.GetCurrentState() is not PlayerStateBoomerangReturning && !isOpen)    //il giocatore deve essere umano o boomerang 
         {
             if (!canOpenWithKey)            //guarda se questa porta puo essere aperta da una chiave
             {
                 Debug.Log("questa porta non puo essere aperta da una chiave");
+                PlayAudioClipInterazionePortaChiusa();
                 return;
             }
 
@@ -66,7 +68,9 @@ public class Porta : Interactable
                         player.animator.SetTrigger("BoomerangInteract");
                     }
 
+                   
                     OpenDoor();
+                   
 
 
 

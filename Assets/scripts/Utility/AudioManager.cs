@@ -9,6 +9,9 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance { get; private set; }
     public GameObject prefabEmpty;
+    public AudioClip clipOSTLevel_1;
+   
+
    
     private void Awake()
     {
@@ -28,9 +31,19 @@ public class AudioManager : MonoBehaviour
     {
         GameObject temp = Instantiate(prefabEmpty);
         temp.GetComponent<AudioSource>().clip = clipToPLay;
-        //temp.AddComponent<AudioSource>().PlayOneShot(clipToPLay);
         temp.GetComponent<AudioSource>().Play();
         Destroy(temp,clipToPLay.length);
+    }
+
+    public void PlayOSTLevel_1()
+    {
+        GameObject temp = Instantiate(prefabEmpty);
+        temp.gameObject.name = "shfefejhui";
+        temp.GetComponent<AudioSource>().clip = clipOSTLevel_1;
+        temp.GetComponent<AudioSource>().loop= true;
+        temp.GetComponent<AudioSource>().Play();
+
+       
     }
 
 }

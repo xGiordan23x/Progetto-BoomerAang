@@ -8,6 +8,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class DialogueManager : MonoBehaviour,ISubscriber
 {
+    private bool isInDialogue;
     public bool canInteract;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
@@ -34,6 +35,7 @@ public class DialogueManager : MonoBehaviour,ISubscriber
     }
     public void StartDialogue(Dialogue dialogue)
     {
+        isInDialogue = true;
         ActivateDialogeBox(true);
         PubSub.Instance.SendMessageSubscriber(nameof(Player), this,true);
         PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this,true);
@@ -82,7 +84,7 @@ public class DialogueManager : MonoBehaviour,ISubscriber
 
     void EndDialogue()
     {
-
+        isInDialogue = false;
         canInteract= false;
         ActivateDialogeBox(false);
         PubSub.Instance.SendMessageSubscriber(nameof(DialogueTrigger), this, false);
@@ -96,8 +98,19 @@ public class DialogueManager : MonoBehaviour,ISubscriber
     {
         if(content is PotionGenerator)
         {
-            EndDialogue();
-            
+            EndDialogue();            
+        }
+        if(content is PlayerStateBoomerangMovement)
+        {
+            if(isInDialogue)
+            {
+               
+                PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangMovement), this, true);
+            }
+            else
+            {
+                PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangMovement), this, false);
+            }
         }
     }
 }
