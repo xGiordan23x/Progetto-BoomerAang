@@ -60,7 +60,7 @@ MonoBehaviour:
   OnBoomerangHit:
     m_PersistentCalls:
       m_Calls: []
-  ClipRotturaCassa: {fileID: 0}
+  ClipRotturaCassa: {fileID: 8300000, guid: 1b2da2c1b00088547ac4f100047e0f81, type: 3}
   ClipSpostamentoCassa: {fileID: 0}
 --- !u!61 &956278114083313531
 BoxCollider2D:

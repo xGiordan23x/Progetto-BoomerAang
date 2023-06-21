@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Bottom Dark
+    uniqueID: 760854937
+    locked: 0
   - name: Terrain
     uniqueID: 2107836077
     locked: 0
@@ -47,11 +50,8 @@ TagManager:
   - name: PavimentoRigaNera
     uniqueID: 2720863177
     locked: 0
-  - name: Muro
-    uniqueID: 2871256707
-    locked: 0
-  - name: MuroDettaglio
-    uniqueID: 847501983
+  - name: Parete
+    uniqueID: 1292991157
     locked: 0
   - name: Cavi
     uniqueID: 2530929735
@@ -62,6 +62,12 @@ TagManager:
   - name: Player
     uniqueID: 3775881391
     locked: 0
+  - name: Muro
+    uniqueID: 2871256707
+    locked: 0
+  - name: MuroDettaglio
+    uniqueID: 847501983
+    locked: 0
   - name: ObjectsBottom
     uniqueID: 3119521151
     locked: 0
@@ -70,6 +76,9 @@ TagManager:
     locked: 0
   - name: FloorWallDecoration
     uniqueID: 3632089781
+    locked: 0
+  - name: Tetto
+    uniqueID: 3397364633
     locked: 0
   - name: ScreenColor
     uniqueID: 40441923

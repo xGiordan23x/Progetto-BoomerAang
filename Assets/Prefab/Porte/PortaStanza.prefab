@@ -206,7 +206,7 @@ MonoBehaviour:
   isOpen: 0
   canOpenWithKey: 0
   colliderImpatto: {fileID: 1825845216}
-  ClipApriPorta: {fileID: 0}
+  ClipApriPorta: {fileID: 8300000, guid: dff80bb383c869241a11e5c375b07d5e, type: 3}
   ClipChiudiPorta: {fileID: 0}
   ClipUtilizzoChiave: {fileID: 0}
 --- !u!95 &1357046786330203931
