@@ -196,6 +196,12 @@ public class Player : MonoBehaviour, ISubscriber
             SetCanMove(1);
 
         }
+        if (content is TutorialDisplay)
+        {
+            SetCanMove(1);
+
+            //Debug.Log("totorial time");
+        }
 
 
     }
