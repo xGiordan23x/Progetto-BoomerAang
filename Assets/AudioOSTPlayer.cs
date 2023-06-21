@@ -7,9 +7,9 @@ public class AudioOSTPlayer : MonoBehaviour
 {
     public UnityEvent onTriggerEnter;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.GetComponent<Player>().stateMachine.GetCurrentState() is not PlayerStateBoomerangReturning)
+        if(collision.GetComponent<Player>().stateMachine.GetCurrentState() is PlayerStateBoomerangMovement)
         {
             onTriggerEnter.Invoke();
             GetComponent<BoxCollider2D>().enabled = false;
