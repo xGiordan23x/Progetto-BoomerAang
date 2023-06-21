@@ -3454,6 +3454,22 @@ PrefabInstance:
       propertyPath: lineaProva
       value: 
       objectReference: {fileID: 721798772}
+    - target: {fileID: 4637255635221018919, guid: 4c2084da29a60a84d8da823177a36e9a, type: 3}
+      propertyPath: ClipListPassiUmani.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637255635221018919, guid: 4c2084da29a60a84d8da823177a36e9a, type: 3}
+      propertyPath: ClipListPassiUmani.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c6b560ebaaa4ff144a6905ec863c3d7b, type: 3}
+    - target: {fileID: 4637255635221018919, guid: 4c2084da29a60a84d8da823177a36e9a, type: 3}
+      propertyPath: ClipListPassiUmani.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0452509d7c928c3458af7d8f691c3352, type: 3}
+    - target: {fileID: 4637255635221018919, guid: 4c2084da29a60a84d8da823177a36e9a, type: 3}
+      propertyPath: ClipListPassiUmani.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 19c9e14c277dc2843a8cc49348099df0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c2084da29a60a84d8da823177a36e9a, type: 3}
 --- !u!1 &1680871727
