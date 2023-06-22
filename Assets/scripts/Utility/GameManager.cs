@@ -60,12 +60,22 @@ public class GameManager : MonoBehaviour, IDataPersistance
 
     private void Start()
     {
-        maxIndex = SceneManager.sceneCountInBuildSettings-1;
+        maxIndex = SceneManager.sceneCountInBuildSettings- 1;
         CurrentRoomIndex = SceneManager.GetActiveScene().buildIndex;
 
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        
+        if (CurrentRoomIndex == 0)
+        {
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+
+
+
     }
 
     public void LoadNextRoom()
