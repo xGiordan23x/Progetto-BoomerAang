@@ -602,6 +602,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e7449744751de0642bb482a5e20d3968, type: 3}
   - {fileID: 21300000, guid: 856fe4541b739e240877cf6d002c86b0, type: 3}
   - {fileID: 21300000, guid: fb214864686358c429df1150a87895a8, type: 3}
+  - {fileID: 21300000, guid: 49ce4864c9ec405418c77d1790555d2d, type: 3}
   - {fileID: 21300000, guid: 839da864d81091645be6810722d77153, type: 3}
   - {fileID: 21300000, guid: 80dd5a64d1d7bd84b9c70b86b6578ba5, type: 3}
   - {fileID: 21300000, guid: 1c8ffc848978c694abf86ecd98353766, type: 3}
@@ -1279,6 +1280,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 45b1e60fe8acfdb49bb5a8eb533f4ff0, type: 3}
   - {fileID: 21300000, guid: 6b29db0f821343b48936bed9fc259bb9, type: 3}
   - {fileID: 21300000, guid: 16f1ec0f8670960498d1e9e31962df00, type: 3}
+  - {fileID: 21300000, guid: 28d7ec0f56abb7742b66b8c30e33a238, type: 3}
   - {fileID: 21300000, guid: b015a11f527c237409dbef5889c40522, type: 3}
   - {fileID: 21300000, guid: 9e9df61fcf86a9f47b703948de25fdfc, type: 3}
   - {fileID: 21300000, guid: 81f2d91f718cc0f48a6c746b93c2b634, type: 3}
@@ -1884,6 +1886,7 @@ SpriteAtlas:
   - StartMenuMonitorFx26
   - I_Porta1Orizzontale6
   - remakeCamminataLateraleSX3
+  - Catene2
   - I_BloccoBluVerticale2
   - Door6
   - Idle R1
@@ -2561,6 +2564,7 @@ SpriteAtlas:
   - Leva12
   - cassa frontale spostata2
   - tavolo a parete
+  - Catene1
   - pulsante dx1
   - I_VentolaBloccoPavimentoUeP1
   - TextBoxFX6
