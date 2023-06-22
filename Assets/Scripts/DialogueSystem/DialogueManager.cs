@@ -1,13 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
-public class DialogueManager : MonoBehaviour,ISubscriber
+public class DialogueManager : MonoBehaviour, ISubscriber
 {
     private bool isInDialogue;
     public bool canInteract;
@@ -20,7 +17,7 @@ public class DialogueManager : MonoBehaviour,ISubscriber
 
     void Start()
     {
-        canInteract= false;
+        canInteract = false;
         sentences = new Queue<string>();
         ActivateDialogeBox(false);
         PubSub.Instance.RegisteredSubscriber(nameof(DialogueManager), this);
@@ -39,8 +36,8 @@ public class DialogueManager : MonoBehaviour,ISubscriber
     {
         isInDialogue = true;
         ActivateDialogeBox(true);
-        PubSub.Instance.SendMessageSubscriber(nameof(Player), this,true);
-        PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this,true);
+        PubSub.Instance.SendMessageSubscriber(nameof(Player), this, true);
+        PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator), this, true);
 
         nameText.text = dialogue.name;
 
@@ -52,12 +49,12 @@ public class DialogueManager : MonoBehaviour,ISubscriber
         }
 
         ShowNextSentence();
-       
+
     }
 
     private void ActivateDialogeBox(bool value)
     {
-       dialogeBox.gameObject.SetActive(value);
+        dialogeBox.gameObject.SetActive(value);
     }
 
     public void ShowNextSentence()
@@ -70,7 +67,7 @@ public class DialogueManager : MonoBehaviour,ISubscriber
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-        
+
     }
 
     IEnumerator TypeSentence(string frase)
@@ -78,10 +75,10 @@ public class DialogueManager : MonoBehaviour,ISubscriber
         dialogueText.text = "";
         foreach (char letter in frase.ToCharArray())
         {
-           
+
             dialogueText.text += letter;
-            yield return new WaitForSecondsRealtime(1/textSpeed);
-            
+            yield return new WaitForSecondsRealtime(1 / textSpeed);
+
         }
         canInteract = true;
     }
@@ -89,7 +86,7 @@ public class DialogueManager : MonoBehaviour,ISubscriber
     void EndDialogue()
     {
         isInDialogue = false;
-        canInteract= false;
+        canInteract = false;
         ActivateDialogeBox(false);
         PubSub.Instance.SendMessageSubscriber(nameof(DialogueTrigger), this, false);
         PubSub.Instance.SendMessageSubscriber(nameof(Player), this, false);
@@ -100,15 +97,15 @@ public class DialogueManager : MonoBehaviour,ISubscriber
 
     public void OnNotify(object content, bool vero = false)
     {
-        if(content is PotionGenerator)
+        if (content is PotionGenerator)
         {
-            EndDialogue();            
+            EndDialogue();
         }
-        if(content is PlayerStateBoomerangMovement)
+        if (content is PlayerStateBoomerangMovement)
         {
-            if(isInDialogue)
+            if (isInDialogue)
             {
-               
+
                 PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangMovement), this, true);
             }
             else
