@@ -35,7 +35,7 @@ public class TutorialDisplay : Interactable
 
     public override void Interact(Player player)
     {
-        if (player.stateMachine.GetCurrentState() is not PlayerStateBoomerangReturning && !display && !canInteract)
+        if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangMovement && !display && !canInteract)
         {
            ActivateTutorialScreen();
         }
