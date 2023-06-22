@@ -1,15 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class BloccoUmanoParabola : Interactable, ISubscriber
 {
-    
+
     public bool activated;
     public Transform stopPosition;
-   
+
     private Animator anim;
 
     private void Start()
@@ -23,7 +19,7 @@ public class BloccoUmanoParabola : Interactable, ISubscriber
 
     public override void Interact(Player player)
     {
-       
+
         OnInteraction.Invoke();
         activated = true;
 
@@ -39,7 +35,7 @@ public class BloccoUmanoParabola : Interactable, ISubscriber
     }
 
 
-    
+
     public void StartParabola()
     {
         PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
@@ -52,10 +48,10 @@ public class BloccoUmanoParabola : Interactable, ISubscriber
     {
         if (collision.GetComponent<Player>().stateMachine.GetCurrentState() is PlayerStateHumanMovement)
         {
-          
+
             Interact(collision.GetComponent<Player>());
         }
 
     }
-   
+
 }

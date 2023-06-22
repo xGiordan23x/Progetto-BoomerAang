@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5b46f25b2a4a3884eb9862374393554a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.764151, g: 0.637994, b: 0.637994, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -103,7 +103,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.014024138, y: -0.01377815}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -187,6 +187,8 @@ MonoBehaviour:
   activated: 0
   stopPosition: {fileID: 3025781377760289676}
   shouldMovePlayer: 0
+  ClipRisucchio: {fileID: 0}
+  ClipRilascio: {fileID: 0}
 --- !u!114 &3025781377422432126
 MonoBehaviour:
   m_ObjectHideFlags: 0

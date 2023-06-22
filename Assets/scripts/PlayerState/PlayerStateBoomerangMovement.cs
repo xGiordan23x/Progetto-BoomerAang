@@ -1,4 +1,3 @@
-using UnityEditor.Hardware;
 using UnityEngine;
 
 public class PlayerStateBoomerangMovement : State, ISubscriber
@@ -31,7 +30,7 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
 
     public void OnNotify(object content, bool vero = false)
     {
-        if(content is Player)
+        if (content is Player)
         {
             PubSub.Instance.SendMessageSubscriber(nameof(DialogueManager), this);
         }
@@ -49,7 +48,7 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
 
     public override void OnUpdate()
     {
-       
+
         if (_player.canMove)
         {
             //Movement
@@ -69,7 +68,7 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
                 _player.stateMachine.SetState(PlayerStateType.HumanMovement);
             }
         }
-       
+
 
     }
 }

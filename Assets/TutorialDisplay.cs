@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 public enum TutorialType
 {
@@ -15,49 +13,62 @@ public class TutorialDisplay : Interactable
     [SerializeField] GameObject TutorialScreen;
 
     [SerializeField] bool display = false;
+    [SerializeField] bool canInteract = false;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
-        
+
     }
 
     private void Update()
     {
-        if(Input.GetButtonDown("Use") && display)
+        if (canInteract)
         {
-            
-            
-               
-            
-            
-
-
-
+            if (Input.GetButtonDown("Use") && display)
+            {
+                DeactivateTutorialScreen();
+            }
         }
     }
 
+
     public override void Interact(Player player)
     {
-        if (player.stateMachine.GetCurrentState() is not PlayerStateBoomerangReturning && !display)
+        if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangMovement && !display && !canInteract)
         {
-            TutorialScreen.SetActive(true);
-            display = true;
-            player.SetCanMove(0);
-            animator.SetBool("Display", true);
-            animator.SetTrigger(tutorialType.ToString());
-
-
-            Debug.Log("sentiamo");
+           ActivateTutorialScreen();
         }
-        else if (player.stateMachine.GetCurrentState() is not PlayerStateBoomerangReturning && display)
-        {
-            display = false;
-            animator.SetBool("Display", false);
-            PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
-            TutorialScreen.SetActive(false);
+       
+    }
 
-            Debug.Log("non sentiamo");
-        }
+
+    public void ActivateTutorialScreen()
+    {
+        TutorialScreen.SetActive(true);
+        display = true;
+        PubSub.Instance.SendMessageSubscriber(nameof(Player), this, true);
+        animator.SetBool("Display", true);
+        animator.SetTrigger(tutorialType.ToString());
+        
+        Invoke(nameof(SetCanInteractTrue), 1f);
+       
+    } 
+    public void DeactivateTutorialScreen()
+    {
+        display = false;
+        animator.SetBool("Display", false);
+        PubSub.Instance.SendMessageSubscriber(nameof(Player), this, false);
+        TutorialScreen.SetActive(false);
+        Invoke(nameof(SetCanInteractFalse), 1f);
+      
+    }
+    public void SetCanInteractTrue()
+    {
+        canInteract= true;
+    } 
+    public void SetCanInteractFalse()
+    {
+        canInteract= false;
     }
 }
