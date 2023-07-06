@@ -3291,6 +3291,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 217526486001130075, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetEffectVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 1086051508013978559, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
+      propertyPath: m_Name
+      value: EffectVolumeSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706278600085094219, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMusicVolume
+      objectReference: {fileID: 0}
     - target: {fileID: 2185279093884422944, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3379,41 +3391,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 2185279093884422975, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
+    - target: {fileID: 3319982375622524227, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
+      propertyPath: m_Name
+      value: MusicVolumeSlider
       objectReference: {fileID: 0}
-    - target: {fileID: 3505635283747218833, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
-      propertyPath: m_CullTransparentMesh
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3505635284096798985, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.52319336
-      objectReference: {fileID: 0}
-    - target: {fileID: 3505635284197531667, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.00024414062
-      objectReference: {fileID: 0}
-    - target: {fileID: 3505635284266554154, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.38082886
-      objectReference: {fileID: 0}
-    - target: {fileID: 3505635284736193171, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.4234619
-      objectReference: {fileID: 0}
-    - target: {fileID: 7192527518028388130, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.00024414062
-      objectReference: {fileID: 0}
-    - target: {fileID: 7192527518028388130, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 194.74438
-      objectReference: {fileID: 0}
-    - target: {fileID: 8995789566835380230, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -62.80005
+    - target: {fileID: 8995789567045536109, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMainVolume
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}

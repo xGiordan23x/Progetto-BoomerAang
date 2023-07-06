@@ -17,10 +17,27 @@ public class OptionMenu : MonoBehaviour
         }
     }
 
-    public void SetVolume(float volume)
+    public void SetFullScreen(bool isFullScreen)
+    {
+        Screen.fullScreen = isFullScreen;
+
+        Debug.Log("Ho cambiato lo scermo");
+    }
+
+    public void SetMainVolume(float volume)
     {
         audioMixer.SetFloat("Volume", Mathf.Log10(volume) * 20);
     }
 
-    
+    public void SetMusicVolume(float volume)
+    {
+
+    }
+
+    public void SetEffectVolume(float volume)
+    {
+
+    }
+
+
 }
