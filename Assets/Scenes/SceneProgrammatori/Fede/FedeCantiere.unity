@@ -3291,18 +3291,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 217526486001130075, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetEffectVolume
-      objectReference: {fileID: 0}
-    - target: {fileID: 1086051508013978559, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
-      propertyPath: m_Name
-      value: EffectVolumeSlider
-      objectReference: {fileID: 0}
-    - target: {fileID: 1706278600085094219, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetMusicVolume
-      objectReference: {fileID: 0}
     - target: {fileID: 2185279093884422944, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3390,14 +3378,6 @@ PrefabInstance:
     - target: {fileID: 2185279093884422972, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3319982375622524227, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
-      propertyPath: m_Name
-      value: MusicVolumeSlider
-      objectReference: {fileID: 0}
-    - target: {fileID: 8995789567045536109, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetMainVolume
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
