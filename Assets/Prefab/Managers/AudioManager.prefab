@@ -45,3 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabEmpty: {fileID: 1741179995098769881, guid: 813ab0e4aa20b474c83b176c5d83be1d, type: 3}
+  audioMixerMusic: {fileID: -7601163563288348993, guid: cedf1d26fc0c1cc4f9c5a3cbdd44cc5d, type: 2}
+  audioMixerEffect: {fileID: -3903682550238425742, guid: cedf1d26fc0c1cc4f9c5a3cbdd44cc5d, type: 2}
+  clipOSTLevel_1: {fileID: 0}

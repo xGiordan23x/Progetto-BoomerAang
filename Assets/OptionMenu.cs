@@ -26,17 +26,17 @@ public class OptionMenu : MonoBehaviour
 
     public void SetMainVolume(float volume)
     {
-        audioMixer.SetFloat("Volume", Mathf.Log10(volume) * 20);
+        audioMixer.SetFloat("MainVolume", Mathf.Log10(volume) * 20);
     }
 
     public void SetMusicVolume(float volume)
     {
-
+        audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
     }
 
     public void SetEffectVolume(float volume)
     {
-
+        audioMixer.SetFloat("EffectVolume", Mathf.Log10(volume) * 20);
     }
 
 
