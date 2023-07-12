@@ -5,8 +5,10 @@ using UnityEngine;
 public class Booster : Interactable, ISubscriber
 {
     public Transform stopPosition;
+    public Transform puntoArrivo;
     public Vector2 newDirection;
     public bool activated;
+    public float returnTimer;
    
     public float timeToWaitBeforeChange;
     private Animator anim;
@@ -80,6 +82,8 @@ public class Booster : Interactable, ISubscriber
     }
     public void ShootPlayer()
     {
+        playerRef.arrivePoint = puntoArrivo;
+        playerRef.returnTimer = returnTimer;
         PubSub.Instance.SendMessageSubscriber(nameof(Player),this);
       
     }

@@ -24,7 +24,7 @@ public class PlayerStateBoomerangMovement : State, ISubscriber
         PubSub.Instance.SendMessageSubscriber(nameof(Fontanella), this);
         PubSub.Instance.SendMessageSubscriber(nameof(DialogueManager), this);
 
-        //_player.canMove = true;
+        _player.canMove = true;
 
     }
 

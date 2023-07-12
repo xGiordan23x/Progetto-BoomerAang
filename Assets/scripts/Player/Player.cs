@@ -22,6 +22,7 @@ public class Player : MonoBehaviour, ISubscriber
     private float speed;
     public Rigidbody2D Rb;
     [Header("VariabiliBoomerang")]
+    [HideInInspector] private float defaultReturnTimer;
     public float returnTimer;
     public Transform potionGenerator;
     public CircleCollider2D boomerangCollider;
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour, ISubscriber
     [HideInInspector] public bool isReturning;
     [HideInInspector] public bool canMove;
     [HideInInspector] public bool canInteract;
+    [HideInInspector] public Transform arrivePoint;
 
     [Header("Audio")]
     [SerializeField] public int numeroClipDaNonRipetere;
@@ -77,6 +79,7 @@ public class Player : MonoBehaviour, ISubscriber
 
         stateMachine.SetState(PlayerStateType.BoomerangMovement);
         speed = humanSpeed;
+        defaultReturnTimer = returnTimer;
 
     }
     private void Update()
@@ -96,6 +99,7 @@ public class Player : MonoBehaviour, ISubscriber
 
     public void SetCurveHandles(Vector2 lastDirection)
     {
+        returnTimer = defaultReturnTimer;
         Vector3 GeneratorDirection = potionGenerator.position - transform.position;
         float temp = Vector3.Dot(lastDirection, GeneratorDirection);
         temp = (temp + 1) / 2f;

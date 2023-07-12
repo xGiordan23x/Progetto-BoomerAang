@@ -46,6 +46,16 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
         elapsedTime = 0;
         _player.DrawCurve();
     }
+    private void SetLinearCurve()
+    {
+        //imposta il punto uno sotto il player
+        _player.points[0].transform.position = _player.transform.position;
+        //imposto l'altro punto sotto il punto di arrivo
+        _player.points[1].transform.position = _player.arrivePoint.position;
+
+        _player.points[0].handle1 = new Vector3(0,0, 0);     
+        _player.points[1].handle1 = new Vector3(0,0, 0);
+    }
 
     public void OnNotify(object content, bool vero = false)
     {
@@ -56,6 +66,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
         }
         if(content is Player)
         {
+            SetLinearCurve();
             stopPlayer= false;
         }
     
