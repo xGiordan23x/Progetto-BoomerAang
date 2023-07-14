@@ -67,6 +67,8 @@ public class DataPersistanceManager : MonoBehaviour
         }
 
         dataHandler.Save(gameData);
+
+        Debug.Log("Ho salvato");
     }
 
     private List<IDataPersistance> FindAllDataPersistanceObjects()
@@ -79,7 +81,7 @@ public class DataPersistanceManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         //salvo all'uscita del gioco, da cambiare
-        SaveGame();
+        //SaveGame();
     }
 
 

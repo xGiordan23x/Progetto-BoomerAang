@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour, IDataPersistance
         else
         {
             CurrentRoomIndex++;
+            DataPersistanceManager.instance.SaveGame();
             SceneManager.LoadScene(CurrentRoomIndex);
         }
 
