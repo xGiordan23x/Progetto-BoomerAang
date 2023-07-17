@@ -381,7 +381,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 84ef42852c5b9524fb48095d07fa8a3a, type: 3}
   - {fileID: 21300000, guid: 8401d585b79fd3f48b16d0823f13e7d9, type: 3}
   - {fileID: 21300000, guid: 82515b85504709142abf6f3ecd4f7533, type: 3}
-  - {fileID: 21300000, guid: 25bf2c853b6558143b0b336ef6606c28, type: 3}
   - {fileID: 21300000, guid: ca26bc85369785449b35b94a03949412, type: 3}
   - {fileID: 21300000, guid: eeba539575615a049a6dc3188b9bcd7d, type: 3}
   - {fileID: 21300000, guid: d2ad2ea566f428b41ba60c84ca554efd, type: 3}
@@ -495,6 +494,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ab12a7e2101b81e44a2cf64088e20314, type: 3}
   - {fileID: 21300000, guid: fdd026f2da2104147af16dab4dc20f04, type: 3}
   - {fileID: 21300000, guid: cd1576f29b3aa1f4bb6f46b31f8ac25c, type: 3}
+  - {fileID: 21300000, guid: 3cfd3af26a738bf44bbcf7e4ea43227a, type: 3}
   - {fileID: 21300000, guid: 5ef7caf29c3985b48b16a8274b539a34, type: 3}
   - {fileID: 21300000, guid: bc3e9403f7e26854e955396ccc0eafbb, type: 3}
   - {fileID: 21300000, guid: fef4a70330d53c849a420d77a93cedfb, type: 3}
@@ -632,6 +632,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 42df5f753223d054caed76fd9a4e780f, type: 3}
   - {fileID: 21300000, guid: edb940859ac7b34488a340bafd99cc8f, type: 3}
   - {fileID: 21300000, guid: cdfd5085ef37cf8468bbafb6681db055, type: 3}
+  - {fileID: 21300000, guid: 25bf2c853b6558143b0b336ef6606c28, type: 3}
   - {fileID: 21300000, guid: 8e9e2d858b023904fa430858caf59c5a, type: 3}
   - {fileID: 21300000, guid: cb652795e888c3a43a959dfce3b1cd7d, type: 3}
   - {fileID: 21300000, guid: 46e69f9513b157a4eb39434ce96324f6, type: 3}
@@ -682,6 +683,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 56f516e6808c1084ca6e42af1ca4d6c4, type: 3}
   - {fileID: 21300000, guid: 22f38be6ce511b44b9ae4ff934d61a45, type: 3}
   - {fileID: 21300000, guid: 7e5eb0f6caf906440a15471fcf06c361, type: 3}
+  - {fileID: 21300000, guid: 8a10e3f6dc259324caa27a6965a922d3, type: 3}
   - {fileID: 21300000, guid: d62ee6f663623624cb6370e92ea43bde, type: 3}
   - {fileID: 21300000, guid: 02dec207bc59fcf40841ffc555f2d909, type: 3}
   - {fileID: 21300000, guid: f5282d078e8c3ff419d09e2056a8e7e2, type: 3}
@@ -1137,6 +1139,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 2bcd55ed06c55c245ac6412816e0fcdb, type: 3}
   - {fileID: 21300000, guid: 574b5cedd4801f34087544bed80797b8, type: 3}
   - {fileID: 21300000, guid: 81d7dded15bd4db4390881081839b607, type: 3}
+  - {fileID: 21300000, guid: 247ec1fdd0bfbc54297dd03c67f235a1, type: 3}
   - {fileID: 21300000, guid: b90369fdac156ae409536c72ea6fa8c0, type: 3}
   - {fileID: 21300000, guid: 7aa4a9fd1d4d051448215dee4a008eaa, type: 3}
   - {fileID: 21300000, guid: 643d9dfd69673a847b6837dfe2cead10, type: 3}
@@ -1310,6 +1313,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 08a3128fcc4af574094cb6abd59949fc, type: 3}
   - {fileID: 21300000, guid: bdf9558f6e083d74aac59779485f82b6, type: 3}
   - {fileID: 21300000, guid: a0f9239fa4ce37f44aebd76bd9c3485a, type: 3}
+  - {fileID: 21300000, guid: 3f71069fa32ee5e46a93093d98a352ec, type: 3}
   - {fileID: 21300000, guid: 1e249c9fbe126744ba68fc5574e2bf86, type: 3}
   - {fileID: 21300000, guid: b8024e9f2a9d61242be19e8cc5bee6a6, type: 3}
   - {fileID: 21300000, guid: 58e17e9f0111cad4ab9f3649c39e64c8, type: 3}
@@ -1663,7 +1667,6 @@ SpriteAtlas:
   - trasforma b1
   - cassa animazione3
   - int fontana down1
-  - TextBoxMonitor8
   - run up 2
   - I_PiastraPressioneDisattiva
   - I_BloccoBluVerticale1
@@ -1777,6 +1780,7 @@ SpriteAtlas:
   - run L5
   - cassa animazione sx13
   - AlgheinVetroBasso4
+  - Tilerule (3)
   - P_MonitorSfondo1
   - cassa frontale spostata4
   - 14
@@ -1914,6 +1918,7 @@ SpriteAtlas:
   - PortaChiaveAperturaStanza1
   - AlgheinVetroMedio2
   - BoomRetro4 1
+  - TextBoxMonitor8
   - StartMenuMonitorFx35
   - BoosterTopEject12
   - StartMenuMonitorFx10
@@ -1964,6 +1969,7 @@ SpriteAtlas:
   - B_portafrontale2
   - BoosterTopEject7
   - TutorialPARABOLA7
+  - MonitorBase
   - push L3
   - BoosterRightShake6
   - BoomFront3 1
@@ -2419,6 +2425,7 @@ SpriteAtlas:
   - cassa dietro11
   - portale creazione 8
   - Idle R2
+  - MonitorGlow1
   - BoosterBottomEject9
   - Leva13
   - Distributore rotto1
@@ -2592,6 +2599,7 @@ SpriteAtlas:
   - StartMenuMonitorBase25
   - cassa animazioneremake9
   - I_VentolaBloccoPavimentoParabola4
+  - Tilerule (2)
   - I_VentolaBloccoMuroParabola6
   - I_VentolaBloccoPavimentoParabola5
   - BoosterBottomEject14
