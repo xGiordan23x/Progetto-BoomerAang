@@ -56,10 +56,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   stopPosition: {fileID: 851307899939509596}
-  puntoArrivo: {fileID: 0}
+  puntoArrivo: {fileID: 851307899910767951}
   newDirection: {x: 0, y: -1}
   activated: 0
-  returnTimer: 0
+  returnTimer: 2
   timeToWaitBeforeChange: 0.3
   ClipBoosterTrema: {fileID: 0}
   ClipBoosterSpara: {fileID: 0}
