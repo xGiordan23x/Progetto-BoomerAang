@@ -32,8 +32,9 @@ public class DialogueManager : MonoBehaviour, ISubscriber
             }
         }
     }
-    public void StartDialogue(Dialogue dialogue)
+public void StartDialogue(Dialogue dialogue)
     {
+        PubSub.Instance.SendMessageSubscriber(nameof(PauseMenu), this, true);
         isInDialogue = true;
         ActivateDialogeBox(true);
         PubSub.Instance.SendMessageSubscriber(nameof(Player), this, true);
@@ -86,6 +87,7 @@ public class DialogueManager : MonoBehaviour, ISubscriber
     void EndDialogue()
     {
         isInDialogue = false;
+        PubSub.Instance.SendMessageSubscriber(nameof(PauseMenu), this, false);
         canInteract = false;
         ActivateDialogeBox(false);
         PubSub.Instance.SendMessageSubscriber(nameof(DialogueTrigger), this, false);
@@ -112,6 +114,10 @@ public class DialogueManager : MonoBehaviour, ISubscriber
             {
                 PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangMovement), this, false);
             }
+        }
+        if(content is PauseMenu)
+        {
+            EndDialogue();
         }
     }
 }

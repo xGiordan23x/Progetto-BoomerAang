@@ -36,8 +36,6 @@ public class BloccoUmanoBoomerang : Interactable, ISubscriber
     {
         if (player.stateMachine.GetCurrentState() is PlayerStateHumanMovement)
         {
-
-
             OnInteraction.Invoke();
             activated = true;
             if (shouldMovePlayer)
@@ -61,8 +59,7 @@ public class BloccoUmanoBoomerang : Interactable, ISubscriber
         }
 
         else if (!shouldMovePlayer)
-        {
-           
+        {           
             PubSub.Instance.SendMessageSubscriber(nameof(Player), this , true);
         }
            
@@ -72,10 +69,12 @@ public class BloccoUmanoBoomerang : Interactable, ISubscriber
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("dgsdgy");
         if (collision.GetComponent<Player>().stateMachine.GetCurrentState() is PlayerStateHumanMovement)
         {
             Interact(collision.GetComponent<Player>());
         }
+        
 
     }
 
