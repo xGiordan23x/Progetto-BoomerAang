@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine.Events;
 
 public class Leva : Interactable
 {
-    //[SerializeField] bool oneTime;
+    [SerializeField] Transform stopPosition;
     private bool active;
 
     private Animator animator;
@@ -32,6 +33,17 @@ public class Leva : Interactable
             active = true;
             animator.SetTrigger("Pulled");
         }
+        else if (player.stateMachine.GetCurrentState() is PlayerStateHumanMovement && !active)
+        {
+            if (active)
+            {
+                Debug.Log("l'ho gia usata");
+                return;
+            }
+            base.Interact(player);
+            active = true;
+            PLayInteraction(player);
+        }
         else
         {
             Debug.Log("non ci posso interagire");
@@ -40,6 +52,19 @@ public class Leva : Interactable
         
 
     }
+
+    private void PLayInteraction(Player player)
+    {
+        player.SetCanMove(0);
+        player.transform.position = stopPosition.position;
+        player.GetComponent<SpriteRenderer>().enabled = false;
+        animator.SetTrigger("playerPulled");
+        //in animazione alla fine setCanMove(1)
+
+
+
+    }
+
     public void PlayAudioClipAttivaLeva()
     {
         AudioManager.instance.PlayAudioClip(ClipAttivaLeva);

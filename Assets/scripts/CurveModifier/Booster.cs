@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class Booster : Interactable, ISubscriber
 {
@@ -27,9 +29,11 @@ public class Booster : Interactable, ISubscriber
         activated = false;
         anim = GetComponent<Animator>();
         SetUpAnimator();
-
+        
     }
+
    
+
     private void SetUpAnimator()
     {
        if(newDirection == Vector2.right)
@@ -97,4 +101,9 @@ public class Booster : Interactable, ISubscriber
         AudioManager.instance.PlayAudioClip(ClipBoosterSpara);
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(puntoArrivo.position, 0.5f);
+
+    }
 }

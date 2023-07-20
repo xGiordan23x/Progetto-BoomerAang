@@ -4,16 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenu : MonoBehaviour, ISubscriber
 {
     public static bool GameIsPaused = false;
     [SerializeField] GameObject pauseMenuUI;
+    [SerializeField] GameObject dialogueBoxUI;
     private Player player;
+    private bool inDialogue;
     bool inMainMenu = true;
 
     private void Awake()
     {
         player = FindAnyObjectByType<Player>();
+        PubSub.Instance.RegisteredSubscriber(nameof(PauseMenu), this);
     }
     private void Update()
     {
@@ -55,6 +58,14 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
+        // se in dialogo chiudo dialogo
+       
+        if(inDialogue)
+        {
+          PubSub.Instance.SendMessageSubscriber(nameof(DialogueManager), this);
+        }
+
+
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
@@ -94,4 +105,16 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void OnNotify(object content, bool vero = false)
+    {
+        if(content is DialogueManager && vero)
+        {
+            inDialogue = true;
+        }
+        if(content is DialogueManager && !vero)
+        {
+            inDialogue = false;
+        }
+    }
+   
 }
