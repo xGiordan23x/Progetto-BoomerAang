@@ -57,7 +57,6 @@ public class PlayerStateHumanMovement : State, ISubscriber
             {
                 //torno manualmente a boomerang. ingnorando il timer
 
-                //_player.SetIsReturning();
                 _player.animator.SetBool("transform", true);
             }
 
