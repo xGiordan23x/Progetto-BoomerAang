@@ -47,19 +47,21 @@ public class PlayerStateHumanMovement : State, ISubscriber
             _player.Move();
 
             //interaction
-            
+
             if (Input.GetButtonDown("Use"))
             {
                 _player.Interaction();
             }
-            
+
+            if (Input.GetKeyDown(KeyCode.Space))    
+            {
+                //torno manualmente a boomerang. ingnorando il timer
+
+                //_player.SetIsReturning();
+                _player.animator.SetBool("transform", true);
+            }
+
         }
-        
-        
-
-
-
-
 
 
         if (_player.isReturning)
