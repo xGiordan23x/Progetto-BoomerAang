@@ -83,12 +83,15 @@ public class PotionGenerator : Interactable, ISubscriber
         {
             stopTimer = false;
         }
+        if (content is Leva && vero)
+        {
+            stopTimer = true;
+        }
+        if (content is Leva && !vero)
+        {
+            stopTimer = false;
+        }
 
-
-        //if(content is Fontanella)
-        //{
-
-        //}
     }
     public void StartTimer()
     {
