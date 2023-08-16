@@ -4,10 +4,7 @@ using UnityEngine;
 public class Player : MonoBehaviour, ISubscriber
 {
 
-    //Ho levato al fine animazione BoomerangToBoomerang il setCanMove a 1 , vedere se funziona tutto
-
-
-
+    
 
     [Header("Curva")]
     public BezierCurve curve;
@@ -407,4 +404,9 @@ public class Player : MonoBehaviour, ISubscriber
     {
         PubSub.Instance.SendMessageSubscriber(nameof(PlayerStateBoomerangMovement), this);
     }
+    public void SetStateBoomerangMoving()
+    {
+        stateMachine.SetState(PlayerStateType.BoomerangMovement);
+    }
+
 }

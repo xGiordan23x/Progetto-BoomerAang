@@ -124,7 +124,7 @@ public class PlayerStateBoomerangReturning : State, ISubscriber
     {
         _player.isReturning = false;
         _player.animator.SetBool("BoomerangMoving", true);
-        _player.stateMachine.SetState(PlayerStateType.BoomerangMovement);
+        //_player.stateMachine.SetState(PlayerStateType.BoomerangMovement);
     }
 
     public override void OnExit()
