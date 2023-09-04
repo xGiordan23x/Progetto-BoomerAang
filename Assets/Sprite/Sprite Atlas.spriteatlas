@@ -1327,7 +1327,26 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 765e09fa52384d94da35f30f92e52ddb, type: 3}
   - {fileID: 21300000, guid: eb1e1afaf007f114cb66ab42e749a5b7, type: 3}
   - {fileID: 21300000, guid: 6329eafa0fa0e0c4581127e6da95208c, type: 3}
-  - {fileID: 21300000, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: -884058993, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: 120598006, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: -1936709569, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: -569859755, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: -1896061761, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: 1596640788, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: -1405956640, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: 2009364303, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: 1185929014, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: 1343873970, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: -26378596, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: -2140818220, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: 1375526157, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: 598845486, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: -2103519932, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: -560312856, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: 906436326, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: -1910324639, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: -1088077550, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
+  - {fileID: -1486449907, guid: 33502cfa34548ab43b1d3cf2ace21a7d, type: 3}
   - {fileID: 21300000, guid: bb10fcfa7ab510240b617e1f15a7eeca, type: 3}
   - {fileID: 21300000, guid: 19aa6efab3d4dd14382cc92ebd672d57, type: 3}
   - {fileID: 21300000, guid: c1e6f30b916110a4085046592857d29d, type: 3}
@@ -3198,7 +3217,26 @@ SpriteAtlas:
   - BoomLaterale2
   - B_Interazioneretro2
   - PorteCardDueB4
-  - TileruleWall2
+  - TileruleWall2_17
+  - TileruleWall2_16
+  - TileruleWall2_15
+  - TileruleWall2_11
+  - TileruleWall2_10
+  - TileruleWall2_22
+  - TileruleWall2_23
+  - TileruleWall2_20
+  - TileruleWall2_21
+  - TileruleWall2_26
+  - TileruleWall2_27
+  - TileruleWall2_24
+  - TileruleWall2_25
+  - TileruleWall2_9
+  - TileruleWall2_4
+  - TileruleWall2_5
+  - TileruleWall2_0
+  - TileruleWall2_1
+  - TileruleWall2_2
+  - TileruleWall2_3
   - BoosterRightEject12
   - portale creazione sx5
   - Dr B2 Drink13
