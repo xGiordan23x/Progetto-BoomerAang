@@ -622,6 +622,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ec211714be6d40b40865a4bdf437e8c8, type: 3}
   - {fileID: 21300000, guid: c8942b14355a42c439aa37a43e02b2db, type: 3}
   - {fileID: 21300000, guid: 144a002474fa2f647bec66ce0a345fa3, type: 3}
+  - {fileID: 21300000, guid: 860ac124374a5d742901c5a71b2ef648, type: 3}
   - {fileID: 21300000, guid: 2467f224ace2eb343bc462f75905fb28, type: 3}
   - {fileID: 21300000, guid: d74f07243b458c640a5ef1f6ac15dbaa, type: 3}
   - {fileID: 21300000, guid: 83a959246bf8e1f499949d92bb2474de, type: 3}
@@ -1556,6 +1557,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 9431c3ccc220ad740ad73fcabf358be7, type: 3}
   - {fileID: 21300000, guid: e0d795cc663abbb438f416fde577395b, type: 3}
   - {fileID: 21300000, guid: 592e76cce46f3064bb1c5f2af214c140, type: 3}
+  - {fileID: 21300000, guid: 007a31dcecb3f0c4e968d6a0fb16d5a5, type: 3}
   - {fileID: 21300000, guid: df8c83dc7efa2a2478d4194270449056, type: 3}
   - {fileID: 21300000, guid: 1051f8dcba0b13c469d1f622a9371ac1, type: 3}
   - {fileID: 21300000, guid: 773fabdc5f4414949b8dfd9596c9eacb, type: 3}
@@ -1606,6 +1608,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 0999666d1979d4f4cbb5961c50ae8f27, type: 3}
   - {fileID: 21300000, guid: 87dcb76df31e5274d967a41818283346, type: 3}
   - {fileID: 21300000, guid: 03fee86d78700c74ab7aeebd36073383, type: 3}
+  - {fileID: 21300000, guid: f29a1a6d4decb084d80801c1f76871a3, type: 3}
   - {fileID: 21300000, guid: dbb9907d1c764114184fc6ac5703c481, type: 3}
   - {fileID: 21300000, guid: 41a2957da13f0524d8628039dc36a469, type: 3}
   - {fileID: 21300000, guid: d899b08d955e0e14eba69cd7bf2c1d32, type: 3}
@@ -1621,6 +1624,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: a7edfe9dbcb6dcb42ae4430dcca892e2, type: 3}
   - {fileID: 21300000, guid: a120ef9d8663c1a43b19349937302bf0, type: 3}
   - {fileID: 21300000, guid: f67140ad2104f424abad50fd24f9adb7, type: 3}
+  - {fileID: 21300000, guid: ce7ea0adfe7ce104ab23971e42bb8bf0, type: 3}
   - {fileID: 21300000, guid: a13fb5adf42d06944882ffff6aae92b7, type: 3}
   - {fileID: 21300000, guid: 418f1aadb31ad7f4884d609f6d63b451, type: 3}
   - {fileID: 21300000, guid: e9503aadeda58074c9e7d561f9bf557e, type: 3}
@@ -2534,6 +2538,7 @@ SpriteAtlas:
   - pulsante1
   - StartMenuMonitorFx8
   - iddle lateralesx remake2
+  - DigitalKeyRossaRidotta
   - 7
   - PortaCardBluUno10
   - PortaPianoTre1
@@ -3468,6 +3473,7 @@ SpriteAtlas:
   - Dr B2 Drink14
   - cassa dietro13
   - DefibrillatoreParete
+  - DigitalKeyBluRidotta
   - PortaChiaveDueAperta6
   - TextBoxMonitor7
   - portale creazione sx2
@@ -3518,6 +3524,7 @@ SpriteAtlas:
   - portale creazione 10
   - PortaPianoDue7
   - 16
+  - DigitalKeyGrey
   - int fontana R3
   - int fontana L6
   - LoadingFrame1
@@ -3533,6 +3540,7 @@ SpriteAtlas:
   - cassa frontale spostata1(1)
   - TutorialPARABOLA14
   - PorteCardDueR2
+  - DigitalKeyVerdeRidotta
   - I_BloccoGialloVerticale1
   - TextBoxMonitor10
   - PorteCardDueR17
