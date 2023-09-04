@@ -69,11 +69,19 @@ public class BloccoUmanoBoomerang : Interactable, ISubscriber
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("dgsdgy");
-        if (collision.GetComponent<Player>().stateMachine.GetCurrentState() is PlayerStateHumanMovement)
+        if(collision.GetComponent<Player>() != null)
         {
-            Interact(collision.GetComponent<Player>());
+            if (collision.GetComponent<Player>().stateMachine.GetCurrentState() is PlayerStateHumanMovement)
+            {
+                Interact(collision.GetComponent<Player>());
+            }
+            else
+            {
+                return;
+            }
         }
+        
+
         
 
     }
