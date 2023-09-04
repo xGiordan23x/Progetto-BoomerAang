@@ -65,6 +65,7 @@ public class Leva : Interactable, ISubscriber
         player.transform.position = stopPosition.position;
         player.GetComponent<SpriteRenderer>().enabled = false;
         animator.SetTrigger("playerPulled");
+
         //in animazione alla fine setCanMove(1)
 
       
