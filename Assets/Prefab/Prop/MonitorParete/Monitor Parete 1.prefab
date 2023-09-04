@@ -172,8 +172,7 @@ MonoBehaviour:
   dialogue:
     name: Il cazzo
     sentences:
-    - Le palle
-    - il pisello
+    - text
 --- !u!50 &1566750071415291999
 Rigidbody2D:
   serializedVersion: 4
