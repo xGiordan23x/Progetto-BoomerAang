@@ -28,7 +28,21 @@ public class Porta : Interactable
 
     private void Start()
     {
+
         animator = GetComponent<Animator>();
+
+        switch (pianoPorta)
+        {
+            case PianoPorta.Piano_1:
+                animator.SetInteger("StanzaPiano", 0);
+                break;
+            case PianoPorta.Piano_2:
+                animator.SetInteger("StanzaPiano", 1);
+                break;
+            case PianoPorta.Piano_3:
+                animator.SetInteger("StanzaPiano", 2);
+                break;
+        }
 
         if (isOpen)
         {
