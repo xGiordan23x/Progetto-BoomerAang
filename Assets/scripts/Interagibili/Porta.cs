@@ -2,10 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PianoPorta
+{
+    Piano_1,
+    Piano_2,
+    Piano_3
+}
 public class Porta : Interactable
 {
+    [SerializeField] PianoPorta pianoPorta;
+    [Header("Tipologia apertura porta")]
     [SerializeField] bool isOpen;
     [SerializeField] bool canOpenWithKey;
+    [SerializeField] bool proximityOpen;
 
     [SerializeField] BoxCollider2D colliderImpatto;
 
@@ -19,7 +28,21 @@ public class Porta : Interactable
 
     private void Start()
     {
+
         animator = GetComponent<Animator>();
+
+        switch (pianoPorta)
+        {
+            case PianoPorta.Piano_1:
+                animator.SetInteger("StanzaPiano", 0);
+                break;
+            case PianoPorta.Piano_2:
+                animator.SetInteger("StanzaPiano", 1);
+                break;
+            case PianoPorta.Piano_3:
+                animator.SetInteger("StanzaPiano", 2);
+                break;
+        }
 
         if (isOpen)
         {
@@ -31,7 +54,7 @@ public class Porta : Interactable
     }
     public override void Interact(Player player)
     {
-        
+
         if (player.stateMachine.GetCurrentState() is not PlayerStateBoomerangReturning && !isOpen)    //il giocatore deve essere umano o boomerang 
         {
             if (!canOpenWithKey)            //guarda se questa porta puo essere aperta da una chiave
@@ -68,9 +91,9 @@ public class Porta : Interactable
                         player.animator.SetTrigger("BoomerangInteract");
                     }
 
-                   
+
                     OpenDoor();
-                   
+
 
 
 
@@ -98,7 +121,7 @@ public class Porta : Interactable
 
     }
 
-    private void ActivateWall()     
+    private void ActivateWall()
     {
         if (colliderImpatto.enabled == false)
         {
@@ -160,6 +183,14 @@ public class Porta : Interactable
     public void PlayAudioClipInterazionePortaChiusa()
     {
         AudioManager.instance.PlayAudioClip(ClipInterazionePortaChiusa);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Player>() != null && isOpen==false && proximityOpen)
+        {
+            OpenDoor();
+        }
     }
 
 }
