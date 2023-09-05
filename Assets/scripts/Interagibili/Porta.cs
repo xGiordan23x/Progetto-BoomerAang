@@ -173,7 +173,7 @@ public class Porta : Interactable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Player>() != null && isOpen==false)
+        if (collision.GetComponent<Player>() != null && isOpen==false && proximityOpen)
         {
             OpenDoor();
         }
