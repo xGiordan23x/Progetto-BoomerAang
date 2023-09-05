@@ -203,8 +203,10 @@ MonoBehaviour:
   OnInteraction:
     m_PersistentCalls:
       m_Calls: []
+  pianoPorta: 0
   isOpen: 0
   canOpenWithKey: 0
+  proximityOpen: 0
   colliderImpatto: {fileID: 1825845216}
   ClipApriPorta: {fileID: 8300000, guid: dff80bb383c869241a11e5c375b07d5e, type: 3}
   ClipChiudiPorta: {fileID: 0}
