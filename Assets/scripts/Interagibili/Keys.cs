@@ -13,7 +13,7 @@ public class Keys : Interactable
     public KeyType tipologiaChiave = KeyType.Chiave;
 
     [Header("Audio")]
-    AudioClip ClipRaccogliChiaveChip;
+    public AudioClip ClipRaccogliChiaveChip;
 
     public override void Interact(Player player)
     {
