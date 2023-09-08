@@ -190,6 +190,7 @@ public class Porta : Interactable
         if (collision.GetComponent<Player>() != null && isOpen==false && proximityOpen)
         {
             OpenDoor();
+            isOpen = true;
         }
     }
 

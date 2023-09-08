@@ -2662,6 +2662,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8726201056532202103, guid: 9ccf8650ac29ee641a9fb085aaba5996, type: 3}
+      propertyPath: isOpen
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726201056532202103, guid: 9ccf8650ac29ee641a9fb085aaba5996, type: 3}
+      propertyPath: canOpenWithKey
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8726201056532202108, guid: 9ccf8650ac29ee641a9fb085aaba5996, type: 3}
       propertyPath: m_Name
       value: PortaFineLivello1
@@ -4892,6 +4900,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1383018708}
     m_Modifications:
+    - target: {fileID: 4721978275857979251, guid: 23d9b211fe7862c4db41eaea90ebaee5, type: 3}
+      propertyPath: isOpen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4721978275857979254, guid: 23d9b211fe7862c4db41eaea90ebaee5, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -5052,6 +5064,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7294336744310954664, guid: 049e74d35be3b4b49ad90e2ffebe7133, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7294336744310954669, guid: 049e74d35be3b4b49ad90e2ffebe7133, type: 3}
+      propertyPath: isOpen
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
