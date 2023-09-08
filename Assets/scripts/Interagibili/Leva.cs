@@ -45,7 +45,7 @@ public class Leva : Interactable, ISubscriber
                 return;
             }
             playerRef = player;
-            base.Interact(player);
+           PlayerInteraction(player);
            
           
 
