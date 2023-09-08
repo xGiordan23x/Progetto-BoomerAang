@@ -26,8 +26,8 @@ public class IntroPlayer : MonoBehaviour
         timelineIntro.Play();
 
     }
-    public void playIntroClip()
+    public void PlayIntroClip()
     {        
-            AudioManager.instance.PlayAudioClip(introMusicClip);        
+      AudioManager.instance.PlayAudioClip(introMusicClip);        
     }
 }
