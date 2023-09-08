@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/sceneGiocoFinale/Level1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/sceneGiocoFinale/Level2.unity
     guid: f8404b0f08f7ef44199a9d6c7572ff02
   - enabled: 0
-    path: Assets/Scenes/sceneGiocoFinale/Level3.unity
-    guid: f11a388020d19094893fb0fe731778d1
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

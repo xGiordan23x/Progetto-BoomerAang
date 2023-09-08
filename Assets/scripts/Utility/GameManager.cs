@@ -7,9 +7,19 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour, IDataPersistance
 {
     PauseMenu pauseMenu;
+
+    [Header("Level manager")]   
+
     public int CurrentRoomIndex = 0;
-    [SerializeField] int SaveRoomIndex= 0;
+    [SerializeField] int SaveRoomIndex = 0;
     [SerializeField] int maxIndex;
+    [SerializeField] LevelLoader levelLoader;
+    Animator transition;
+    [SerializeField] float transitionTime = 1f;
+
+
+
+    [Header("Inventory manager")]
 
     private int _chiaviCounter;
     private int _chipCounter;
@@ -60,7 +70,7 @@ public class GameManager : MonoBehaviour, IDataPersistance
 
     private void Start()
     {
-        maxIndex = SceneManager.sceneCountInBuildSettings- 1;
+        maxIndex = SceneManager.sceneCountInBuildSettings - 1;
         CurrentRoomIndex = SceneManager.GetActiveScene().buildIndex;
 
         if (CurrentRoomIndex == 0)
@@ -88,24 +98,43 @@ public class GameManager : MonoBehaviour, IDataPersistance
         {
             CurrentRoomIndex++;
             DataPersistanceManager.instance.SaveGame();
-            SceneManager.LoadScene(CurrentRoomIndex);
+            //SceneManager.LoadScene(CurrentRoomIndex);
+
+
+            StartCoroutine(LoadLevel(CurrentRoomIndex));
+
+
         }
 
     }
 
     public void LoadSavedRoom()
     {
-        SceneManager.LoadScene(SaveRoomIndex);
+        StartCoroutine(LoadLevel(SaveRoomIndex));
     }
 
     public void LoadData(GameData data)
     {
-        SaveRoomIndex= data.roomIndex;
-        
+        SaveRoomIndex = data.roomIndex;
+
     }
 
     public void SaveData(ref GameData data)
     {
         data.roomIndex = CurrentRoomIndex;
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        if (transition == null)
+        {
+            transition = levelLoader.animator;
+        }
+
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(levelIndex);
     }
 }

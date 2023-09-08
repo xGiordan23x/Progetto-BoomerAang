@@ -8,6 +8,7 @@ public class Leva : Interactable, ISubscriber
 {
     [SerializeField] Transform stopPosition;
     private bool active;
+    private Player playerRef;
 
     private Animator animator;
     private void Awake()
@@ -36,16 +37,18 @@ public class Leva : Interactable, ISubscriber
             active = true;
             animator.SetTrigger("Pulled");
         }
-        else if (player.stateMachine.GetCurrentState() is PlayerStateHumanMovement && !active)
+        if (player.stateMachine.GetCurrentState() is PlayerStateBoomerangMovement && !active)
         {
             if (active)
             {
                 Debug.Log("l'ho gia usata");
                 return;
             }
-            base.Interact(player);
-            active = true;
-            PLayInteraction(player);
+            playerRef = player;
+           PlayerInteraction(player);
+           
+          
+
         }
         else
         {
@@ -56,19 +59,16 @@ public class Leva : Interactable, ISubscriber
 
     }
 
-    private void PLayInteraction(Player player)
+    public void PlayerInteraction(Player player)
     {
         // Stop Timer
         PubSub.Instance.SendMessageSubscriber(nameof(PotionGenerator),this, true);
-
+        //GetComponentInChildren<SpriteRenderer>().enabled= false;
         player.SetCanMove(0);
         player.transform.position = stopPosition.position;
-        player.GetComponent<SpriteRenderer>().enabled = false;
+        playerRef.GetComponent<SpriteRenderer>().enabled = false;
+
         animator.SetTrigger("playerPulled");
-
-        //in animazione alla fine setCanMove(1)
-
-      
 
     }
 
@@ -86,4 +86,13 @@ public class Leva : Interactable, ISubscriber
     {
         throw new NotImplementedException();
     }
+
+    public void ReEnablePlayer()
+    {
+        playerRef.GetComponent<SpriteRenderer>().enabled = true;
+
+
+        playerRef.SetCanMove(1);
+    }
+    
 }
