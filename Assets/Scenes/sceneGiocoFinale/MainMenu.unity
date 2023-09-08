@@ -355,6 +355,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5712118858889060940, guid: 18b495c277e17174890e6c608f708982, type: 3}
+      propertyPath: m_fontSize
+      value: 54.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712118858889060940, guid: 18b495c277e17174890e6c608f708982, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 86173aab6656096409fbbc7edb16b790, type: 2}
+    - target: {fileID: 5712118858889060940, guid: 18b495c277e17174890e6c608f708982, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3911359052702242885, guid: 86173aab6656096409fbbc7edb16b790, type: 2}
     - target: {fileID: 5712118859432203626, guid: 18b495c277e17174890e6c608f708982, type: 3}
       propertyPath: introImage
       value: 
@@ -367,6 +379,30 @@ PrefabInstance:
       propertyPath: timelineIntro
       value: 
       objectReference: {fileID: 144816584}
+    - target: {fileID: 5712118859686169416, guid: 18b495c277e17174890e6c608f708982, type: 3}
+      propertyPath: m_fontSize
+      value: 54.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712118859686169416, guid: 18b495c277e17174890e6c608f708982, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 86173aab6656096409fbbc7edb16b790, type: 2}
+    - target: {fileID: 5712118859686169416, guid: 18b495c277e17174890e6c608f708982, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3911359052702242885, guid: 86173aab6656096409fbbc7edb16b790, type: 2}
+    - target: {fileID: 5712118860047575225, guid: 18b495c277e17174890e6c608f708982, type: 3}
+      propertyPath: m_fontSize
+      value: 54.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712118860047575225, guid: 18b495c277e17174890e6c608f708982, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 86173aab6656096409fbbc7edb16b790, type: 2}
+    - target: {fileID: 5712118860047575225, guid: 18b495c277e17174890e6c608f708982, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3911359052702242885, guid: 86173aab6656096409fbbc7edb16b790, type: 2}
     - target: {fileID: 5712118860301597257, guid: 18b495c277e17174890e6c608f708982, type: 3}
       propertyPath: m_Name
       value: Canvas
