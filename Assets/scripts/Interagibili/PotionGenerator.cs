@@ -1,6 +1,7 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PotionGenerator : Interactable, ISubscriber
 {
@@ -13,7 +14,10 @@ public class PotionGenerator : Interactable, ISubscriber
     Animator animator;
     [SerializeField] bool isActive;
     [SerializeField] bool canStartOperateWithChip;
+    [Header("UI")]
     [SerializeField] TextMeshProUGUI timerTextValue;
+    [SerializeField] Image timerImage;
+    [SerializeField] Animator timerAnimator;
     [Header("Audio")]
     [SerializeField] AudioClip ClipUtilizzaChip;
 
@@ -97,6 +101,7 @@ public class PotionGenerator : Interactable, ISubscriber
     {
         Debug.Log("Timer avviato");
         timer = timerBoomerang;
+        timerAnimator.SetBool("TimerOn", true);
         UpdateTimerText();
 
         PubSub.Instance.SendMessageSubscriber(nameof(Player), this);
@@ -116,6 +121,7 @@ public class PotionGenerator : Interactable, ISubscriber
         {
             timer = 0;
             Debug.Log("timer Finito");
+            StopTimer();
             started = false;
 
             PubSub.Instance.SendMessageSubscriber(nameof(DialogueManager), this);
@@ -127,6 +133,7 @@ public class PotionGenerator : Interactable, ISubscriber
 
     private void StopTimer()
     {
+        timerAnimator.SetBool("TimerOn", false);
         timer = 0;
         stopTimer = true;
         started = false;
