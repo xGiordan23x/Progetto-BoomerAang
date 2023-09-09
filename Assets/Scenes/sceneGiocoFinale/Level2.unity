@@ -2197,6 +2197,7 @@ GameObject:
   - component: {fileID: 607771918}
   - component: {fileID: 607771920}
   - component: {fileID: 607771919}
+  - component: {fileID: 607771921}
   m_Layer: 0
   m_Name: Parete
   m_TagString: Untagged
@@ -2460,6 +2461,27 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!50 &607771921
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607771917}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1001 &730081379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3644,6 +3666,7 @@ GameObject:
   - component: {fileID: 1932923234}
   - component: {fileID: 1932923236}
   - component: {fileID: 1932923235}
+  - component: {fileID: 1932923237}
   m_Layer: 0
   m_Name: Muri
   m_TagString: Untagged
@@ -4269,6 +4292,27 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!50 &1932923237
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932923233}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &2037217028
 GameObject:
   m_ObjectHideFlags: 0
