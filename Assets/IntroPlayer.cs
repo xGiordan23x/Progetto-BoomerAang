@@ -30,4 +30,9 @@ public class IntroPlayer : MonoBehaviour
     {        
       AudioManager.instance.PlayAudioClip(introMusicClip);        
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

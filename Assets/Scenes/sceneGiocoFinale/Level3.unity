@@ -3084,12 +3084,27 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 6c8ccc41285c0fb4cafb5888806f1df2, type: 2}
+    - {fileID: 11400000, guid: 06d93bf7c4bee2f43b288e9f1f04f079, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1617284087}
           m_TargetAssemblyTypeName: IntroPlayer, Assembly-CSharp
           m_MethodName: PlayIntroClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1617284087}
+          m_TargetAssemblyTypeName: IntroPlayer, Assembly-CSharp
+          m_MethodName: QuitGame
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
