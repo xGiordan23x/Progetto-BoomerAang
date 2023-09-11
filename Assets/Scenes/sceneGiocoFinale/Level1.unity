@@ -8071,7 +8071,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2630768, y: -35.932266, z: -9.885892}
+  m_LocalPosition: {x: 1.2630692, y: -35.932266, z: -9.885892}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8566,6 +8566,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 956278114083313534, guid: 931c03f09e1b9bf46af90626b9c418a8, type: 3}
   m_PrefabInstance: {fileID: 598690250}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &603499319 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8910472255699128500, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
+  m_PrefabInstance: {fileID: 2046469552}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &603499320 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 336331557336965226, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
+  m_PrefabInstance: {fileID: 2046469552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &614936980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95472,6 +95488,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1978901724092581428, guid: 752e32964b8060b4292cbb88b7a4b5a2, type: 3}
+      propertyPath: timerImage
+      value: 
+      objectReference: {fileID: 603499320}
+    - target: {fileID: 1978901724092581428, guid: 752e32964b8060b4292cbb88b7a4b5a2, type: 3}
+      propertyPath: timerAnimator
+      value: 
+      objectReference: {fileID: 603499319}
+    - target: {fileID: 1978901724092581428, guid: 752e32964b8060b4292cbb88b7a4b5a2, type: 3}
       propertyPath: timerBoomerang
       value: 5
       objectReference: {fileID: 0}
@@ -101959,6 +101983,10 @@ PrefabInstance:
     - target: {fileID: 8756776787946798637, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -62.605103
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910472255699128500, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8995789566835380230, guid: eca721760b3d843468d9ed250f42f9d7, type: 3}
       propertyPath: m_AnchoredPosition.x
