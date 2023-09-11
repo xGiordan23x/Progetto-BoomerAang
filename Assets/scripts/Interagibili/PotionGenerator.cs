@@ -23,7 +23,8 @@ public class PotionGenerator : Interactable, ISubscriber
 
     private void Awake()
     {
-        timerTextValue = FindObjectOfType<GeneratorTimer>().gameObject.GetComponent<TextMeshProUGUI>();
+        timerTextValue = FindObjectOfType<GeneratorTimer>().gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        timerAnimator = FindObjectOfType<GeneratorTimer>().gameObject.GetComponent<Animator>();
     }
 
     private void Start()
