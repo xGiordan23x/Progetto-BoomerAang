@@ -301,6 +301,7 @@ SpriteAtlas:
   - {fileID: 321892352, guid: 34ec9a2284619ac4681cde7f866e686e, type: 3}
   - {fileID: -1406029122, guid: 34ec9a2284619ac4681cde7f866e686e, type: 3}
   - {fileID: 21300000, guid: 00755e22a1724ff4da2143ef72f2703b, type: 3}
+  - {fileID: 21300000, guid: 8066403209197fa4c94ee94dc9c63ebf, type: 3}
   - {fileID: 21300000, guid: 836b253291d31e043b0f1851a50daaaa, type: 3}
   - {fileID: 21300000, guid: 539d5f32dc7fa3944a8d49f7e9783f78, type: 3}
   - {fileID: 21300000, guid: 968f8042a58732a4bae105fbba27690f, type: 3}
@@ -505,6 +506,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 09784844a248d8f48aa07363e3b9fafc, type: 3}
   - {fileID: 21300000, guid: 8c9d3b44b83a21c4382dc25bbcbc037f, type: 3}
   - {fileID: 21300000, guid: dbba7b44f0b2e7340becf6e4923bb420, type: 3}
+  - {fileID: 21300000, guid: 6fea705440b455d4b88b909e9a90c61c, type: 3}
   - {fileID: 21300000, guid: 36efeb54d1c9875488735a5ce8eed798, type: 3}
   - {fileID: 21300000, guid: 7283b16464284634ab4426247ffefa93, type: 3}
   - {fileID: 21300000, guid: 818ee2649d03d9f4bb639199d6708c73, type: 3}
@@ -698,7 +700,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: cede1e1290a35e74ba104ab5e045bb2f, type: 3}
   - {fileID: 21300000, guid: 8495ef1228e15004e808ce30ec97185f, type: 3}
   - {fileID: 21300000, guid: 0dd4b62234d07984c9e8dd738adfa23d, type: 3}
-  - {fileID: 21300000, guid: 8066403209197fa4c94ee94dc9c63ebf, type: 3}
   - {fileID: 21300000, guid: 45d3f0325b99e8e4da9f49b7d73ea3cf, type: 3}
   - {fileID: 21300000, guid: 542c6332aaa890a4286b8c78c9b7d7ca, type: 3}
   - {fileID: 21300000, guid: 518d7a3249fd2a641aa152896367ef3f, type: 3}
@@ -2356,6 +2357,7 @@ SpriteAtlas:
   - CableNarrowYellow_8
   - CableNarrowYellow_9
   - PortaChiaveChiusaStanza8
+  - run R.8
   - PortaChiaveChiusaStanza2
   - cassa dietro3
   - int porta down 2
@@ -2560,6 +2562,7 @@ SpriteAtlas:
   - PorteCardDueR8
   - iddle lateralesx remake1
   - trasforma b5
+  - "9 B\U0001F922\U0001F922\U0001F922"
   - cassa animazione2
   - PortaCardRossaUno16
   - Lucchichio2x22
@@ -2753,7 +2756,6 @@ SpriteAtlas:
   - ampolla1
   - cassa frontale spostata12
   - BoosterRightEject9
-  - run R.8
   - P_MonitorSfondo2
   - portale creazione sx7
   - PorteCardTreB7
